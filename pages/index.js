@@ -14,15 +14,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div 
-        className='bg-gray-100' 
+        className='bg-primary' 
         style={{
           height:"100vh"
         }}
       >
 
         <div className="px-8 py-12">  
-          <Image src={logo} alt="logo"/>
-          <Image  src={beachWork} alt="logo"/>
+          <h1 className='font-headline text-white'>Holla</h1>
 
         </div>
       </div>
