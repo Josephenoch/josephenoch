@@ -30,6 +30,13 @@ module.exports = {
       },
       fontFamily:{
         headline:"Fira Code, monospace"
+      },
+      spacing: {
+        '90per': '90%',
+        "10per": "10%",
+        "5per":"5%",
+        "85per":"85%"
+
       }
     },
   },
