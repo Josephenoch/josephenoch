@@ -1,6 +1,10 @@
 import Head from 'next/head'
+import Typewriter from 'typewriter-effect'
+
+import { useRef } from 'react';
 
 export default function Home() {
+  const typewriterRef = useRef()
   return (
     <>
       <Head>
@@ -14,8 +18,16 @@ export default function Home() {
         <div className='pr-20'>
           <h1 className="text-xs pl-1">Hello world, I am </h1>
           <h1 className="text-6xl font-thin">Joseph Enoch</h1>
-          <h1 className="text-2xl font-thin text-secondary-purple"> {"<Front-end Developer/>"}</h1>
-          <h1 className="mt-10 text-xs font-thin text-secondary"> //complete the game to continue</h1>
+          <h1 ref={typewriterRef} className="text-2xl font-thin text-secondary-purple flex align-baseline">
+             {<Typewriter
+                options={{
+                  strings: ['Front-end Developer', 'UX Designer', 'Data Science Enthusiast'],
+                  autoStart: true,
+                  loop: true,
+                }}
+             />}
+          </h1>
+          <h1 className="mt-10 text-xs font-thin text-secondary">  //complete the game to continue</h1>
           <h1 className="text-xs font-thin text-secondary"> //you can also see it on my Github page</h1>
           <h1 className="mt-1 text-xs font-thin"> 
             <span className="text-secondary-purple">const   </span>
