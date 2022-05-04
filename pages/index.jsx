@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <div className="px-8 py-12">  
-        <h1 className='font-headline text-white'>Holla</h1>
+        <h1>Joseph Enoch</h1>
       </div>
     </>
     

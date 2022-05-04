@@ -37,7 +37,7 @@ module.exports = {
         "5per":"5%",
         "85per":"85%"
 
-      }
+      },
     },
   },
   plugins: [],
