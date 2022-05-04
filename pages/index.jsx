@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex justify-center mt-auto min-h-full">  
+      <div className="flex justify-center min-h-full">  
         <h1>Joseph Enoch</h1>
       </div>
     </>

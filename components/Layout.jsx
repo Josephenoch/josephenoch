@@ -75,7 +75,7 @@ export const Layout = ({children}) => {
                 <SocialIcon key={index} link={social.link} icon={social.icon}/>
                 )
             }
-            <a target="_blank" href={"https://github.com/josephenoch"}className={` text-secondary hover:text-white  flex items-center last:ml-auto border-r-0 border-l-2 border-l-lines inline-block px-3  py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2  `}>
+            <a target="_blank" href={"https://github.com/josephenoch"} rel="noreferrer" className={` text-secondary hover:text-white  flex items-center last:ml-auto border-r-0 border-l-2 border-l-lines px-3  py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2  `}>
               <span className='text-xs block mr-1'>@josephenoch </span> <i className="ri-github-fill"></i>
             </a>
           </div>      
