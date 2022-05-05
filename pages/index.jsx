@@ -27,13 +27,13 @@ export default function Home() {
                 }}
              />}
           </h1>
-          <h1 className="mt-10 text-xs font-thin text-secondary">  //complete the game to continue</h1>
-          <h1 className="text-xs font-thin text-secondary"> //you can also see it on my Github page</h1>
+          <h1 className="mt-10 text-xs font-thin text-secondary">  {"//complete the game to continue"}</h1>
+          <h1 className="text-xs font-thin text-secondary"> {"//you can also see it on my Github page"}</h1>
           <h1 className="mt-1 text-xs font-thin"> 
             <span className="text-secondary-purple">const   </span>
             <span className="text-accent-green">githubLink </span> 
             =
-            <span className="text-accent-orange"> “https://github.com/example/url”</span>
+            <span className="text-accent-orange"> {"“https://github.com/example/url”"}</span>
           </h1>
 
 
