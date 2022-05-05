@@ -8,8 +8,9 @@ module.exports = {
       colors:{
         primary:{
           DEFAULT:"#01080E",
-          light:"#011627",
-          lighter:"#011627"
+          light:"#011221",
+          lighter:"#011627",
+          dark:"#010C15"
         },
         secondary:{
           DEFAULT:"#607B96",
@@ -30,13 +31,6 @@ module.exports = {
       },
       fontFamily:{
         headline:"Fira Code, monospace"
-      },
-      spacing: {
-        '90per': '90%',
-        "10per": "10%",
-        "5per":"5%",
-        "85per":"85%"
-
       },
     },
   },
