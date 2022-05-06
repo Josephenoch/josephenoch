@@ -16,11 +16,11 @@ export default function Home() {
 
       
       <div className="flex justify-center items-center h-full">  
-        <div className="lg:space-y-2">
+        <div className="lg:space-y-2 px-10 md:px-0">
           <h1 className="text-[10px] lg:text-xs pl-1">Hello world, I am </h1>
-          <h1 className="text-4xl lg:text-6xl font-thin">Joseph Enoch</h1>
+          <h1 className="font-extralight tracking-tighter text-6xl ">Joseph <br className="lg:hidden"/>Enoch</h1>
           <h1 ref={typewriterRef} className="text-md lg:text-2xl font-thin text-secondary-purple flex align-baseline">
-             {">"}{<Typewriter
+             {"> "}{<Typewriter
                 options={{
                   strings: ['Front-end Developer', 'UX Designer', 'Data Science Enthusiast'],
                   autoStart: true,
@@ -43,7 +43,7 @@ export default function Home() {
           style={{
               background:"linear-gradient(135deg, rgba(67, 217, 173,0.7), rgba(23, 85, 83,0.2))"
           }}
-          className=" ml-20 hidden lg:flex w-[30%] h-[70%] opacity-50 shadow-[_116px_85px_66px_-54px_rgba(77,91,206,0.3),_-59px_-99px_81px_-41px_rgba(67,217,173,0.64);] justify-center items-center rounded-md"
+          className=" ml-20 hidden lg:flex w-[30%] h-[80%] opacity-50 shadow-[_116px_85px_66px_-54px_rgba(77,91,206,0.3),_-59px_-99px_81px_-41px_rgba(67,217,173,0.64);] justify-center items-center rounded-md"
         >
           <SnakeGame/>
         </div>

@@ -29,7 +29,7 @@ export const Layout = ({children}) => {
   ]
   return (
     <div className="bg-primary-dark  w-full h-screen flex justify-center items-center font-headline text-white">
-      <div className="w-11/12 relative bg-primary-lighter rounded-lg overflow-hidden shadow-md shadow-primary-lighter border-lines border-2 h-[95%] lg:h-[90%]">
+      <div className="w-11/12 relative bg-primary-lighter rounded-lg overflow-hidden shadow-md shadow-primary-lighter border-lines border-2 h-[93%] lg:h-[90%]">
         <div className="border-b-2 border-b-lines flex flex-col lg:flex-row">
             <NavBar 
               nav={nav} 
@@ -39,7 +39,7 @@ export const Layout = ({children}) => {
         
         <div className={`border-t-2 absolute bottom-0 border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100"} transition-all ease-in-out duration-1000`}>
           <Link href="" >
-            <a className="text-secondary text-xs inline-block border-r-2 hover:text-white border-r-lines px-2 py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2">
+            <a className="text-secondary text-xs inline-block border-r-2 hover:text-white border-r-lines px-2 py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 pr-10 lg:pr-0">
                 <h1 className=" mt-1">find me on:</h1>
             </a>
           </Link>
