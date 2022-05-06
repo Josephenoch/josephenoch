@@ -37,7 +37,7 @@ export const Layout = ({children}) => {
             />
         </div>
         
-        <div className={`border-t-2 absolute bottom-0 border-t-lines flex w-full ${nav?"flex":"hidden lg:flex"}`}>
+        <div className={`border-t-2 absolute bottom-0 border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100"} transition-all ease-in-out duration-1000`}>
           <Link href="" >
             <a className="text-secondary text-xs inline-block border-r-2 hover:text-white border-r-lines px-2 py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2">
                 <h1 className=" mt-1">find me on:</h1>
@@ -53,7 +53,7 @@ export const Layout = ({children}) => {
           </a>
         </div>  
         <div className={` overflow-auto max-h-[85%] h-[85%] text-white `}>
-          <div className={`max-h-full h-full ${nav?"hidden lg:block":"block"}`}>
+          <div className={`max-h-full h-full ${nav?"opacity-0 lg:opacity-100 ":"opacity-100 transition-all delay-1000 ease-in-out  duration-1000"}`}>
             {children}
           </div>
         </div>     

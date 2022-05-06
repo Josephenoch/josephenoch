@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Typewriter from 'typewriter-effect'
 
 import { useRef } from 'react';
+import { SnakeGame } from '../components/SnakeGame';
 
 export default function Home() {
   const typewriterRef = useRef()
@@ -38,10 +39,13 @@ export default function Home() {
               </a >
           </div>
         </div>
-        <div style={{
-          background:"linear-gradient(135deg, rgba(67, 217, 173,0.7), rgba(23, 85, 83,0.2))"
-        }}className=" ml-20 hidden lg:block w-1/4 h-3/4 opacity-50 shadow-[_116px_85px_66px_-54px_rgba(77,91,206,0.3),_-59px_-99px_81px_-41px_rgba(67,217,173,0.64);]">
-
+        <div 
+          style={{
+              background:"linear-gradient(135deg, rgba(67, 217, 173,0.7), rgba(23, 85, 83,0.2))"
+          }}
+          className=" ml-20 hidden lg:flex w-[30%] h-[70%] opacity-50 shadow-[_116px_85px_66px_-54px_rgba(77,91,206,0.3),_-59px_-99px_81px_-41px_rgba(67,217,173,0.64);] justify-center items-center rounded-md"
+        >
+          <SnakeGame/>
         </div>
         
       </div>
