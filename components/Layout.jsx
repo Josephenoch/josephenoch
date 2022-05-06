@@ -29,7 +29,7 @@ export const Layout = ({children}) => {
   ]
   return (
     <div className="bg-primary-dark  w-full h-screen flex justify-center items-center font-headline text-white">
-      <div className="w-11/12 relative bg-primary-lighter rounded-lg overflow-hidden shadow-md shadow-primary-lighter border-lines border-2 h-[93%] lg:h-[90%]">
+      <div className="w-11/12 relative bg-primary-lighter rounded-lg overflow-hidden shadow-md shadow-primary-lighter border-lines border-2 h-[90%]">
         <div className="border-b-2 border-b-lines flex flex-col lg:flex-row">
             <NavBar 
               nav={nav} 
@@ -39,16 +39,17 @@ export const Layout = ({children}) => {
         
         <div className={`border-t-2 absolute bottom-0 border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100"} transition-all ease-in-out duration-1000`}>
           <Link href="" >
-            <a className="text-secondary text-xs inline-block border-r-2 hover:text-white border-r-lines px-2 py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 pr-10 lg:pr-0">
-                <h1 className=" mt-1">find me on:</h1>
-            </a>
+            <h1 className="text-secondary text-xs inline-block border-r-2 
+            border-r-lines px-2 py-3 border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 w-full lg:w-fit mt-1">
+                find me on:
+            </h1>
           </Link>
           {
             socials.map((social,index)=>
               <SocialIcon key={index} link={social.link} icon={social.icon}/>
               )
           }
-          <a target="_blank" href={"https://github.com/josephenoch"} rel="noreferrer" className={` text-secondary hover:text-white  flex items-center last:ml-auto border-r-0 border-l-2 border-l-lines px-3  py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2  `}>
+          <a target="_blank" href={"https://github.com/josephenoch"} rel="noreferrer" className={` text-secondary hover:text-white  flex items-center last:ml-auto border-l-2 border-l-lines px-3  py-3 hover:border-b-accent border-b-primary-lighter hover:transition-[border] ease-in-out duration-1000 border-b-2 `}>
             <span className='text-xs mr-1 hidden lg:inline'>@josephenoch </span> <i className="ri-github-fill"></i>
           </a>
         </div>  
