@@ -32,8 +32,9 @@ export const SnakeGame = () => {
     <>
       <div className="w-[51%] h-[80%] bg-primary-dark rounded-lg">
        <div className={`${Styles.background} h-52 w-54`}>
-        {snakeBody.map(body=>
+        {snakeBody.map((body,index)=>
         <div 
+          key={index}
           style={{
             gridColumnStart:body.x,
             gridRowStart:body.y

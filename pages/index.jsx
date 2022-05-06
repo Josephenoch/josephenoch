@@ -31,7 +31,7 @@ export default function Home() {
           <div>
               <h1 className="mt-20 sm:mt-10 text-xs font-thin text-secondary">  {"//complete the game to continue"}</h1>
               <h1 className="text-xs font-thin text-secondary"> {"//you can also see it on my Github page"}</h1>
-              <a href="https://github.com/josephenoch" target="_blank" rel="nonreferrer"className="mt-1 text-xs font-thin"> 
+              <a href="https://github.com/josephenoch" target="_blank" rel="noreferrer" className="mt-1 text-xs font-thin"> 
                 <span className="text-secondary-purple">const   </span>
                 <span className="text-accent-green">githubLink </span> 
                 =
