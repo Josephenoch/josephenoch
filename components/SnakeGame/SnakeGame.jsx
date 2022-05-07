@@ -1,6 +1,6 @@
 import React,{ useState, useEffect} from 'react'
  
-import Styles from "../styles/SnakeGame.module.css"
+import Styles from "../../styles/SnakeGame.module.css"
 
 export const SnakeGame = () => {
   const [snakeBody, setSnakeBody] = useState([

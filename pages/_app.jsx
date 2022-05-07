@@ -1,4 +1,4 @@
-import { Layout } from '../components/Layout'
+import { Layout } from '../components/Layout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 

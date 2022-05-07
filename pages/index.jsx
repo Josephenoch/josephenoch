@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Typewriter from 'typewriter-effect'
 
 import { useRef } from 'react';
-import { SnakeGame } from '../components/SnakeGame';
+import { SnakeGame } from '../components/SnakeGame/SnakeGame';
 
 export default function Home() {
   const typewriterRef = useRef()
