@@ -29,14 +29,14 @@ export const Layout = ({children}) => {
   ]
   return (
     <div className="bg-primary-dark  w-full h-screen flex justify-center items-center font-headline text-white">
-      <div className="w-11/12 relative bg-primary-lighter rounded-lg overflow-hidden shadow-md shadow-primary-lighter border-lines border-2 h-[90%]">
+      <div className="w-[95%] relative bg-primary-lighter rounded-lg overflow-hidden shadow-md shadow-primary-lighter border-lines border-2 h-[90%]">
         <div className="border-b-2 border-b-lines flex flex-col lg:flex-row">
             <NavBar 
               nav={nav} 
               handleNav={handleNav}
             />
         </div>
-        <div className={` overflow-auto max-h-[84%] h-[84%] text-white `}>
+        <div className={` overflow-auto max-h-[85%] h-[85%] text-white `}>
           <div className={`max-h-full h-full ${nav?"opacity-0 lg:opacity-100 ":"opacity-100 transition-all delay-1000 ease-in-out  duration-1000"}`}>
             {children}
           </div>
