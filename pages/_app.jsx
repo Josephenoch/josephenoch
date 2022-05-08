@@ -1,14 +1,18 @@
-import { Layout } from '../components/Layout/Layout'
+import { Layout } from '../Layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 
 function MyApp({ Component, pageProps }) {
+  const ChildLayout = Component.Layout || EmptyLayout
   return (
     <Layout>
-      <Component {...pageProps} />
+      <ChildLayout>
+        <Component {...pageProps} />
+      </ChildLayout>
     </Layout>
   )
     
-}
 
+}
+const EmptyLayout = ({children}) => <>{children}</>
 export default MyApp
