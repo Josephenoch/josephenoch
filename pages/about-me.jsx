@@ -5,15 +5,15 @@ import { PersonalInfoSection } from '../components/AboutMe/PersonalInfoSection'
 const AboutMe = () => {
   const icons = [
     {
-      icon:<i class="ri-terminal-box-fill"></i>,
+      icon:<i className="ri-terminal-box-fill"></i>,
       link:"/"
     },
     {
-      icon:<i class="ri-user-4-fill"></i>,
+      icon:<i className="ri-user-4-fill"></i>,
       link:"/"
     },
     {
-      icon:<i class="ri-gamepad-fill"></i>,
+      icon:<i className="ri-gamepad-fill"></i>,
       link:"/"
     }
   ]
@@ -21,7 +21,7 @@ const AboutMe = () => {
     <div className="h-full flex">
       <div className="w-12 h-full border-r-2 border-r-lines items-center flex flex-col">
         {
-          icons.map(icon=> <AboutIcon icon={icon.icon} link={icon.link}/>)
+          icons.map((icon,index)=> <AboutIcon key={index} icon={icon.icon} link={icon.link}/>)
         }
         
       </div>
