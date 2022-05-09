@@ -1,5 +1,5 @@
 import React from 'react'
-import { AboutNav } from '../../components/AboutMe/AboutNav'
+import { AboutNav } from './AboutNav'
 
 import { PersonalInfoNav } from '../../components/AboutMe/PersonalInfoNav'
 export const Layout = () => {
