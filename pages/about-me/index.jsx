@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Layout } from '../../Layouts/AboutMeLayout/Layout'
+import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
 
 const index = () => {
   
@@ -9,6 +9,6 @@ const index = () => {
     )
 }
 
-index.Layout = Layout
+index.Layout = AboutLayout
 
 export default index

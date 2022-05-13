@@ -2,7 +2,7 @@ import React from 'react'
 import { AboutNav } from './AboutNav'
 
 import { PersonalInfoNav } from '../../components/AboutMe/PersonalInfoNav'
-export const Layout = () => {
+export const AboutLayout = () => {
   return (
     <div className="h-full flex">
       <div className="w-12 h-full border-r-2 border-r-lines items-center flex flex-col">

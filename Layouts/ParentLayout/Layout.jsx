@@ -28,7 +28,7 @@ export const Layout = ({children}) => {
     }
   ]
   return (
-    <div className="bg-primary-dark  w-full h-screen flex justify-center items-center font-headline text-white">
+    <div className="bg-primary-dark  w-screen h-screen flex justify-center items-center font-headline text-white">
       <div className="w-[95%] relative bg-primary-lighter rounded-lg overflow-hidden shadow-md shadow-primary-lighter border-lines border-2 h-[90%]">
         <div className="border-b-2 border-b-lines flex flex-col lg:flex-row">
             <NavBar 
@@ -41,13 +41,11 @@ export const Layout = ({children}) => {
             {children}
           </div>
         </div>
-        <div className={`border-t-2 absolute bottom-[-2px] border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100"} transition-all ease-in-out duration-1000`}>
-          <Link href="" >
+        <div className={`border-t-2 bottom-[-2px] border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100"} transition-all ease-in-out duration-1000`}>
             <h1 className="text-secondary text-xs inline-block border-r-2 
             border-r-lines px-2 py-4 border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 w-full lg:w-fit">
                 find me on:
             </h1>
-          </Link>
           {
             socials.map((social,index)=>
               <SocialIcon key={index} link={social.link} icon={social.icon}/>
