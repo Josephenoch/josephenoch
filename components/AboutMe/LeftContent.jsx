@@ -4,6 +4,9 @@ export const LeftContent = () => {
   const [lines,setLines] = useState([])
   const pRef = useRef()
   const text ="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores odio excepturi! Placeat autem deserunt eum perspiciatis velit ullam numquam esse vel, pariatur corrupti voluptatum voluptas distinctio! Ipsa, assumenda harum.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores odio excepturi! Placeat autem deserunt eum perspiciatis velit ullam numquam esse vel, pariatur corrupti voluptatum voluptas distinctio! Ipsa, assumenda harum."
+  
+
+
   useLayoutEffect(()=>{
     if(pRef.current){
         pRef.current.style.display="none"
@@ -24,7 +27,7 @@ export const LeftContent = () => {
             <li className="list-decimal"><span className="ml-5">* About</span></li>
             {
               lines.map((line, index)=>
-                  <li className="list-decimal" key={index}><span className="ml-5">* {line}</span></li>
+                  <li className="list-decimal" key={index}><span className="ml-4">* {line}</span></li>
               )
             }  
             <li className="list-decimal"><span className="ml-5">{"*/"}</span></li>

@@ -88,3 +88,6 @@ export default function getLines (text) {
     }
     return[...words]
   }
+
+
+  
