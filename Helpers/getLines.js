@@ -14,7 +14,5 @@ export default function* getLines(text,width){
     }
     yield words
     words = ""
-      
-    
   }
 }
