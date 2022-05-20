@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const CodeShowCase = ({Children}) => {
+export const CodeShowCase = ({children}) => {
   return (
-    <div className="text-xs space-y-2">
+    <div className="text-xs space-y-2 pb-10">
         
         <div className="flex justify-between">
             <div className="flex items-center space-x-2">
@@ -18,7 +18,7 @@ export const CodeShowCase = ({Children}) => {
             </div>
         </div>
         <div className='w-full rounded-lg h-40 border-[0.5px] border-lines bg-primary-light'>   
-            {Children}
+            {children}
         </div>
     </div>
   )

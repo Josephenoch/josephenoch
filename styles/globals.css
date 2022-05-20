@@ -1,4 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 15px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #010C15;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #011627;
+    border-radius: 100vh;
+    border: 3px solid #010C15;
+
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #011221;
+  }
+}

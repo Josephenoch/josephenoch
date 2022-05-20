@@ -4,7 +4,10 @@ import { CodeShowCase } from './CodeShowCase'
 export const RightContent = () => {
   return (
     <div className="mt-10">
-        <CodeShowCase/>
+        <CodeShowCase>Hi</CodeShowCase>
+        <CodeShowCase>Hi</CodeShowCase>
+        <CodeShowCase>Hi</CodeShowCase>
+
     </div>
   )
 }
