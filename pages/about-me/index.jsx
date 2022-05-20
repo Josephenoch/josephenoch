@@ -2,8 +2,8 @@ import React from 'react'
 
 import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
 
-import { PersonalInfoNav } from '../../components/AboutMe/PersonalInfoNav'
-import { LeftContent } from '../../components/AboutMe/LeftContent'
+import { PersonalInfoNav } from '../../Components/AboutMe/PersonalInfoNav'
+import { LeftContent } from '../../Components/AboutMe/LeftContent'
 import { RightContent } from '../../Components/AboutMe/RightContent'
 
 const index = () => {
