@@ -24,14 +24,14 @@ export const LeftContent = () => {
         </div>
         <div className="pl-12 pr-10 border-t-2 border-r-2 border-lines pt-5 h-full overflow-y-auto scrollbar pb-10">
           <ol className='w-full'>
-            <li className="list-decimal"><span className="ml-5">{"/**"}</span></li>
-            <li className="list-decimal"><span className="ml-5">* About</span></li>
+            <li className="list-decimal"><span className="ml-4">{"/**"}</span></li>
+            <li className="list-decimal"><span className="ml-4">* About</span></li>
             {
               lines.map((line, index)=>
                   <li className="list-decimal" key={index}><span className="ml-4">* {line}</span></li>
               )
             }  
-            <li className="list-decimal"><span className="ml-5">{"*/"}</span></li>
+            <li className="list-decimal"><span className="ml-4">{"*/"}</span></li>
 
           </ol>
           <p className="w-fit lg:hidden">

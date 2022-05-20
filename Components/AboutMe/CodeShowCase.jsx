@@ -8,7 +8,7 @@ export const CodeShowCase = ({children}) => {
             <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-500 "></div>
                 <div>
-                    <p className="text-secondary-purple font-bold">@username</p>
+                    <a href="https://github.com/josephenoch" rel="noreferrer" target="_blank" className="text-secondary-purple font-bold">@josephenoch</a>
                     <p>Created 5 months ago</p>
                 </div>
             </div>
@@ -17,7 +17,7 @@ export const CodeShowCase = ({children}) => {
                 <span><i className="ri-star-fill"></i> 3 stars</span>
             </div>
         </div>
-        <div className='w-full rounded-lg h-40 border-[0.5px] border-lines bg-primary-light'>   
+        <div className='w-full rounded-lg h-content border-[0.5px] border-lines bg-primary-light px-5 py-3'>   
             {children}
         </div>
     </div>
