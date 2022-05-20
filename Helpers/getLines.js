@@ -6,7 +6,7 @@ export default function* getLines(text,width){
     for(let j =(width*(i)); j<(width*(i+1));j++){
       if(letters[j]){ 
         words+=letters[j]
-        if(j==(width*(i+1)-1)&& letters[j+1]!=" "){
+        if(j==(width*(i+1)-1)&& letters[j+1]!=" " && letters[j]!=" "){
           words+="-"
         }
       }
