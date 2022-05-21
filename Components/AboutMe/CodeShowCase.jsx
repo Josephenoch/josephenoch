@@ -17,7 +17,7 @@ export const CodeShowCase = ({children}) => {
                 <span><i className="ri-star-fill"></i> 3 stars</span>
             </div>
         </div>
-        <div className='w-full rounded-lg h-content border-[0.5px] border-lines bg-primary-light px-5 py-3'>   
+        <div className='w-full rounded-2xl h-content border-[0.5px] border-lines bg-primary-light'>   
             {children}
         </div>
     </div>
