@@ -2,6 +2,17 @@ import React from 'react'
 import { CodeShowCase } from './CodeShowCase'
 
 export const RightContent = () => {
+  const codeFromServer = `<code>
+    function add(n1,n2){
+      console.log(x + y);
+    }
+
+    const x = 8;
+    const y = 10;
+
+    add(x,y);
+    </code>
+  `;
   return (
     <div className="mt-10">
         <CodeShowCase>
@@ -37,21 +48,10 @@ export const RightContent = () => {
           </div>
         </CodeShowCase>
         <CodeShowCase>
-          <iframe src="https://codesandbox.io/embed/quizzical-cartwright-u7559h?fontsize=10&hidenavigation=1&theme=dark&view=editor"
-            style={{
-              width:"100%", 
-              height:"fit",
-              minHeight:"300px",
-              border:"0px",
-              borderRadius: "4px",
-              overflow:"hidden"
-            }}
-            title="React"
-            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-          >
-
-          </iframe>
+        <pre className="prettyprint" 
+      dangerouslySetInnerHTML={{
+                    __html: codeFromServer
+                  }}></pre>
    </CodeShowCase>
     </div>
   )
