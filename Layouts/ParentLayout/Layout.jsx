@@ -23,7 +23,7 @@ export const Layout = ({children}) => {
       icon:<i className="ri-facebook-fill"></i>
     },
     {
-      link: "https://twitter.com/EnochJoseph01",
+      link: "https://twitter.com/techbrojoe",
       icon:<i className="ri-twitter-fill"></i>
     }
   ]

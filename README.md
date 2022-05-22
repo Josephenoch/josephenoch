@@ -13,7 +13,6 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 <br />
 
 ## Some of my Github Stats
-<!-- <p align=left> <img src=https://komarev.com/ghpvc/?username=Cradoe alt=Cradoe /> </p> -->
 
 | <a href="https://github.com/Josephenoch/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=Josephenoch&show_icons=true&include_all_commits=true&theme=aura&hide_border=true" alt="Anurag's github stats" /></a> | <a href="https://github.com/Josephenoch/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Josephenoch&layout=compact&theme=aura&hide_border=true" /></a> |
 | ------------- | ------------- |
@@ -22,7 +21,28 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 
 
 ## Expertise
+<br>
+
 ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Python Badge](https://img.shields.io/static/v1?label=Python&message=Data&color=blue)
+![Python](https://img.shields.io/badge/Python%20-%2320232a.svg?&style=for-the-badge&logo=python&logoColor=%2361DAFB)
+
 
 ## Side Projects 
+<br>
+
+### React Projects 
+
+[Nerdy Eye Project](https://nerdy-eye-gamma.vercel.app/)<br>
+[Portfolio Dashboard](https://portfolio-dashboard-josephenoch.vercel.app/)<br>
+[ChatUp](https://chat-up-chi.vercel.app/)<br>
+[Authex](http://authex.vercel.app/)<br>
+
+### Nextjs Projects 
+
+[Rick and Morty App](https://rick-and-morty-page.vercel.app/)<br>
+[Events Listing Page](https://event-listing-page.vercel.app/)<br>
+[My Portfolio](https://josephenoch.vercel.app)
+
+### Typescript projects
+
+[Typescript for DOM](https://github.com/Josephenoch/ts-dom)

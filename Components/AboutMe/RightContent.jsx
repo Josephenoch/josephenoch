@@ -183,7 +183,7 @@ export const RightContent = () => {
                   key={code.title}
                 >
                   <pre 
-                    className="prettyprint" 
+                    className="prettyprint language-js" 
                     dangerouslySetInnerHTML={{
                             __html: code.code
                     }}
