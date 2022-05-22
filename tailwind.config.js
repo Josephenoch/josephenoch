@@ -7,7 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      transitionProperty:{
+        height:"height"
+      },
       colors:{
         primary:{
           DEFAULT:"#01080E",
