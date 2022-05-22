@@ -2,9 +2,9 @@ import React from 'react'
 
 import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
 
-import { PersonalInfoNav } from '../../Components/AboutMe/PersonalInfoNav'
-import { LeftContent } from '../../Components/AboutMe/LeftContent'
-import { RightContent } from '../../Components/AboutMe/RightContent'
+import { PersonalInfoNav } from '../../Components/AboutMe/PersonalInfo/Bio/PersonalInfoNav'
+import LeftContent  from '../../Components/AboutMe/LeftContent'
+import RightContent from '../../Components/AboutMe/RightContent'
 
 const index = () => {
   
@@ -23,7 +23,6 @@ const index = () => {
       </div>
       <div className="w-[41.4%] h-full border-l-2 border-lines">
         <div className="h-full border-r-2 border-t-2 border-lines mt-8 py-5 px-7  overflow-y-auto scrollbar text-secondary text-sm">
-          {"// Code Snippet showcase"}
           <RightContent/>
         </div>
       </div>
