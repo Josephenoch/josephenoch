@@ -1,5 +1,5 @@
 import React from 'react'
-import CodeShowCaseSection from './PersonalInfo/Bio/CodeShowCaseSection'
+import CodeShowCaseSection from './CodeShowCaseSection'
 
 const RightContent = () => {
   return (

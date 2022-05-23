@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
 
 import Link from "next/link"
+import Bio from './Bio'
+import FrontEndDev from './FrontEndDev'
 
-export const PersonalInfoNav = () => {
+export const PersonalInfoNav = ({handleChangeEditor}) => {
   const [personalInfo, setPersonalInfo] = useState(true)
   const [contact, setContact] = useState(true)
   const [interest, setInterest] = useState(true)
@@ -28,6 +30,7 @@ export const PersonalInfoNav = () => {
       educationStyle: education?"h-fit opacity-100 mt-1":"h-0 opacity-0 py-0"
 
   }
+
   return (
     <>
         <div onClick={handlePersonalInfo} className=" text-secondary hover:text-white cursor-pointer text-xs py-2 h-fit w-full flex justify-start">
@@ -37,7 +40,7 @@ export const PersonalInfoNav = () => {
             <h1 className="ml-2">personal-info</h1>
         </div>
         <div className={`${extraStyle.personalInfoStyle} space-y-2`}>
-            <div className="text-secondary text-xs hover:text-white cursor-pointer flex items-center ml-[26px] space-x-1">
+            <div onClick={()=>handleChangeEditor(<Bio/>)} className="text-secondary text-xs hover:text-white cursor-pointer flex items-center ml-[26px] space-x-1">
                 <i className="ri-markdown-fill"></i>
                 <span>bio</span>   
             </div>
@@ -50,8 +53,8 @@ export const PersonalInfoNav = () => {
                     <span>interests</span>
                 </div>
                 <div className={`${extraStyle.interestStyle} text-secondary text-xs ml-[26px] space-y-1`}>
-                    <p className="flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>Frontend Dev</span></p>
-                    <p className="flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>Data Science</span></p>
+                    <p className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>Frontend Dev</span></p>
+                    <p className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>Data Science</span></p>
                 </div>
             </div>
             <div className="text-secondary text-xs">
@@ -63,8 +66,8 @@ export const PersonalInfoNav = () => {
                     <span>education</span>
                 </div>
                 <div className={`${extraStyle.educationStyle} text-secondary text-xs ml-[26px] space-y-1`}>
-                    <p className="flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>AUL</span></p>
-                    <p className="flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>BSI</span></p>
+                    <p onClick={()=>handleChangeEditor(<FrontEndDev/>)}className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>AUL</span></p>
+                    <p onClick={()=>handleChangeEditor(<FrontEndDev/>)}className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>BSI</span></p>
                 </div>
             </div>
         </div>
