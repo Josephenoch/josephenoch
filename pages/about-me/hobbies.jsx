@@ -1,12 +1,12 @@
 import React from 'react'
 import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
 
-const hobbies = () => {
+const Hobbies = () => {
   return (
     <div>hobbies</div>
   )
 }
 
-hobbies.Layout = AboutLayout
+Hobbies.Layout = AboutLayout
 
-export default hobbies
+export default Hobbies

@@ -1,16 +1,59 @@
 import React,{useState,useEffect} from 'react'
 
 import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
-import Bio from '../../Components/AboutMe/PersonalInfo/Bio'
 
 import { PersonalInfoNav } from '../../Components/AboutMe/PersonalInfo/PersonalInfoNav'
 import LeftContent  from '../../Components/AboutMe/PersonalInfo/LeftContent'
 import RightContent from '../../Components/AboutMe/PersonalInfo/RightContent'
 
 const Index = () => {
-  const [openEditor, setOpenEditor] = useState(<Bio/>)
+  const text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, libero fugiat ullam, omnis minima officia impedit porro eum cumque voluptatem aspernatur, tenetur qui maiores. Assumenda quibusdam consequuntur maxime accusamus nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, libero fugiat ullam, omnis minima officia impedit porro eum cumque voluptatem aspernatur, tenetur qui maiores. Assumenda quibusdam consequuntur maxime accusamus nihil."
+  const files = [
+    {
+      folderName:"Interest",
+      pages:[
+        {
+          title:"FrontEnd Dev",
+          text:text
+        },
+        {
+          title:"BackEnd Dev",
+          text:text
+        }
+      ]
+    },
+    {
+      folderName:"School",
+      pages:[
+        {
+          title:"AUL",
+          text:text
+        },
+        {
+          title:"BSI",
+          text:text
+        }
+      ]
+    }
+  ]
+  const [openEditor, setOpenEditor] = useState(
+      {
+        active:0,
+        pages:[
+          {
+            title:"bio",
+            text:text
+          }
+        ]
+      }
+    )
   const handleChangeEditor = (selected) =>{
-    setOpenEditor(selected)
+    setOpenEditor(prevState=>{
+      if(prevState.pages.some(page=>page.title===selected.title)){
+        return {...prevState}
+      }
+      return {active:prevState.pages.length,pages:[...prevState.pages,selected]}
+    })
   }
   useEffect(() => {
     console.log(openEditor)
@@ -19,7 +62,7 @@ const Index = () => {
   return (
     <>
       <div className="w-40 h-full border-r-2 border-r-lines">
-        <PersonalInfoNav handleChangeEditor={handleChangeEditor}/>
+        <PersonalInfoNav files={files} handleChangeEditor={handleChangeEditor}/>
       </div>
       <div className="w-[41.4%] h-full text-secondary text-xs border-r-lines">
         <LeftContent  openEditor={openEditor}/>

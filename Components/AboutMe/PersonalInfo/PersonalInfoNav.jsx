@@ -1,15 +1,16 @@
 import React,{useState} from 'react'
 
 import Link from "next/link"
-import Bio from './Bio'
-import FrontEndDev from './FrontEndDev'
 
-export const PersonalInfoNav = ({handleChangeEditor}) => {
+export const PersonalInfoNav = ({files,handleChangeEditor}) => {
+  const text = "Lorem"
   const [personalInfo, setPersonalInfo] = useState(true)
   const [contact, setContact] = useState(true)
   const [interest, setInterest] = useState(true)
   const [education, setEducation] = useState(true)
 
+  const interestPages = files.filter(file=>file.folderName=="Interest")[0]
+  const schoolPages = files.filter(file=> file.folderName=="School")[0]
 
   const handlePersonalInfo = () => {
     setPersonalInfo(prevState =>!prevState)
@@ -23,6 +24,8 @@ export const PersonalInfoNav = ({handleChangeEditor}) => {
   const handleEducation = () => {
     setEducation(prevState =>!prevState)
   }
+
+
   const extraStyle = {
       personalInfoStyle: personalInfo?"h-fit opacity-100 py-4 border-t-2 border-t-lines":"h-0 opacity-0 py-0",
       contactStyle: contact?"h-fit opacity-100 py-4":"h-0 opacity-0 py-0",
@@ -40,7 +43,11 @@ export const PersonalInfoNav = ({handleChangeEditor}) => {
             <h1 className="ml-2">personal-info</h1>
         </div>
         <div className={`${extraStyle.personalInfoStyle} space-y-2`}>
-            <div onClick={()=>handleChangeEditor(<Bio/>)} className="text-secondary text-xs hover:text-white cursor-pointer flex items-center ml-[26px] space-x-1">
+            <div 
+                onClick={
+                    ()=>handleChangeEditor({title:"bio",text:text})
+                } 
+                className="text-secondary text-xs hover:text-white cursor-pointer flex items-center ml-[26px] space-x-1">
                 <i className="ri-markdown-fill"></i>
                 <span>bio</span>   
             </div>
@@ -53,21 +60,28 @@ export const PersonalInfoNav = ({handleChangeEditor}) => {
                     <span>interests</span>
                 </div>
                 <div className={`${extraStyle.interestStyle} text-secondary text-xs ml-[26px] space-y-1`}>
-                    <p className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>Frontend Dev</span></p>
-                    <p className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>Data Science</span></p>
+                    {
+                        interestPages.pages.map((page,index)=>{
+                            return <p key={index} onClick={()=>handleChangeEditor(page)} className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>{page.title}</span></p>
+                        })
+                    }
+                   
                 </div>
             </div>
             <div className="text-secondary text-xs">
                 <div onClick={handleEducation} className="hover:text-white cursor-pointer text-secondary text-xs flex items-center space-x-1">
                     {
-                        interest?<i className="text-sm ri-arrow-down-s-line ml-2"></i>:<i className="text-sm ri-arrow-right-s-line ml-2"></i>
+                        education?<i className="text-sm ri-arrow-down-s-line ml-2"></i>:<i className="text-sm ri-arrow-right-s-line ml-2"></i>
                     }
                     <i className="text-secondary-purple ri-folder-fill inline-block "></i>
                     <span>education</span>
                 </div>
                 <div className={`${extraStyle.educationStyle} text-secondary text-xs ml-[26px] space-y-1`}>
-                    <p onClick={()=>handleChangeEditor(<FrontEndDev/>)}className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>AUL</span></p>
-                    <p onClick={()=>handleChangeEditor(<FrontEndDev/>)}className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>BSI</span></p>
+                {
+                        schoolPages.pages.map((page,index)=>{
+                            return <p key={index} onClick={()=>handleChangeEditor(page)} className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span>{page.title}</span></p>
+                        })
+                    }
                 </div>
             </div>
         </div>
