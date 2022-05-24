@@ -3,7 +3,7 @@ import React,{useMemo} from 'react'
 import getLines from '../../../Helpers/getLines'
 
 
-const LeftContent = ({openEditor}) => {
+const LeftContent = ({openEditor, handleChangeEditor}) => {
   const WIDTH = 59
 
   const lines = useMemo(()=>{
@@ -22,10 +22,11 @@ const LeftContent = ({openEditor}) => {
      {
        openEditor.pages.map((page,index)=>{
         const styles ={
-          activeStyle:page.title==openEditor.pages[openEditor.active].title?"text-white":""
+          activeStyle:page.title==openEditor.pages[openEditor.active].title?"text-white":"",
+          moreThanFourOpened:openEditor.pages.length>4?`w-28`:""
         }
-        return <div key={index} className="inline-flex px-3 items-center border-r-2 py-2  border-lines">
-                <span className={`${styles.activeStyle} inline-block mr-10`}>{page.title}</span>
+        return <div key={index} onClick= {()=>handleChangeEditor(page)} className={ `${styles.moreThanFourOpened} cursor-pointer inline-flex px-3 items-center border-r-2 py-2  border-lines`}>
+                <span className={`${styles.activeStyle} inline-block mr-10 overflow-hidden text-ellipsis whitespace-nowrap`}>{page.title}</span>
                 <i className="ri-close-line"></i>
               </div>
       })

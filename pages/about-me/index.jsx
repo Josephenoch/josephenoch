@@ -50,14 +50,12 @@ const Index = () => {
   const handleChangeEditor = (selected) =>{
     setOpenEditor(prevState=>{
       if(prevState.pages.some(page=>page.title===selected.title)){
-        return {...prevState}
+        const newActive = prevState.pages.findIndex(page=>page.title==selected.title)
+        return {...prevState,active:newActive}
       }
       return {active:prevState.pages.length,pages:[...prevState.pages,selected]}
     })
   }
-  useEffect(() => {
-    console.log(openEditor)
-  }, [openEditor])
   
   return (
     <>
@@ -65,11 +63,10 @@ const Index = () => {
         <PersonalInfoNav files={files} handleChangeEditor={handleChangeEditor}/>
       </div>
       <div className="w-[41.4%] h-full text-secondary text-xs border-r-lines">
-        <LeftContent  openEditor={openEditor}/>
+        <LeftContent  openEditor={openEditor} handleChangeEditor={handleChangeEditor}/>
       </div>
       <div className="w-5 h-full mt-8 px-1 border-t-2 border-t-lines">
             <div className="w-3 h-full mx-auto mt-1 border-t-[6px] border-t-secondary">
-
             </div>
       </div>
       <div className="w-[41.4%] h-full border-l-2 border-lines">
