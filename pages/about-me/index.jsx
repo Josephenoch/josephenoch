@@ -14,11 +14,11 @@ const Index = () => {
       pages:[
         {
           title:"FrontEnd Dev",
-          text:text
+          text:text+"FrontEnd Dev"
         },
         {
           title:"BackEnd Dev",
-          text:text
+          text:text+"BackEnd Dev"
         }
       ]
     },
@@ -27,11 +27,11 @@ const Index = () => {
       pages:[
         {
           title:"AUL",
-          text:text
+          text:text+"AUL"
         },
         {
           title:"BSI",
-          text:text
+          text:text+"BSI"
         }
       ]
     }
@@ -42,12 +42,12 @@ const Index = () => {
         pages:[
           {
             title:"bio",
-            text:text
+            text:text+"bio"
           }
         ]
       }
     )
-  const handleChangeEditor = (selected) =>{
+  const handleChangeEditor = ((selected) =>{
     setOpenEditor(prevState=>{
       if(prevState.pages.some(page=>page.title===selected.title)){
         const newActive = prevState.pages.findIndex(page=>page.title==selected.title)
@@ -55,15 +55,22 @@ const Index = () => {
       }
       return {active:prevState.pages.length,pages:[...prevState.pages,selected]}
     })
-  }
+  })
   
+  const closeEditor = (item=>{
+    setOpenEditor(prevState=>{
+      const oldArray = [...prevState.pages]
+      const newArray = oldArray.filter(arr=>arr.title!==item.title)
+      return {active:0, pages:[...newArray]}
+    })
+  })
   return (
     <>
       <div className="w-40 h-full border-r-2 border-r-lines">
         <PersonalInfoNav files={files} handleChangeEditor={handleChangeEditor}/>
       </div>
       <div className="w-[41.4%] h-full text-secondary text-xs border-r-lines">
-        <LeftContent  openEditor={openEditor} handleChangeEditor={handleChangeEditor}/>
+        <LeftContent  openEditor={openEditor} handleChangeEditor={handleChangeEditor} closeEditor={closeEditor}/>
       </div>
       <div className="w-5 h-full mt-8 px-1 border-t-2 border-t-lines">
             <div className="w-3 h-full mx-auto mt-1 border-t-[6px] border-t-secondary">
