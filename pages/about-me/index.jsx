@@ -2,9 +2,9 @@ import React,{useState} from 'react'
 
 import Head from 'next/head'
 
-import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
+import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 
-import { PersonalInfoNav } from '../../Components/AboutMe/PersonalInfo/PersonalInfoNav'
+import PersonalInfoNav from '../../Components/AboutMe/PersonalInfo/PersonalInfoNav'
 import LeftContent  from '../../Components/AboutMe/PersonalInfo/LeftContent'
 import RightContent from '../../Components/AboutMe/PersonalInfo/RightContent'
 

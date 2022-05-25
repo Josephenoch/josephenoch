@@ -1,8 +1,8 @@
 import React from 'react'
-import { AboutIcon } from './AboutIcon'
+import AboutIcon from './AboutIcon'
 
 
-export const AboutNav = () => {
+const AboutNav = () => {
   const icons = [
     {
       icon:<i className="ri-user-4-fill"></i>,
@@ -19,3 +19,5 @@ export const AboutNav = () => {
   ]
   return icons.map((icon,index)=> <AboutIcon key={index} icon={icon.icon} link={icon.link}/>)
 }
+
+export default AboutNav

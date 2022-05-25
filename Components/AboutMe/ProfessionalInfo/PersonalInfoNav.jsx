@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 import Link from "next/link"
 
-const PersonalInfoNav = ({files,handleChangeEditor}) => {
+const ProfessionalInfoNav = ({files,handleChangeEditor}) => {
   const text = "Lorem"
   const [personalInfo, setPersonalInfo] = useState(true)
   const [contact, setContact] = useState(true)
@@ -103,4 +103,4 @@ const PersonalInfoNav = ({files,handleChangeEditor}) => {
   )
 }
 
-export default PersonalInfoNav
+export default ProfessionalInfoNav

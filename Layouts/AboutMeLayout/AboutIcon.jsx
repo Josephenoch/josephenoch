@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 
-export const AboutIcon = ({icon, link}) => {
+const AboutIcon = ({icon, link}) => {
   const router = useRouter();
   const { projectId } = router.query;
   return (
@@ -17,3 +17,5 @@ export const AboutIcon = ({icon, link}) => {
     </>
   )
 }
+
+export default AboutIcon

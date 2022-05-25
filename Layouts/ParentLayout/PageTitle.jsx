@@ -6,7 +6,7 @@ import {useRouter} from 'next/router'
 import React from 'react'
 
 
-export const PageTitle = ({pageTitle, userName, lastItem, notLink}) => {
+const PageTitle = ({pageTitle, userName, lastItem, notLink}) => {
   const router= useRouter()
   const styles = {
       activeStyle: router.pathname===`/${pageTitle}`|| (router.pathname==="/" && notLink)? "lg:border-b-2 border-b-accent lg:text-white":"hover:border-b-accent  hover:transition-[border] ease-in-ou border-b-primary-lighter text-secondary"
@@ -22,3 +22,5 @@ export const PageTitle = ({pageTitle, userName, lastItem, notLink}) => {
     </>
   )
 }
+
+export default PageTitle

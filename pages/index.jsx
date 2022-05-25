@@ -1,11 +1,9 @@
 import Head from 'next/head'
 import Typewriter from 'typewriter-effect'
-import { useRef } from 'react';
 import { SnakeGame } from '../Components/SnakeGame/SnakeGame';
 
 
-export default function Home() {
-  const typewriterRef = useRef()
+const Home = () => {
   return (
     <>
       <Head>
@@ -19,7 +17,7 @@ export default function Home() {
         <div className="lg:space-y-2 px-10 md:px-0">
           <h1 className="text-[10px] lg:text-xs pl-1">Hello world, I am </h1>
           <h1 className="font-extralight tracking-tighter text-6xl ">Joseph <br className="lg:hidden"/>Enoch</h1>
-          <h1 ref={typewriterRef} className="text-md lg:text-2xl font-thin text-secondary-purple flex align-baseline">
+          <h1 className="text-md lg:text-2xl font-thin text-secondary-purple flex align-baseline">
              {"> "}{<Typewriter
                 options={{
                   strings: ['Front-end Developer', 'UX Designer', 'Data Science Enthusiast'],
@@ -54,3 +52,5 @@ export default function Home() {
   )
 
 }
+
+export default Home

@@ -1,4 +1,4 @@
-import { Layout } from '../Layouts/ParentLayout/Layout'
+import Layout from '../Layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'

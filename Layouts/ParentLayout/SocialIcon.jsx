@@ -1,7 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
 
-export const SocialIcon = ({icon, link}) => {
+const SocialIcon = ({icon, link}) => {
 
   return (
     <>
@@ -11,3 +10,4 @@ export const SocialIcon = ({icon, link}) => {
     </>
   )
 }
+export default SocialIcon

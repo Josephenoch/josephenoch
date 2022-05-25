@@ -1,5 +1,5 @@
 import React from 'react'
-import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
+import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 import Head from 'next/head'
 
 const professionalInfo = () => {

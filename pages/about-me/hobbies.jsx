@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { AboutLayout } from '../../Layouts/AboutMeLayout/AboutLayout'
+import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 
 const Hobbies = () => {
   return (

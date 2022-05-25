@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 
-export const NavBar = ({nav, handleNav}) => {
+const NavBar = ({nav, handleNav}) => {
   const styles = {
       nav :nav?"opacity-100":"h-0 lg:h-full opacity-0 lg:opacity-100 "
   }
@@ -41,3 +41,5 @@ export const NavBar = ({nav, handleNav}) => {
     </>
   )
 }
+
+export default NavBar

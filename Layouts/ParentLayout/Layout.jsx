@@ -1,9 +1,8 @@
 import React,{useState} from 'react'
-import { SocialIcon } from './SocialIcon'
-import Link from "next/link"
-import { NavBar } from './NavBar'
+import  SocialIcon  from './SocialIcon'
+import  NavBar  from './NavBar'
 
-export const Layout = ({children}) => {
+const Layout = ({children}) => {
   const [nav, setNav] = useState(false)
   const handleNav = () =>{
       setNav(prev=> !prev)
@@ -61,3 +60,4 @@ export const Layout = ({children}) => {
     </div>    
   )
 }
+export default Layout

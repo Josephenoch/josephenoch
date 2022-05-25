@@ -21,11 +21,11 @@ export const SnakeGame = () => {
 
     return sb
   }
-  useEffect(()=>{
-    setTimeout(()=>{
-      console.log(moveSnake())
-    },400)
-  })
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     console.log(moveSnake())
+  //   },400)
+  // })
 
  
   return (
