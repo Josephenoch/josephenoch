@@ -1,7 +1,8 @@
-import React from 'react'
+import React,{memo} from 'react'
 import CodeShowCaseSection from './CodeShowCaseSection'
 
 const RightContent = () => {
+  console.log("hi")
   return (
     <>
         <CodeShowCaseSection/>
@@ -9,4 +10,4 @@ const RightContent = () => {
   )
 }
 
-export default RightContent
+export default memo(RightContent)
