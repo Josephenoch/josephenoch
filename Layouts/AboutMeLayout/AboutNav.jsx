@@ -10,11 +10,11 @@ const AboutNav = () => {
     },
     {
       icon:<i className="ri-terminal-box-fill"></i>,
-      link:"professional-info"
+      link:"/professional-info"
     },
     {
       icon:<i className="ri-gamepad-fill"></i>,
-      link:"hobbies"
+      link:"/hobbies"
     }
   ]
   return icons.map((icon,index)=> <AboutIcon key={index} icon={icon.icon} link={icon.link}/>)

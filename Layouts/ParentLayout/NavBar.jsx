@@ -2,10 +2,18 @@ import Link from 'next/link'
 
 import React from 'react'
 
+import { useRouter } from 'next/router'
+
 
 const NavBar = ({nav, handleNav}) => {
+  const path = useRouter().pathname
   const styles = {
-      nav :nav?"opacity-100":"h-0 lg:h-full opacity-0 lg:opacity-100 "
+      nav :nav?"opacity-100":"h-0 lg:h-full opacity-0 lg:opacity-100",
+      home:path=="/"?"border-b-accent text-white":"",
+      about:path.includes("/about-me")?"border-b-accent text-white":"",
+      projects:path==="/projects"?"border-b-accent text-white":"",
+      contact:path==="/contact-me"?"border-b-accent text-white":"",
+
   }
   return (
     <>
@@ -18,22 +26,22 @@ const NavBar = ({nav, handleNav}) => {
         </div> 
         <div className={`w-full flex  lg:w-[85%] transition-all ease-in-out duration-1000 flex-col lg:flex-row ${styles.nav}`} >
             <Link href="/">
-                <a className={`duration-1000 lg:border-t-0 border-t-2 border-t-lines text-sm lg:text-xs lg:border-b-2 lg:border-r-2 lg:border-r-lines lg:w-fit lg:block hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
+                <a className={`${styles.home} duration-1000 lg:border-t-0 border-t-2 border-t-lines text-sm lg:text-xs lg:border-b-2 lg:border-r-2 lg:border-r-lines lg:w-fit lg:block hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
                     _hello
                 </a>
             </Link>
             <Link href="/about-me">
-                <a className={`duration-1000 lg:border-t-0 border-t-2 border-t-lines text-sm lg:text-xs lg:border-b-2 lg:border-r-2 lg:border-r-lines  w-full lg:w-fit hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
+                <a className={`${styles.about} duration-1000 lg:border-t-0 border-t-2 border-t-lines text-sm lg:text-xs lg:border-b-2 lg:border-r-2 lg:border-r-lines  w-full lg:w-fit hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
                     _about-me
                 </a>
             </Link>
             <Link href="/projects">
-                <a className={`duration-1000 lg:border-t-0 border-t-2 border-t-lines text-sm lg:text-xs lg:border-b-2 lg:border-r-2 lg:border-r-lines  w-full lg:w-fit hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
+                <a className={`${styles.projects} duration-1000 lg:border-t-0 border-t-2 border-t-lines text-sm lg:text-xs lg:border-b-2 lg:border-r-2 lg:border-r-lines  w-full lg:w-fit hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
                     _projects
                 </a>
             </Link>
             <Link href="/contact-me">
-                <a className={`duration-1000 lg:border-t-0 border-t-2 last:ml-auto border-t-lines text-sm lg:text-xs lg:border-b-2  lg:border-r-0 w-full lg:w-fit lg:border-l-2 lg:border-l-lines hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
+                <a className={`${styles.contact}}duration-1000 lg:border-t-0 border-t-2 last:ml-auto border-t-lines text-sm lg:text-xs lg:border-b-2  lg:border-r-0 w-full lg:w-fit lg:border-l-2 lg:border-l-lines hover:border-b-accent  hover:transition-[border] ease-in-out border-b-primary-lighter hover:text-white px-6 py-4 lg:py-3`}>
                     _contact-me
                 </a>
             </Link>
