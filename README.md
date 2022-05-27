@@ -18,7 +18,7 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 | ------------- | ------------- |
 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=josephenoch&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
-   <a href="http://www.github.com/chelsea-banke"><img src="https://activity-graph.herokuapp.com/graph?username=josephenoch&bg_color=1c1917&color=ffffff&line=0891b2&point=ffffff&area_color=1c1917&area=true&hide_border=true&custom_title=GitHub%20Commits%20Graph" alt="GitHub Commits Graph" /></a>
+
 
 ## Expertise
 <br>
