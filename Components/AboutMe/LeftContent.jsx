@@ -1,6 +1,6 @@
 import React,{useMemo} from 'react'
 
-import getLines from '../../../Helpers/getLines'
+import getLines from '../../Helpers/getLines'
 
 
 const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
