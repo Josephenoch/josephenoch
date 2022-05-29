@@ -40,9 +40,8 @@ const Layout = ({children}) => {
             {children}
           </div>
         </div>
-        <div className={`border-t-2 bottom-[-2px] border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100"} transition-all ease-in-out duration-1000`}>
-            <h1 className="text-secondary text-xs inline-block border-r-2 
-            border-r-lines px-2 py-4 border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 w-full lg:w-fit">
+        <div className={`border-t-2 bottom-[-2px] absolute lg:relative border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100 transition-all ease-in-out duration-1000 delay-0"}`}>
+            <h1 className="text-secondary text-xs inline-block border-r-2 border-r-lines px-2 py-4 border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 w-full lg:w-fit">
                 find me on:
             </h1>
           {
