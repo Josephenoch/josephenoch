@@ -176,7 +176,7 @@ const CodeShowCaseSection = () => {
           }`
         }
       </style>
-      <div>
+      <code className="inline-block">
         {
           codeToShowCase.map(code=>
               {
@@ -197,7 +197,7 @@ const CodeShowCaseSection = () => {
           
           )
         }
-      </div>
+      </code>
     </div>
   )
 }

@@ -46,16 +46,16 @@ const Index = () => {
   ]
   return (
     <>
-      <LeftComponent files={files}/>
+      <LeftComponent files={files} pageTitle="personal-info"/>
         <div className="w-5 h-full mt-8 px-1 border-t-2 border-t-lines">
               <div className="w-3 h-full mx-auto mt-1 border-t-[6px] border-t-secondary">
               </div>
         </div>
-        <div className="w-[41.4%] h-full border-l-2 border-lines">
-          <div className="h-full border-r-2 border-t-2 border-lines mt-8 py-5 px-7  overflow-y-auto scrollbar text-secondary text-sm">
+        <section className="w-[41.4%] h-full border-l-2 border-lines">
+          <aside className="h-full border-r-2 border-t-2 border-lines mt-8 py-5 px-7  overflow-y-auto scrollbar text-secondary text-sm">
             <RightContent/>
-          </div>
-        </div>
+          </aside>
+        </section>
     </>
     )
 }

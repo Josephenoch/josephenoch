@@ -5,7 +5,6 @@ import getLines from '../../Helpers/getLines'
 
 const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
   const WIDTH = 59
-
   const lines = useMemo(()=>{
     if(!(openEditor.pages.length>0)){
       return []
@@ -28,7 +27,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
           activeStyle:page.title==openEditor.pages[openEditor.active].title?"text-white":"",
           moreThanFourOpened:openEditor.pages.length>4?`w-28`:""
         }
-        return <div key={index}  className={ `${styles.moreThanFourOpened}  inline-flex  items-center border-r-2   border-lines`}>
+        return <div key={index}  className={ `${styles.moreThanFourOpened} inline-flex  items-center border-r-2   border-lines`}>
                 <span  onClick={()=>handleChangeEditor(page)} className={`${styles.activeStyle} cursor-pointer inline-block px-6 py-2  overflow-hidden text-ellipsis whitespace-nowrap`}>{page.title}</span>
                 <span onClick={()=>closeEditor(page)} className=" cursor-pointer w-4 h-4 inline-flex mr-2 items-center bg-gray-50/10 justify-center rounded-full"><i className="ri-close-line"></i></span>
               </div>

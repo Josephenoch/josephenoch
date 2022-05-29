@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import Link from "next/link"
 
 const PageNav = ({files,handleChangeEditor, pageTitle}) => {
+  const folderColors = ["text-secondary-blue", "text-accent-green","text-accent"]
   const dd = files.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:false}})
   const [folders, setFolders] = useState(dd)
   const [personalInfo, setPersonalInfo] = useState(true)
@@ -34,12 +35,12 @@ const PageNav = ({files,handleChangeEditor, pageTitle}) => {
     <>
         <div onClick={handlePersonalInfo} className=" text-secondary hover:text-white cursor-pointer text-xs py-2 h-fit w-full flex justify-start">
             {
-                {pageTitle}?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
+                pageTitle?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
             }
-            <h1 className="ml-2">personal-info</h1>
+            <h1 className="ml-2">{pageTitle}</h1>
         </div>
         <div className={`${extraStyle.pageTitle} space-y-2`}>
-            {files.map(file=>{
+            {files.map((file,index)=>{
                 if(file.folderName==="none"){
                     return( 
                     file.pages.map(fil=>
@@ -62,7 +63,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle}) => {
                             {
                                 folders[itemId].active?<i className="text-sm ri-arrow-down-s-line ml-2"></i>:<i className="text-sm ri-arrow-right-s-line ml-2"></i>
                             }
-                            <i className="text-accent-green ri-folder-fill inline-block"></i>
+                            <i className={`${folderColors[index%3]} ri-folder-fill inline-block`}></i>
                             <span className="capitalize">{file.folderName}</span>
                         </div>
                         <div className={`${folders[itemId].active?"h-fit opacity-100 mt-1":"h-0 opacity-0 py-0"} text-secondary text-xs ml-[26px] space-y-1`}>

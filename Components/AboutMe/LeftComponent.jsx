@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import LeftContent from './LeftContent'
 import PageNav from './PageNav'
 
-const LeftComponent = ({files}) => {
+const LeftComponent = ({files, pageTitle}) => {
   const [openEditor, setOpenEditor] = useState(
       {
         active:0,
@@ -29,12 +29,12 @@ const LeftComponent = ({files}) => {
   })
   return (
     <>
-        <div className="w-40 h-full border-r-2 border-r-lines">
-            <PageNav files={files} handleChangeEditor={handleChangeEditor} pageTitle="personal-info"/>
-        </div>
-        <div className="w-[41.4%] h-full text-secondary text-xs border-r-lines">
+        <nav className="w-40 h-full border-r-2 border-r-lines">
+            <PageNav files={files} handleChangeEditor={handleChangeEditor} pageTitle={pageTitle}/>
+        </nav>
+        <article className="w-[41.4%] h-full text-secondary text-xs border-r-lines">
             <LeftContent  openEditor={openEditor} handleChangeEditor={handleChangeEditor} closeEditor={closeEditor}/>
-        </div>
+        </article>
       </>
   )
 }
