@@ -20,15 +20,14 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
   },[openEditor])
   return (
     <>
-    <div className="w-full min-h-[34px] border-b-2 border-lines">
+    <div className="w-full min-h-[33.6px] border-b-2 border-lines  overflow-hidden flex flex-nowrap">
      {
        openEditor.pages.map((page,index)=>{
         const styles ={
           activeStyle:page.title==openEditor.pages[openEditor.active].title?"text-white":"",
-          moreThanFourOpened:openEditor.pages.length>4?`w-28`:""
-        }
-        return <div key={index}  className={ `${styles.moreThanFourOpened} inline-flex  items-center border-r-2   border-lines`}>
-                <span  onClick={()=>handleChangeEditor(page)} className={`${styles.activeStyle} cursor-pointer inline-block px-6 py-2  overflow-hidden text-ellipsis whitespace-nowrap`}>{page.title}</span>
+          moreThanFourOpened:openEditor.pages.length>4&&`w-28`}
+        return <div key={index}  className={ `${styles.moreThanFourOpened} inline-flex items-center border-r-2   border-lines`}>
+                <span  onClick={()=>handleChangeEditor(page)} className={`${styles.activeStyle} cursor-pointer inline-block pr-2 pl-6 py-2  overflow-hidden text-ellipsis whitespace-nowrap`}>{page.title}</span>
                 <span onClick={()=>closeEditor(page)} className=" cursor-pointer w-4 h-4 inline-flex mr-2 items-center bg-gray-50/10 justify-center rounded-full"><i className="ri-close-line"></i></span>
               </div>
       })

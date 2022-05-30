@@ -14,7 +14,7 @@ const ProfessionalInfo = () => {
           text:text+"FrontEnd Dev"
         },
         {
-          title:"BackEnd Dev enjnwjbbj",
+          title:"BackEnd Dev",
           text:text+"BackEnd Dev"
         }
       ]
