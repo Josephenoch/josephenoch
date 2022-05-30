@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 const NavBar = ({nav, handleNav}) => {
   const path = useRouter().pathname
   const styles = {
-      nav :nav?"opacity-100":"h-0 lg:h-full opacity-0 lg:opacity-100",
+      nav :nav?"opacity-100":"h-0 lg:h-full opacity-0 lg:opacity-100 hidden",
       home:path=="/"?"border-b-accent text-white":"",
       about:path.includes("/about-me")?"border-b-accent text-white":"",
       projects:path==="/projects"?"border-b-accent text-white":"",

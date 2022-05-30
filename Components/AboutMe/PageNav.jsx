@@ -66,7 +66,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle}) => {
                             <i className={`${folderColors[index%3]} ri-folder-fill inline-block`}></i>
                             <span className="capitalize">{file.folderName}</span>
                         </div>
-                        <div className={`${folders[itemId].active?"h-fit opacity-100 mt-1":"h-0 opacity-0 py-0"} text-secondary text-xs ml-[26px] space-y-1`}>
+                        <div className={`${folders[itemId].active?"block mt-1":"hidden"} text-secondary text-xs ml-[26px] space-y-1`}>
                             {
                                 file.pages.map((page,index)=>{
                                     return <p key={index} onClick={()=>handleChangeEditor(page)} className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span className="overflow-hidden text-ellipsis whitespace-nowrap capitalize">{page.title}</span>   
