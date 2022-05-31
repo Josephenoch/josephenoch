@@ -7,13 +7,12 @@ function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
   return (
     <>
-    <Script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></Script>
-    
-        <Layout>
-      <ChildLayout>
-        <Component {...pageProps} />
-      </ChildLayout>
-    </Layout>
+      <Script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></Script>  
+      <Layout>
+        <ChildLayout>
+          <Component {...pageProps} />
+        </ChildLayout>
+      </Layout>
     </>
    
   )
