@@ -1,7 +1,7 @@
 ### Hello World 👋, I am Joseph Enoch 
 I am a passionate developer from Nigeria. I love to write react code and I enjoy playing with snakes (just python). 
 - 🔭 Working on multiple frontend projects using React,
-- 🌱 Learning redux for state management and python for data science
+- 🌱 Learning redux for state management and python (Django) for backend
 
 ## Connect with me
 
