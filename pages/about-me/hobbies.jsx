@@ -48,7 +48,7 @@ const Hobbies = () => {
       headers:{
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": "Bearer BQDwLMV9VRIxoVtWe2uyejZ0OBTlJ49xLyBKcwvRsXbtHzXoQHY2lwi3JnJ0mhE9Zl_7hEBQ7bSdiAnggiEk05iMezFHY7Ut0YVxT4ThPYy1xce_lAa1qQXJj7boP8FnIfHfjuoI5xr3fVGvoAy1vpA7oGa_wowUXFbGsQop7RA79GE5hGE"
+        "Authorization": "Bearer BQDk0JXtLA_8emBjT7D8clHQdYuv7vBYUtVoETr-caTBRf684OVTvr8VyT8U0FFKL--4WXAJUnMkTpO_rQW-EYEJsNFqhd-nS19qYfO0qTH6yrldPUXvarzLMxKx7QPODs0FtGSU79eJpcrjEF-5q6VghJ8VJUJPWlGTD41AtKsFb6ooua8"
       }
     })
     const actualData =data.data.items.filter(item=>item.collaborative===true||item.owner.id==="314su7vnojlr2wtq75z2rab6v6te")
