@@ -17,7 +17,7 @@ const NavBar = ({nav, handleNav}) => {
   }
   return (
     <>
-        <div className="flex w-full lg:w-52">
+        <div className="flex w-full h-10 lg:w-52">
             <h1 className=" text-sm lg:text-xs lg:border-b-2 lg:border-b-primary-lighter lg:border-r-2 lg:border-r-lines w-full text-secondary inline-block pl-6 py-3">joseph-enoch</h1>
             
             <button onClick={handleNav} className="flex justify-center w-[15%] items-center text-[20px] text-secondary lg:hidden">
