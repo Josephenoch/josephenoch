@@ -1,6 +1,5 @@
 import React from 'react'
 import AboutNav  from './AboutNav'
-import RightContent from '../../Components/AboutMe/RightContent'
 import Head from 'next/head'
 
 const AboutLayout = ({children}) => {

@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
+import React from 'react'
 
 
 import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 
-import RightContent from '../../Components/AboutMe/RightContent'
+import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowCaseSection"
 import LeftComponent from '../../Components/AboutMe/LeftComponent'
 
 const Index = () => {
@@ -53,7 +53,7 @@ const Index = () => {
         </div>
         <section className="w-[41.4%] h-full border-l-2 border-lines">
           <aside className="h-full border-r-2 border-t-2 border-lines mt-8 py-5 px-7  overflow-y-auto scrollbar text-secondary text-sm">
-            <RightContent/>
+            <CodeShowCaseSection/>
           </aside>
         </section>
     </>

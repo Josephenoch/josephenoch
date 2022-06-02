@@ -7,7 +7,7 @@ const Playlist = ({playlist}) => {
     },[playlist.description])
     return (
     <div className='mb-5 w-[80%] flex bg-primary-light space-x-4 font-mono px-5 py-4 rounded-lg'>
-        <div className="min-w-[25%]">
+        <div className="min-w-[25%] bg-white">
             <Image src={playlist.images[0].url} alt="Playlist" width="100" height="100"/>
         </div>
         <div className='max-w-[70%]  flex flex-col'>
