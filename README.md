@@ -5,10 +5,6 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 
 ## Connect with me
 
-<!-- [![Gmail Badge](https://img.shields.io/badge/-enochjoseph01@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:enochjoseph01@gmail.com)](mailto:enochjoseph01@gmail.com)
-[<img align="left" alt="linked-in" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/joseph-enoch)
-[<img align="left" alt="facebook" src="https://img.shields.io/badge/facebook-%231877F2.svg?&style=for-the-badge&logo=facebook&logoColor=white" />](https://web.facebook.com/Kingjoeenoch/)
-[<img align="left" alt="Portfolio" src="https://img.shields.io/website?up_color=white&up_message=online&url=http://josephenoch.github.io/reactportfolio/" />](http://josephenoch.github.io/reactportfolio/) -->
 
 [![Linkedin Badge](https://img.shields.io/badge/-Joseph%20Enoch-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joseph-enoch/)](https://www.linkedin.com/in/joseph-enoch/)
 [![Instagram Badge](https://img.shields.io/badge/-@j.oenoch-E33153?style=flat-square&logo=instagram&logoColor=white&link=https://instagram.com/j.oenoch/)](https://instagram.com/j.oenoch)
@@ -28,8 +24,10 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 ## Expertise
 <br>
 
+![Javascript](https://img.shields.io/badge/javascript%20-%2320232a.svg?&style=for-the-badge&logo=javascript&logoColor=%2361DAFB)
 ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Python](https://img.shields.io/badge/Python%20-%2320232a.svg?&style=for-the-badge&logo=python&logoColor=%2361DAFB)
+![Django](https://img.shields.io/badge/Django%20-%2320232a.svg?&style=for-the-badge&logo=django&logoColor=%2361DAFB)
 
 
 ## Side Projects 
