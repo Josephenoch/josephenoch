@@ -19,7 +19,7 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 | ------------- | ------------- |
 
 <div style="width:100%;display:flex; justify-content:center">
-    <img align="center" src="http://github-readme-streak-stats.herokuapp.com?user=josephenoch&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D"/>
+    <img align="center" style="width:fit-content" src="http://github-readme-streak-stats.herokuapp.com?user=josephenoch&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D"/>
 </div>
 
 
