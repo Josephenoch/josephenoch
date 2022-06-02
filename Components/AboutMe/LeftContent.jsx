@@ -20,7 +20,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
   },[openEditor])
   return (
     <>
-    <div className="w-full min-h-[33.6px] border-b-2 border-lines  overflow-hidden flex flex-nowrap">
+    <div className="w-full min-h-[33.6px] border-b-2 border-lines  overflow-x-auto scrollbar-x flex flex-nowrap">
      {
        openEditor.pages.map((page,index)=>{
         const styles ={
@@ -33,7 +33,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
       })
      }
      </div>
-      <div className="pl-12 pr-10  border-r-2 border-lines pt-5 h-full overflow-y-auto scrollbar pb-10">
+      <div className="pl-12 pr-10  border-r-2 border-lines pt-5 h-full overflow-y-auto scrollbar-y pb-10">
         <ol className='w-full'>
 
           <li className="list-decimal"><span className="ml-4">{"/**"}</span></li>

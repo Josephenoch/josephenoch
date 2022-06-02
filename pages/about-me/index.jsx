@@ -52,7 +52,7 @@ const Index = () => {
               </div>
         </div>
         <section className="w-[41.4%] h-full border-l-2 border-lines">
-          <aside className="h-full border-r-2 border-t-2 border-lines mt-8 py-5 px-7  overflow-y-auto scrollbar text-secondary text-sm">
+          <aside className="h-full border-r-2 border-t-2 border-lines mt-8 py-5 px-7  overflow-y-auto scrollbar-y text-secondary text-sm">
             <CodeShowCaseSection/>
           </aside>
         </section>
