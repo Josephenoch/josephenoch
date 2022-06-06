@@ -9,34 +9,42 @@ export const useSpotifyContext = () => {
 
 const SpotifyProvider = ({children}) => {
   const [loggedIn, setLoggedIn] = useState(false)
-  const [playlists, setPlaylists] = useState(false)
+  const [playlists, setPlaylists] = useState([])
+  const [error, setError] = useState({})
 
   useEffect(()=>{
     const getData = async()=>{
-      const data = await axios({
-      method:"get",
-      url:"https://api.spotify.com/v1/users/314su7vnojlr2wtq75z2rab6v6te/playlists?offset=0&limit=50",
-      headers:{
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer BQDNO-PcAsnuD-qmuSMnyV2tE-lkEvOME6KBT1a_VgC-ISHWVNW7z7nCX0Qg0hRYB51196IiYnILkNnRwg4md7BMIQyiLJoLCn3M4n9XxMxVLCzpysD6JsTJvfwP9ZYus6l4egElPKHvMCmbWHAVOyX7Pw1YTmhDetKvltXqEF_U4LuCfPE"
+      try{
+          const data = await axios({
+          method:"get",
+          url:"https://api.spotify.com/v1/users/314su7vnojlr2wtq75z2rab6v6te/playlists?offset=0&limit=50",
+          headers:{
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer BQDNO-PcAsnuD-qmuSMnyV2tE-lkEvOME6KBT1a_VgC-ISHWVNW7z7nCX0Qg0hRYB51196IiYnILkNnRwg4md7BMIQyiLJoLCn3M4n9XxMxVLCzpysD6JsTJvfwP9ZYus6l4egElPKHvMCmbWHAVOyX7Pw1YTmhDetKvltXqEF_U4LuCfPE"
+          }
+        })
+        const actualData =data.data.items.filter(item=>item.collaborative===true||item.owner.id==="314su7vnojlr2wtq75z2rab6v6te")
+        setPlaylists([...actualData])
+
       }
-    })
-    const actualData =data.data.items.filter(item=>item.collaborative===true||item.owner.id==="314su7vnojlr2wtq75z2rab6v6te")
-    setPlaylists([...actualData])
+    catch(err){
+      setError(err)
+    }
     }
     getData()
   },[])
   const handleLogIn = () => {
     setLoggedIn(prevState => !prevState)
   }
-  const vale = {
+  const value = {
       loggedIn,
       playlists,
-      handleLogIn
+      handleLogIn,
+      error
   }
   return (
-    <SpotifyContext.Provider value={vale}>
+    <SpotifyContext.Provider value={value}>
         {children}
     </SpotifyContext.Provider>
   )
