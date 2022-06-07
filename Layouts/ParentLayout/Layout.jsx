@@ -35,10 +35,8 @@ const Layout = ({children}) => {
               handleNav={handleNav}
             />
         </div>
-        <div className={` overflow-auto max-h-[85%] h-[85%] text-white `}>
-          <div className={`max-h-full h-full ${nav?"opacity-0 lg:opacity-100 ":"opacity-100 transition-all delay-1000 ease-in-out  duration-1000"}`}>
+        <div className={` overflow-auto max-h-[85%] h-[85%] text-white ${nav?"opacity-0 lg:opacity-100 ":"opacity-100 transition-all delay-1000 ease-in-out  duration-1000"}`}>
             {children}
-          </div>
         </div>
         <div className={`border-t-2 bottom-[-2px] absolute lg:relative border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100 transition-all ease-in-out duration-1000 delay-0"}`}>
             <h1 className="text-secondary text-xs inline-block border-r-2 border-r-lines px-2 py-4 border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 w-full lg:w-fit">
