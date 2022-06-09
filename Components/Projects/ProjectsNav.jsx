@@ -7,7 +7,7 @@ const ProjectsNav = () => {
       dropDown:projDropDown?"text-white":"text-secondary"
   }
   return (
-    <nav className="text-sm w-52 min-h-full border-r-2 border-r-lines flex flex-col">
+    <nav className="text-sm min-w-[13rem] min-h-full border-r-2 border-r-lines flex flex-col">
         <div onClick={()=>setProjDropDown(prevState=>!prevState)} className={`${style.dropDown} hover:text-white cursor-pointer  py-2 border-b-2 border-lines h-fit w-full flex justify-start`}>
             {
                 projDropDown?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>

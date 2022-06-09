@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></Script>  
+      <Script src="https://kit.fontawesome.com/b557305bb5.js" crossorigin="anonymous"></Script>
       <Layout>
         <ChildLayout>
           <Component {...pageProps} />
