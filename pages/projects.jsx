@@ -1,13 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
+import ProjectsNav from '../Components/Projects/ProjectsNav'
 
-const projects = () => {
+const Projects = () => {
   return (
-    <div className="h-full">
-      <nav className="w-52 min-h-full border-r-2 border-r-lines items-center flex flex-col">
-      Projects
-      </nav>
-    </div>
+    <aside className="h-full">
+      <ProjectsNav/>
+    </aside>
   )
 }
 
-export default projects
+export default Projects
