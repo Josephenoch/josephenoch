@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Project from '../Components/Projects/Project'
 import ProjectsNav from '../Components/Projects/ProjectsNav'
+import Head from 'next/head'
 
 const Projects = () => {
   const projects= [
@@ -58,9 +59,17 @@ const Projects = () => {
   }
   return (
     <aside className="h-full w-full flex">
+      <Head>
+        <title>Joseph Enoch | Projects</title>
+      </Head>
       <ProjectsNav stack={stack} handleCheck={handleCheck}/>
-      <div className="mx-10 pb-5 justify-between flex w-full overflow-y-auto scrollbar-y flex-wrap">
-      
+      <div className=" pb-5 flex w-full overflow-y-auto scrollbar-y flex-wrap">
+        {projects.map((stak,index)=>
+          stak.projects.map((proj,id)=>{
+            const checked = stack[stack.findIndex(sta=>sta.stack===stak.stack)].checked     
+            return checked && <Project  key={id} project={proj}/>
+          })
+        )}
       </div>
     </aside>
   )

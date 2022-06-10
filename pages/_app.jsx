@@ -2,6 +2,7 @@ import Layout from '../Layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
@@ -10,6 +11,11 @@ function MyApp({ Component, pageProps }) {
       <Script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></Script>  
       <Script src="https://kit.fontawesome.com/b557305bb5.js" crossorigin="anonymous"></Script>
       <Layout>
+      <Head>
+        <meta name="description" content="Joseph Enoch's Porfolio" />
+        <link rel="icon" href="/favicon.jpeg" />
+      </Head>
+
         <ChildLayout>
           <Component {...pageProps} />
         </ChildLayout>

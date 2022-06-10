@@ -43,7 +43,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
                 <li className="list-decimal" key={index}><span className="ml-4">* {line}</span></li>
             )
           }  
-          {openEditor.pages.length==0&&<li className="list-decimal"><span className="ml-4">{"* No editor open"}</span></li>}
+          {openEditor.pages.length==0&&<li className="list-decimal"><span className="ml-4">{"* No editor open, Click a file to read about me"}</span></li>}
           <li className="list-decimal"><span className="ml-4">{"*/"}</span></li>
         </ol>
         <p className="w-fit lg:hidden">
