@@ -9,7 +9,7 @@ const Project = ({project}) => {
         <div className="w-full h-64 border-[0.5px] rounded-lg border-white/20">
             <div className="h-1/2 relative w-full">
                 <Image 
-                    src={Hero} 
+                    src="https://firebasestorage.googleapis.com/v0/b/josephenoch-portfolio.appspot.com/o/chat-up.png?alt=media&token=0708bdeb-4f9f-41cf-ae3c-9721ef25e5fe" 
                     alt="Hero"
                     layout="fill" 
                     objectFit="cover"

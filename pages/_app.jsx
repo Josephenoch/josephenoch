@@ -1,8 +1,10 @@
+import React, { Suspense } from 'react'
 import Layout from '../Layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
+const ProjectProvider = React.lazy(()=>import('../Contexts/ProjectContext'))
 
 function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
@@ -17,7 +19,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
         <ChildLayout>
-          <Component {...pageProps} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <ProjectProvider>
+              <Component {...pageProps} />
+            </ProjectProvider>
+          </Suspense>
         </ChildLayout>
       </Layout>
     </>
