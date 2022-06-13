@@ -1,4 +1,6 @@
 import React,{createContext, useContext, useState, useEffect} from 'react'
+import { collection, addDoc } from "firebase/firestore"
+import { db } from '../firebase-config'
 import axios from 'axios'
 
 export const SpotifyContext = createContext()
@@ -34,8 +36,9 @@ const SpotifyProvider = ({children}) => {
     }
     getData()
   },[])
-  const handleLogIn = () => {
+  const handleLogIn = async() => {
     setLoggedIn(prevState => !prevState)
+
   }
   const value = {
       loggedIn,

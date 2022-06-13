@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       <Layout>
       <Head>
         <meta name="description" content="Joseph Enoch's Porfolio" />
-        <link rel="icon" href="/favicon.jpeg" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
         <ChildLayout>

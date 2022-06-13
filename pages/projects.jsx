@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Project from '../Components/Projects/Project'
 import ProjectsNav from '../Components/Projects/ProjectsNav'
 import Head from 'next/head'
-
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../firebase-config';
 const Projects = () => {
   const projects= [
     {
@@ -57,6 +58,21 @@ const Projects = () => {
         return [...newState]
     })
   }
+  useEffect(()=>{
+    console.log(db)
+    const getData = async()=>{
+      const docRef = doc(db, "stack", "iIHnIZCkcKEUakU6LESw");
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    }
+    getData()
+  },[])
   return (
     <aside className="h-full w-full flex">
       <Head>
@@ -64,7 +80,7 @@ const Projects = () => {
       </Head>
       <ProjectsNav stack={stack} handleCheck={handleCheck}/>
       <div className=" pb-5 flex w-full overflow-y-auto scrollbar-y flex-wrap">
-        {projects.map((stak,index)=>
+        {projects.map(stak=>
           stak.projects.map((proj,id)=>{
             const checked = stack[stack.findIndex(sta=>sta.stack===stak.stack)].checked     
             return checked && <Project  key={id} project={proj}/>
