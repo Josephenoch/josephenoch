@@ -1,15 +1,14 @@
 import React, { useMemo } from 'react'
-import Hero from "../../Assets/illustration-hero.svg"
 import Image from 'next/image'
 const Project = ({project}) => {
 
   return (
     <div title={project.description} className="hover:scale-105 transition-all duration-200 ease-linear cursor-pointer ml-16 w-80 mt-10 h-fit flex flex-col space-y-2">
-        <p className="text-secondary text-xs"><span className="text-secondary-purple">Project 1</span> {`// _${project.title}`}</p>
+        <p className="text-secondary text-xs"><span className="text-secondary-purple">Project</span> {`// _${project.title}`}</p>
         <div className="w-full h-64 border-[0.5px] rounded-lg border-white/20">
             <div className="h-1/2 relative w-full">
                 <Image 
-                    src="https://firebasestorage.googleapis.com/v0/b/josephenoch-portfolio.appspot.com/o/chat-up.png?alt=media&token=0708bdeb-4f9f-41cf-ae3c-9721ef25e5fe" 
+                    src={project.picture} 
                     alt="Hero"
                     layout="fill" 
                     objectFit="cover"
