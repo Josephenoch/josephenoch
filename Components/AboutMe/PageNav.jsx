@@ -3,8 +3,8 @@ import React,{useEffect, useState} from 'react'
 import Link from "next/link"
 
 const PageNav = ({files,handleChangeEditor, pageTitle}) => {
-  const folderColors = ["text-accent-green","text-accent","text-secondary-purple"]
   const [folders, setFolders] = useState([])
+  const folderColors = ["text-accent-green","text-accent","text-secondary-purple"]
   useEffect(()=>{
     const smt = files.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
     setFolders(smt)
