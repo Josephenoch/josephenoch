@@ -11,11 +11,11 @@ const ProfessionalInfo = () => {
       pages:[
         {
           title:"FrontEnd Dev",
-          text:text+"FrontEnd Dev"
+          content:text+"FrontEnd Dev"
         },
         {
           title:"BackEnd Dev",
-          text:text+"BackEnd Dev"
+          content:text+"BackEnd Dev"
         }
       ]
     },
@@ -24,11 +24,11 @@ const ProfessionalInfo = () => {
       pages:[
         {
           title:"Anchor Intlea Community",
-          text:text+"Anchor Intlea Community"
+          content:text+"Anchor Intlea Community"
         },
         {
           title:"Hult Prize AUL",
-          text:text+"Hult Prize AUL"
+          content:text+"Hult Prize AUL"
         }
       ]
     }

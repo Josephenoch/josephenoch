@@ -5,48 +5,13 @@ import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 
 import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowCaseSection"
 import LeftComponent from '../../Components/AboutMe/LeftComponent'
+import { usePersonalInfo } from '../../Contexts/PersonalInfoContext'
 
 const Index = () => {
-  const text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, libero fugiat ullam, omnis minima officia impedit porro eum cumque voluptatem aspernatur, tenetur qui maiores. Assumenda quibusdam consequuntur maxime accusamus nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, libero fugiat ullam, omnis minima officia impedit porro eum cumque voluptatem aspernatur, tenetur qui maiores. Assumenda quibusdam consequuntur maxime accusamus nihil."
-  const files = [
-    {
-      folderName:"none",
-      pages:[
-        {
-          title:"bio",
-          text:text+"bio"
-        }
-      ],
-    },{
-      folderName:"Interest",
-      pages:[
-        {
-          title:"FrontEnd Dev",
-          text:text+"FrontEnd Dev"
-        },
-        {
-          title:"BackEnd Dev",
-          text:text+"BackEnd Dev"
-        }
-      ]
-    },
-    {
-      folderName:"School",
-      pages:[
-        {
-          title:"AUL",
-          text:text+"AUL"
-        },
-        {
-          title:"BSI",
-          text:text+"BSI"
-        }
-      ]
-    }
-  ]
+  const data = usePersonalInfo()
   return (
     <>
-      <LeftComponent files={files} pageTitle="personal-info"/>
+      <LeftComponent files={data} pageTitle="personal-info"/>
         <div className="w-5 h-full mt-8 px-1 border-t-2 border-t-lines">
               <div className="w-3 h-full mx-auto mt-1 border-t-[6px] border-t-secondary">
               </div>

@@ -9,7 +9,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
     if(!(openEditor.pages.length>0)){
       return []
     }
-    const genobj = getLines(openEditor.pages[openEditor.active].text, WIDTH)
+    const genobj = getLines(openEditor.pages[openEditor.active]?.content, WIDTH)
     const res = []
     let result = genobj.next()
     while(!result.done){

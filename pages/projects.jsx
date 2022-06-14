@@ -9,7 +9,6 @@ const Projects = () => {
   const [stack, setStack] = useState([])
   useEffect(()=>{
       const smt =project.map(proj=>{return {stack:proj.stack, checked:false}})
-      console.log(smt)
       setStack(smt)
     },[project])
 

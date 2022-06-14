@@ -4,7 +4,8 @@ import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
-const ProjectProvider = React.lazy(()=>import('../Contexts/ProjectContext'))
+import ProjectProvider from '../Contexts/ProjectContext'
+import PersonalInfoProvider from '../Contexts/PersonalInfoContext'
 
 function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
@@ -19,11 +20,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
         <ChildLayout>
-          <Suspense fallback={<div>Loading...</div>}>
             <ProjectProvider>
-              <Component {...pageProps} />
+              <PersonalInfoProvider>
+                <Component {...pageProps} />
+              </PersonalInfoProvider>
             </ProjectProvider>
-          </Suspense>
         </ChildLayout>
       </Layout>
     </>

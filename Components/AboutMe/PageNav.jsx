@@ -1,11 +1,14 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 
 import Link from "next/link"
 
 const PageNav = ({files,handleChangeEditor, pageTitle}) => {
   const folderColors = ["text-accent-green","text-accent","text-secondary-purple"]
-  const dd = files.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
-  const [folders, setFolders] = useState(dd)
+  const [folders, setFolders] = useState([])
+  useEffect(()=>{
+    const smt = files.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
+    setFolders(smt)
+  },[files])
   const [personalInfo, setPersonalInfo] = useState(true)
   const [contact, setContact] = useState(true)
 
@@ -61,12 +64,12 @@ const PageNav = ({files,handleChangeEditor, pageTitle}) => {
                     <div key={file.folderName} className="text-secondary text-xs">
                         <div onClick={()=>handleFolder(file.folderName)} className="hover:text-white cursor-pointer text-secondary text-xs flex items-center space-x-1">
                             {
-                                folders[itemId].active?<i className="text-sm ri-arrow-down-s-line ml-2"></i>:<i className="text-sm ri-arrow-right-s-line ml-2"></i>
+                                folders[itemId]?.active?<i className="text-sm ri-arrow-down-s-line ml-2"></i>:<i className="text-sm ri-arrow-right-s-line ml-2"></i>
                             }
                             <i className={`${folderColors[index%3]} ri-folder-fill inline-block`}></i>
                             <span className="capitalize">{file.folderName}</span>
                         </div>
-                        <div className={`${folders[itemId].active?"block mt-1":"hidden"} text-secondary text-xs ml-[26px] space-y-1`}>
+                        <div className={`${folders[itemId]?.active?"block mt-1":"hidden"} text-secondary text-xs ml-[26px] space-y-1`}>
                             {
                                 file.pages.map((page,index)=>{
                                     return <p key={index} onClick={()=>handleChangeEditor(page)} className="hover:text-white cursor-pointer flex items-center space-x-2"><i className="ri-markdown-fill"></i><span className="overflow-hidden text-ellipsis whitespace-nowrap capitalize">{page.title}</span>   

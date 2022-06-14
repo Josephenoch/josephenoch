@@ -11,12 +11,10 @@ export const useProject = () =>{
 const ProjectProvider = ({children}) => {
     const [data, setData] = useState([])
     useEffect(()=>{
-        console.log(db)
         const getData = async()=>{
           const docsRef = collection(db, "stack");
           const docsSnap = await getDocs(docsRef);
           const dat = docsSnap.docs.map(data=>data.data())
-          console.log(dat)
           setData(dat)
         }
         getData()

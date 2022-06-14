@@ -13,7 +13,7 @@ const Hobbies = () => {
       pages:[
         {
           title:"music",
-          text:text+"music"
+          content:text+"music"
         }
       ],
     },{
@@ -21,19 +21,19 @@ const Hobbies = () => {
       pages:[
         {
           title:"Table Tennis",
-          text:text+"Table Tennis"
+          content:text+"Table Tennis"
         },
         {
           title:"Badmitton",
-          text:text+"Badmitton"
+          content:text+"Badmitton"
         },
         {
           title:"Pool",
-          text:text+"Pool"
+          content:text+"Pool"
         },
         {
           title:"Football",
-          text:text+"Football"
+          content:text+"Football"
         }
       ]
     },
