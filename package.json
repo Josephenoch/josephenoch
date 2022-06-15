@@ -17,6 +17,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-facebook-login": "^4.1.1",
+    "react-spinners-kit": "^1.9.1",
     "remixicon": "^2.5.0",
     "typewriter-effect": "^2.18.2"
   },
