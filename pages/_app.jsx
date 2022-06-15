@@ -6,6 +6,7 @@ import Script from 'next/script'
 import Head from 'next/head'
 import ProjectProvider from '../Contexts/ProjectContext'
 import PersonalInfoProvider from '../Contexts/PersonalInfoContext'
+import ProfessionalInfoProvider from '../Contexts/ProfessionalInfoContext'
 
 function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps }) {
         <ChildLayout>
             <ProjectProvider>
               <PersonalInfoProvider>
-                <Component {...pageProps} />
+                <ProfessionalInfoProvider>
+                  <Component {...pageProps} />
+                </ProfessionalInfoProvider>
               </PersonalInfoProvider>
             </ProjectProvider>
         </ChildLayout>

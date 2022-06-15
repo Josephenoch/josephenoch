@@ -2,12 +2,14 @@ import React,{useEffect, useState} from 'react'
 
 import Link from "next/link"
 
-const PageNav = ({files,handleChangeEditor, pageTitle}) => {
+import { CircleSpinner } from "react-spinners-kit";
+
+const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
   const [folders, setFolders] = useState([])
   const folderColors = ["text-accent-green","text-accent","text-secondary-purple"]
   useEffect(()=>{
-    const smt = files.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
-    setFolders(smt)
+    const folders = files.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
+    setFolders(folders)
   },[files])
   const [personalInfo, setPersonalInfo] = useState(true)
   const [contact, setContact] = useState(true)
@@ -41,8 +43,8 @@ const PageNav = ({files,handleChangeEditor, pageTitle}) => {
                 pageTitle?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
             }
             <h1 className="ml-2">{pageTitle}</h1>
-        </div>
-        <div className={`${extraStyle.pageTitle} space-y-2`}>
+        </div >
+        {loading?<div className="flex justify-center border-t-2 border-t-lines py-10"><CircleSpinner size={15} color="#686769" loading={loading} /></div>:<div className={`${extraStyle.pageTitle} space-y-2`}>
             {files.map((file,index)=>{
                 if(file.folderName==="none"){
                     return( 
@@ -82,7 +84,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle}) => {
                 )
             }
             })}
-        </div>
+        </div>}
         <div onClick={handleContact} className="cursor-pointer text-secondary hover:text-white text-xs py-2 h-fit w-full flex justify-start border-y-2 border-y-lines">
             {
                 contact?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
