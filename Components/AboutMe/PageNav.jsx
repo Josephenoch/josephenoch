@@ -49,15 +49,15 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
                 if(file.folderName==="none"){
                     return( 
                     file.pages.map(fil=>
-                       <div 
+                       <p
                             key={fil.title}
                             onClick={
                                 ()=>handleChangeEditor(fil)
                             } 
-                            className="text-secondary text-xs hover:text-white cursor-pointer flex items-center ml-[26px] space-x-1">
+                            className="text-secondary text-xs hover:text-white cursor-pointer flex items-center ml-[26px] space-x-2">
                             <i className="ri-markdown-fill"></i>
-                            <span className="overflow-hidden text-ellipsis whitespace-nowrap">{fil.title}</span>   
-                        </div>
+                            <span className="overflow-hidden capitalize text-ellipsis whitespace-nowrap">{fil.title}</span>   
+                        </p>
                     ))
                 }
                 else{

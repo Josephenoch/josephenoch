@@ -7,6 +7,7 @@ import Head from 'next/head'
 import ProjectProvider from '../Contexts/ProjectContext'
 import PersonalInfoProvider from '../Contexts/PersonalInfoContext'
 import ProfessionalInfoProvider from '../Contexts/ProfessionalInfoContext'
+import HobbiesProvider from '../Contexts/HobbiesContext'
 
 function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
@@ -24,7 +25,9 @@ function MyApp({ Component, pageProps }) {
             <ProjectProvider>
               <PersonalInfoProvider>
                 <ProfessionalInfoProvider>
-                  <Component {...pageProps} />
+                  <HobbiesProvider>
+                    <Component {...pageProps} />
+                  </HobbiesProvider> 
                 </ProfessionalInfoProvider>
               </PersonalInfoProvider>
             </ProjectProvider>
