@@ -9,7 +9,7 @@ const ProfessionalInfo = () => {
   return (
     <>
       
-      <LeftComponent files={data} loading={loading} pageTitle="professional-info"/>
+      <LeftComponent files={data} error={error} loading={loading} pageTitle="professional-info"/>
       <div className="w-5 h-full mt-8 px-1 border-t-2 border-t-lines">
           <div className="w-3 h-full mx-auto mt-1 border-t-[6px] border-t-secondary">
           </div>

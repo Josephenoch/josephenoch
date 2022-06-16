@@ -32,7 +32,6 @@ const HobbiesProvider = ({children}) => {
         catch(err){
             setError(err)
         }
-        setLoading(false)
     }
     getData()
   },[])

@@ -2,7 +2,6 @@ import React,{useMemo} from 'react'
 
 import getLines from '../../Helpers/getLines'
 
-
 const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
   const WIDTH = 59
   const lines = useMemo(()=>{
@@ -20,6 +19,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
   },[openEditor])
   return (
     <>
+
     <div className="w-full min-h-[33.6px] border-b-2 border-lines  overflow-x-auto scrollbar-x flex flex-nowrap">
      {
        openEditor.pages.map((page,index)=>{

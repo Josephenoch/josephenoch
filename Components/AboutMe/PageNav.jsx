@@ -44,7 +44,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
             }
             <h1 className="ml-2">{pageTitle}</h1>
         </div >
-        {loading?<div className="flex justify-center border-t-2 border-t-lines py-10"><CircleSpinner size={15} color="#686769" loading={loading} /></div>:<div className={`${extraStyle.pageTitle} space-y-2`}>
+        {loading?<div className="flex justify-center border-t-2 border-t-lines py-10"><CircleSpinner size={15} color="#4D5BCE" loading={loading} /></div>:<div className={`${extraStyle.pageTitle} space-y-2`}>
             {files.map((file,index)=>{
                 if(file.folderName==="none"){
                     return( 

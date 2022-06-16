@@ -13,8 +13,8 @@ const PersonalInfoProvider = ({children}) => {
 
   useEffect(()=>{
     const getData= async() =>{
+      const docsRef = collection(db,"personaInfo")
       try{
-        const docsRef = collection(db,"personalInfo")
         const docs = await getDocs(docsRef)
         const dat = docs.docs.map(data=>data.data())
         dat.sort(da=>{
@@ -29,6 +29,8 @@ const PersonalInfoProvider = ({children}) => {
         setData(dat)
       }
       catch(err){
+        // console.log(err)
+        console.log("hi")
         setError(err)
       }
       setLoading(false)

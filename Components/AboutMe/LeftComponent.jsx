@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
 import LeftContent from './LeftContent'
 import PageNav from './PageNav'
+import ErrorModal from '../GeneralComponents/ErrorModal'
 
-const LeftComponent = ({files, pageTitle, loading}) => {
+const LeftComponent = ({files, pageTitle, loading,error}) => {
   const [openEditor, setOpenEditor] = useState(
       {
         active:0,
@@ -27,8 +28,10 @@ const LeftComponent = ({files, pageTitle, loading}) => {
       return {active:0, pages:[...newArray]}
     })
   })
+  console.log(error)
   return (
     <>
+    {error&&<ErrorModal/>}
         <nav className="w-40 h-full border-r-2 border-r-lines">
             <PageNav loading={loading} files={files} handleChangeEditor={handleChangeEditor} pageTitle={pageTitle}/>
         </nav>

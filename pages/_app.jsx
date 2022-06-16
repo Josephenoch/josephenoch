@@ -17,8 +17,9 @@ function MyApp({ Component, pageProps }) {
       <Script src="https://kit.fontawesome.com/b557305bb5.js" crossorigin="anonymous"></Script>
       <Layout>
       <Head>
-        <meta name="description" content="Joseph Enoch's Porfolio" />
+        <meta name="description" content="Joseph Enoch is a Fullstack using React and Django. Check out his portfolio" />
         <link rel="icon" href="/favicon.png" />
+        <meta name="keywords" content="Reactjs, Django, Javascript, Python, Frontend, Backend, Web, Developer, Joseph Enoch"/>
       </Head>
 
         <ChildLayout>
