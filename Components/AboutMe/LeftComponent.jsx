@@ -1,10 +1,12 @@
-import React,{useState} from 'react'
+import React,{useMemo, useState} from 'react'
 import LeftContent from './LeftContent'
 import PageNav from './PageNav'
 import ErrorModal from '../GeneralComponents/ErrorModal'
 import useAbout from '../../Hooks/useAbout'
+import seperateWords from '../../Helpers/seperateWords'
 
-const LeftComponent = ({pageTitle, collectionName}) => {
+const LeftComponent = ({pageTitle}) => {
+  const collectionName = useMemo(()=>seperateWords(pageTitle),[pageTitle])
   const {files,error, loading, clearError, getData} = useAbout(collectionName)
   const [openEditor, setOpenEditor] = useState(
       {
