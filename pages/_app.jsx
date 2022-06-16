@@ -1,13 +1,10 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Layout from '../Layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
 import ProjectProvider from '../Contexts/ProjectContext'
-import PersonalInfoProvider from '../Contexts/PersonalInfoContext'
-import ProfessionalInfoProvider from '../Contexts/ProfessionalInfoContext'
-import HobbiesProvider from '../Contexts/HobbiesContext'
 
 function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
@@ -23,15 +20,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
         <ChildLayout>
-            <ProjectProvider>
-              <PersonalInfoProvider>
-                <ProfessionalInfoProvider>
-                  <HobbiesProvider>
-                    <Component {...pageProps} />
-                  </HobbiesProvider> 
-                </ProfessionalInfoProvider>
-              </PersonalInfoProvider>
-            </ProjectProvider>
+          <ProjectProvider>
+            <Component {...pageProps} />
+          </ProjectProvider>
         </ChildLayout>
       </Layout>
     </>

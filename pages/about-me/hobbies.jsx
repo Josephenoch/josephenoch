@@ -1,13 +1,40 @@
-import React from 'react'
-
+import React,{useState, useEffect} from 'react'
+import { db } from '../../firebase-config'
+import { getDocs, collection } from 'firebase/firestore'
 import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 import LeftComponent from '../../Components/AboutMe/LeftComponent'
 import SpotifyProvider from '../../Contexts/SpotifyContext'
 import RightContent from '../../Components/AboutMe/Hobbies/RightContent'
-import { useHobbies } from '../../Contexts/HobbiesContext'
 
 const Hobbies = () => {
-  const {data, error, loading} = useHobbies()
+  const [data, setData] = useState([])
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(()=>{
+    const getData= async() =>{
+      const docsRef = collection(db,"hobbies")
+      const docs = await getDocs(docsRef)
+      const dat = docs.docs.map(data=>data.data())
+      setLoading(false)
+      if(dat.length===0){
+        setError("Unable to receive data")
+        return false
+      }
+      dat.sort(da=>{
+        if(da.folderName==="none"){
+          console.log(da.folderName)
+          return -1
+        }
+        else{
+          return 1
+        }
+      })
+      setData(dat)
+    }
+    getData()
+
+  },[])
   return (      
       <>
       <LeftComponent error={error} files={data} loading={loading} pageTitle="hobbies"/>

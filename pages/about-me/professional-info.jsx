@@ -1,11 +1,38 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowCaseSection"
 import LeftComponent from '../../Components/AboutMe/LeftComponent'
-import { useProfessionalInfo } from '../../Contexts/ProfessionalInfoContext'
-
+import { db } from '../../firebase-config'
+import { getDocs, collection } from 'firebase/firestore'
 const ProfessionalInfo = () => {
-  const {data,error,loading} = useProfessionalInfo()
+  const [data, setData] = useState([])
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(()=>{
+    const getData= async() =>{
+      const docsRef = collection(db,"professionalInfo")
+      const docs = await getDocs(docsRef)
+      const dat = docs.docs.map(data=>data.data())
+      setLoading(false)
+      if(dat.length===0){
+        setError("Unable to receive data")
+        return false
+      }
+      dat.sort(da=>{
+        if(da.folderName==="none"){
+          console.log(da.folderName)
+          return -1
+        }
+        else{
+          return 1
+        }
+      })
+      setData(dat)
+    }
+    getData()
+
+  },[])
   return (
     <>
       

@@ -8,7 +8,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
   const [folders, setFolders] = useState([])
   const folderColors = ["text-accent-green","text-accent","text-secondary-purple"]
   useEffect(()=>{
-    const folders = files.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
+    const folders = files?.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
     setFolders(folders)
   },[files])
   const [personalInfo, setPersonalInfo] = useState(true)
@@ -45,7 +45,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
             <h1 className="ml-2">{pageTitle}</h1>
         </div >
         {loading?<div className="flex justify-center border-t-2 border-t-lines py-10"><CircleSpinner size={15} color="#4D5BCE" loading={loading} /></div>:<div className={`${extraStyle.pageTitle} space-y-2`}>
-            {files.map((file,index)=>{
+            {files?.map((file,index)=>{
                 if(file.folderName==="none"){
                     return( 
                     file.pages.map(fil=>
@@ -61,7 +61,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
                     ))
                 }
                 else{
-                    const itemId = folders.findIndex(drop=>drop.folderName===file.folderName)
+                    const itemId = folders?.findIndex(drop=>drop.folderName===file.folderName)
                     return (
                     <div key={file.folderName} className="text-secondary text-xs">
                         <div onClick={()=>handleFolder(file.folderName)} className="hover:text-white cursor-pointer text-secondary text-xs flex items-center space-x-1">

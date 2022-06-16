@@ -28,7 +28,6 @@ const LeftComponent = ({files, pageTitle, loading,error}) => {
       return {active:0, pages:[...newArray]}
     })
   })
-  console.log(error)
   return (
     <>
     {error&&<ErrorModal/>}
