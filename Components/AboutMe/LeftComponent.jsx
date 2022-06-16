@@ -2,8 +2,10 @@ import React,{useState} from 'react'
 import LeftContent from './LeftContent'
 import PageNav from './PageNav'
 import ErrorModal from '../GeneralComponents/ErrorModal'
+import useAbout from '../../Hooks/useAbout'
 
-const LeftComponent = ({files, pageTitle, loading,error}) => {
+const LeftComponent = ({pageTitle, collectionName}) => {
+  const {files,error, loading, clearError, getData} = useAbout(collectionName)
   const [openEditor, setOpenEditor] = useState(
       {
         active:0,
@@ -28,9 +30,15 @@ const LeftComponent = ({files, pageTitle, loading,error}) => {
       return {active:0, pages:[...newArray]}
     })
   })
+  const close= () =>{
+    clearError()
+  }
+  const retry = async() =>{
+    await getData()
+  }
   return (
     <>
-    {error&&<ErrorModal/>}
+    {error&&<ErrorModal close={close} retry={retry}/>}
         <nav className="w-40 h-full border-r-2 border-r-lines">
             <PageNav loading={loading} files={files} handleChangeEditor={handleChangeEditor} pageTitle={pageTitle}/>
         </nav>

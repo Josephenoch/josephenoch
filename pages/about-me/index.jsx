@@ -1,6 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import { db } from '../../firebase-config'
-import { getDocs, collection } from 'firebase/firestore'
+import React from "react"
 
 import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 
@@ -8,37 +6,10 @@ import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowC
 import LeftComponent from '../../Components/AboutMe/LeftComponent'
 
 const Index = () => {
-  const [data, setData] = useState([])
-  const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(()=>{
-    const getData= async() =>{
-      const docsRef = collection(db,"personalInfo")
-      const docs = await getDocs(docsRef)
-      const dat = docs.docs.map(data=>data.data())
-      setLoading(false)
-      if(dat.length===0){
-        setError("Unable to receive data")
-        return false
-      }
-      dat.sort(da=>{
-        if(da.folderName==="none"){
-          console.log(da.folderName)
-          return -1
-        }
-        else{
-          return 1
-        }
-      })
-      setData(dat)
-    }
-    getData()
-
-  },[])
+ 
   return (
     <>
-      <LeftComponent error={error} files={data} pageTitle="personal-info" loading={loading}/>
+      <LeftComponent collectionName="personalInfo" pageTitle="personal-info"/>
         <div className="w-5 h-full mt-8 px-1 border-t-2 border-t-lines">
               <div className="w-3 h-full mx-auto mt-1 border-t-[6px] border-t-secondary">
               </div>
