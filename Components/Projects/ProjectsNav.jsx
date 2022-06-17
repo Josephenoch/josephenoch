@@ -19,9 +19,12 @@ const ProjectsNav = ({stack, handleCheck}) => {
             }
             <h1 className="ml-2">Projects</h1>
         </div>
-        <div className={`${style.dropDownContent} w-full mt-4 space-y-3 flex-col items-center`}>
-            {loading?<CircleSpinner size={15} color="#4D5BCE" loading={loading} /> : stack.map((proj,id)=><ProjectStack key={id} name={proj.stack} checked={proj.checked} id={id} handleCheck={handleCheck}/>)}
-        </div>
+        {loading?
+        <div className="flex justify-center py-10">
+            <CircleSpinner size={15} color="#4D5BCE" loading={loading} /> 
+        </div>:<div className={`${style.dropDownContent} w-full mt-4 space-y-3 flex-col items-center`}>
+            { stack.map((proj,id)=><ProjectStack key={id} name={proj.stack} checked={proj.checked} id={id} handleCheck={handleCheck}/>)}
+        </div>}
     </nav>
   )
 }

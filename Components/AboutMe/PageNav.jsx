@@ -11,11 +11,11 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
     const folders = files?.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
     setFolders(folders)
   },[files])
-  const [personalInfo, setPersonalInfo] = useState(true)
+  const [page, setPage] = useState(true)
   const [contact, setContact] = useState(true)
 
-  const handlePersonalInfo = () => {
-    setPersonalInfo(prevState =>!prevState)
+  const handlePage = () => {
+    setPage(prevState =>!prevState)
   }
   const handleContact = () => {
     setContact(prevState =>!prevState)
@@ -32,15 +32,15 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
 
 
   const extraStyle = {
-      pageTitle: personalInfo?"h-fit opacity-100 py-4 border-t-2 border-t-lines":"h-0 opacity-0 py-0",
+      pageTitle: page?"h-fit opacity-100 py-4 border-t-2 border-t-lines":"h-0 opacity-0 py-0",
       contactStyle: contact?"h-fit opacity-100 py-4":"h-0 opacity-0 py-0",
   }
 
   return (
     <>
-        <div onClick={handlePersonalInfo} className=" text-secondary hover:text-white cursor-pointer text-xs py-2 h-fit w-full flex justify-start">
+        <div onClick={handlePage} className=" text-secondary hover:text-white cursor-pointer text-xs py-2 h-fit w-full flex justify-start">
             {
-                pageTitle?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
+                page?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
             }
             <h1 className="ml-2">{pageTitle}</h1>
         </div >
