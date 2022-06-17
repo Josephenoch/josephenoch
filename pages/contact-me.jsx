@@ -1,12 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
+import Nav from '../Components/Contact/Nav'
 const ContactMe = () => {
   return (
-    <div className="px-8 py-12">  
+    <div className="h-full">  
       <Head>
         <title>Joseph Enoch | Contact</title>
       </Head>
-        <h1> Contact Me</h1>
+        <Nav/>
     </div>
   )
 }
