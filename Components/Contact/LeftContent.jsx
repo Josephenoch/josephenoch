@@ -1,5 +1,5 @@
 import React, { useCallback,memo,useRef } from 'react'
-
+import Button from '../GeneralComponents/Button'
 const LeftContent = ({handleChange, handleSubmit}) => {
   const formRef = useRef()
   return (
@@ -18,7 +18,7 @@ const LeftContent = ({handleChange, handleSubmit}) => {
                 <textarea id='message' name="message" onChange={(e)=>handleChange(e)} required className="h-32 w-72 bg-primary-light rounded-md border-lines focus:ring-[0.5px] overflow-auto scrollbar-y resize-none"/>
             </div>
             <div className='w-full mt-2'>
-                <button onClick={(e)=>handleSubmit(e,formRef)} className="bg-lines/60 hover:scale-105 hover:bg-lines/80 active:bg-lines active:scale-90 transition-all duration-200 ease-linear px-4 py-2 rounded-md ">submit-message</button>
+                <Button onClick={(e)=>handleSubmit(e,formRef)}>submit-message</Button>
             </div>
         </form>
     </div>

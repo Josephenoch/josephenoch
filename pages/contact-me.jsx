@@ -8,7 +8,7 @@ import { db } from '../firebase-config'
 import { CircleSpinner } from 'react-spinners-kit'
 import ErrorModal from "../Components/GeneralComponents/ErrorModal"
 import formatDate from '../Helpers/formatDate'
-
+import Button from '../Components/GeneralComponents/Button'
 const ContactMe = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -83,7 +83,7 @@ const ContactMe = () => {
             <div  className="flex  items-center justify-center h-full flex-col">
                 <p className="text-lg">Thank you! &#x1F918;</p>
                 <p className="w-1/2 mt-2 text-sm text-secondary text-center">Your message has been accepted. You will recieve answer really soon!</p>
-                <button onClick={handleNewMessage} className="bg-lines/60 hover:scale-105 hover:bg-lines/80 text-xs mt-4 active:bg-lines active:scale-90 transition-all duration-200 ease-linear px-4 py-2 rounded-md ">send-new-message</button>
+                <Button onClick={handleNewMessage} >send-new-message</Button>
             </div>:
             <LeftContent handleChange={handleChange} handleSubmit={handleSubmit}/>}
           </div>
