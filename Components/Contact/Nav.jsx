@@ -18,7 +18,7 @@ const Nav = () => {
 
 }
   return (
-    <nav className="w-[13rem] h-full border-r-2 border-r-lines">
+    <nav className="min-w-[13rem] h-full border-r-2 border-r-lines">
         <div onClick={handleContact} className={`${extraStyle.contact} cursor-pointer  hover:text-white text-xs py-2 h-fit w-full flex justify-start `}>
             {
                 contact?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
