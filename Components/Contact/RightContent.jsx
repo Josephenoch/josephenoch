@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useMemo } from 'react'
+import formatDate from '../../Helpers/formatDate'
 import ColoredText from '../GeneralComponents/ColoredText'
 
 const RightContent = ({values}) => {
+  const today = useMemo(()=>formatDate(new Date()),[])
   return (
     <div className=" w-1/2 overflow-y-auto scrollbar-y h-full border-r-2 border-r-lines">
         <div className="w-full h-full text-xs flex flex-col py-20  items-center">
@@ -36,7 +38,7 @@ const RightContent = ({values}) => {
                 </li>
                 <li className="pl-4 list-decimal"> 
                   date:
-                  <ColoredText color="accent">{' ""'}</ColoredText>
+                  <ColoredText color="accent">{` "${today}"`}</ColoredText>
                 </li>
                 <li className="pl-2 list-decimal">
                   <ColoredText color="secondary">{"}"}</ColoredText>

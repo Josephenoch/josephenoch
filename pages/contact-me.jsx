@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Nav from '../Components/Contact/Nav'
 import LeftContent from '../Components/Contact/LeftContent'
@@ -7,6 +7,7 @@ import {collection, addDoc} from "firebase/firestore"
 import { db } from '../firebase-config'
 import { CircleSpinner } from 'react-spinners-kit'
 import ErrorModal from "../Components/GeneralComponents/ErrorModal"
+import formatDate from '../Helpers/formatDate'
 
 const ContactMe = () => {
   const [loading, setLoading] = useState(false)
@@ -15,7 +16,8 @@ const ContactMe = () => {
   const [values,setValues] = useState({
     name:"",
     email:"",
-    message:""
+    message:"",
+    date:String(formatDate(new Date()))
   })
   const handleChange =useCallback(
     (e) =>{
@@ -30,7 +32,7 @@ const ContactMe = () => {
     
     setLoading(true)
     const docRef = collection(db, "messages")
-    const data = await addDoc(docRef, values)
+    const data = await addDoc(docRef,values)
     if(!data.id){
       setError({error:"error sending message"})
       setLoading(false)
@@ -48,6 +50,18 @@ const ContactMe = () => {
     }
     setError({error:"Please put in the correct details"})
   },[])
+  const handleNewMessage = () =>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+      setValues({
+        name:"",
+        email:"",
+        message:""
+      })
+      setSent(false)
+    } ,300)
+  }
   return (
     <div className="h-full overflow-hidden flex min-w-full">  
       <Head>
@@ -62,8 +76,15 @@ const ContactMe = () => {
         <div className="h-full pb-8 flex">
           <div className=" w-1/2 overflow-auto scrollbar-y h-full border-r-2 border-r-lines">
             {loading?
-            <div className="flex items-center justify-center h-full"><CircleSpinner color="#4D5BCE" loading={loading}/></div>:
-            sent?<div></div>:
+            <div className="flex items-center justify-center h-full">
+              <CircleSpinner color="#4D5BCE" loading={loading}/>
+            </div>:
+            sent?
+            <div  className="flex  items-center justify-center h-full flex-col">
+                <p className="text-lg">Thank you! &#x1F918;</p>
+                <p className="w-1/2 mt-2 text-sm text-secondary text-center">Your message has been accepted. You will recieve answer really soon!</p>
+                <button onClick={handleNewMessage} className="bg-lines/60 hover:scale-105 hover:bg-lines/80 text-xs mt-4 active:bg-lines active:scale-90 transition-all duration-200 ease-linear px-4 py-2 rounded-md ">send-new-message</button>
+            </div>:
             <LeftContent handleChange={handleChange} handleSubmit={handleSubmit}/>}
           </div>
           <RightContent values={values}/>
