@@ -40,7 +40,7 @@ const LeftComponent = ({pageTitle}) => {
   }
   return (
     <>
-    {error&&<ErrorModal close={close} retry={retry}/>}
+    {error&&<ErrorModal error={error} close={close} retry={retry}/>}
         <nav className="w-40 h-full border-r-2 border-r-lines">
             <PageNav loading={loading} files={files} handleChangeEditor={handleChangeEditor} pageTitle={pageTitle}/>
         </nav>

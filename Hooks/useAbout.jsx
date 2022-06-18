@@ -13,7 +13,7 @@ const useAbout = (collectionName) => {
     const data = docs.docs.map(data=>data.data())
     setLoading(false)
     if(data.length===0){
-      setError("Unable to receive data")
+      setError({error:"Unable to receive data"})
       return false
     }
     data.sort(dat=>{

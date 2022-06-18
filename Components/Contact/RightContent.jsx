@@ -4,7 +4,7 @@ import ColoredText from '../GeneralComponents/ColoredText'
 const RightContent = ({values}) => {
   return (
     <div className=" w-1/2 overflow-y-auto scrollbar-y h-full border-r-2 border-r-lines">
-        <div className="w-full h-full text-xs flex flex-col pt-20  items-center">
+        <div className="w-full h-full text-xs flex flex-col py-20  items-center">
             <ol className=" w-[25rem] text-secondary">
                 <li className="pl-2 list-decimal">
                   <ColoredText color="accent-pink">const</ColoredText> 
@@ -30,9 +30,9 @@ const RightContent = ({values}) => {
                   <ColoredText color="secondary-purple">email</ColoredText>:
                   <ColoredText color="accent">{` "${values.email}"`}</ColoredText>,
                 </li>
-                <li className="pl-4 list-decimal">
+                <li className="pl-4 list-decimal break-words">
                   <ColoredText color="secondary-purple">message</ColoredText>:
-                  <ColoredText color="accent">{` "${values.message}"`}</ColoredText>,
+                  <ColoredText color="accent ">{` "${values.message}"`}</ColoredText>,
                 </li>
                 <li className="pl-4 list-decimal"> 
                   date:
@@ -56,6 +56,8 @@ const RightContent = ({values}) => {
                 </li>
 
             </ol>
+            
+            
         </div>
     </div>
   )
