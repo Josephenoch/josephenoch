@@ -42,14 +42,14 @@ const ContactMe = () => {
     setLoading(false)
     setSent(true)
   }
-  const handleSubmit = useCallback( async(e,formRef) =>{
+  const handleSubmit =async(e,formRef) =>{
     e.preventDefault()
     if(formRef.current.checkValidity()){
       await sendData()
       return true
     }
     setError({error:"Please put in the correct details"})
-  },[])
+  }
   const handleNewMessage = () =>{
     setLoading(true)
     setTimeout(()=>{
