@@ -19,7 +19,7 @@ const ProjectProvider = ({children}) => {
       const docsSnap = await getDocs(docsRef);
       const dat = docsSnap.docs.map(data=>data.data())
       if(dat.length===0){
-        setError(true)
+        setError({error:"Unable to receive data"})
         setLoading(false)
         return false
       }

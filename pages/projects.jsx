@@ -26,7 +26,7 @@ const Projects = () => {
       <Head>
         <title>Joseph Enoch | Projects</title>
       </Head>
-      {error&&<ErrorModal retry={getData} close={clearError}/>}
+      {error&&<ErrorModal error={error} retry={getData} close={clearError}/>}
       <ProjectsNav stack={stack} handleCheck={handleCheck}/>
       <div className=" pb-5 flex w-full overflow-y-auto scrollbar-y flex-wrap">
         {project.map(stak=>
