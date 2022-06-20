@@ -13,9 +13,9 @@ const ProjectsNav = ({stack, handleCheck}) => {
   return (
     <>
         <nav className="text-sm min-w-full lg:min-w-[13rem] min-h-fit lg:min-h-full lg:border-r-2 lg:border-r-lines flex flex-col">
-            <div onClick={()=>setProjDropDown(prevState=>!prevState)} className={`${style.dropDownText} hover:text-white cursor-pointer lg:bg-inherit bg-secondary  py-2 border-b-2 border-lines h-fit w-full flex justify-start`}>
+            <div onClick={()=>setProjDropDown(prevState=>!prevState)} className={`${style.dropDownText} hover:text-white cursor-pointer lg:bg-inherit bg-secondary py-2 border-b-2 border-lines h-fit w-full flex justify-start`}>
                 {
-                    projDropDown?<i className="ri-arrow-down-s-fill ml-2"></i>:<i className="ri-arrow-right-s-fill ml-2"></i>
+                    projDropDown?<i className="ri-arrow-down-s-fill ml-8"></i>:<i className="ri-arrow-right-s-fill ml-8"></i>
                 }
                 <h1 className="ml-2">Projects</h1>
             </div>

@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
 import  SocialIcon  from './SocialIcon'
 import  NavBar  from './NavBar'
+import { useRouter } from 'next/router'
 
 const Layout = ({children}) => {
+  const route = useRouter()
   const [nav, setNav] = useState(false)
   const handleNav = () =>{
       setNav(prev=> !prev)
@@ -35,10 +37,13 @@ const Layout = ({children}) => {
               handleNav={handleNav}
             />
         </div>
-        <div className={` overflow-auto max-h-[85%] h-[85%] text-white ${nav?"opacity-0 lg:opacity-100 ":"opacity-100 transition-all delay-1000 ease-in-out  duration-1000"}`}>
+        <div className={` h-[calc(100%-2.5rem)] lg:max-h-[85%] lg:h-[85%] overflow-hidden text-white ${nav?"opacity-0 lg:opacity-100  ":"opacity-100 transition-all delay-1000 ease-in-out  duration-1000"}`}>
+          <h1 className="ml-8 h-[10%] lg:hidden flex items-center">{route.pathname.slice(1)&&`_${route.pathname.slice(1)}`}</h1>
+          <div className="h-[90%] lg:h-full">
             {children}
+          </div>
         </div>
-        <div className={`border-t-2 bottom-[-2px] absolute lg:relative border-t-lines flex w-full ${nav?"opacity-100":"opacity-0 lg:opacity-100 transition-all ease-in-out duration-1000 delay-0"}`}>
+        <div className={`border-t-2 bottom-[-2px] absolute lg:relative border-t-lines w-full ${nav?"opacity-100  flex":"opacity-0 lg:opacity-100 hidden lg:flex transition-all ease-in-out duration-1000 delay-0"}`}>
             <h1 className="text-secondary text-xs inline-block border-r-2 border-r-lines px-2 py-4 border-b-primary-lighter hover:transition-[border] ease-in-out border-b-2 w-full lg:w-fit">
                 find me on:
             </h1>
