@@ -5,7 +5,7 @@ import ColoredText from '../GeneralComponents/ColoredText'
 const RightContent = ({values}) => {
   const today = useMemo(()=>formatDate(new Date()),[])
   return (
-    <div className=" w-1/2 overflow-y-auto scrollbar-y h-full border-r-2 border-r-lines">
+    <div className="hidden lg:block w-1/2 overflow-y-auto scrollbar-y h-full border-r-2 border-r-lines">
         <div className="w-full h-full text-xs flex flex-col py-20  items-center">
             <ol className=" w-[25rem] text-secondary">
                 <li className="pl-2 list-decimal">

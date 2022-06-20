@@ -8,7 +8,7 @@ import { db } from '../firebase-config'
 import { CircleSpinner } from 'react-spinners-kit'
 import ErrorModal from "../Components/GeneralComponents/ErrorModal"
 import formatDate from '../Helpers/formatDate'
-import Button from '../Components/GeneralComponents/Button'
+import MessageSent from '../Components/Contact/MessageSent'
 const ContactMe = () => {
   const date = useMemo(()=>formatDate(new Date()),[])
   const [loading, setLoading] = useState(false)
@@ -65,27 +65,25 @@ const ContactMe = () => {
     } ,300)
   }
   return (
-    <div className="h-full overflow-hidden flex min-w-full">  
+    <div className="h-full overflow-auto scrollbar-y lg:overflow-hidden flex lg:flex-row flex-col min-w-full">  
       <Head>
         <title>Joseph Enoch | Contact</title>
       </Head>
       <Nav/>
       {error&&<ErrorModal retry={()=>setError(null)} close={()=>setError(null)} error={error}/>}
-      <div className="h-full overflow-hidden w-full">
-        <div className=" min-h-[33.6px] border-b-2 border-lines  overflow-x-auto scrollbar-x flex flex-nowrap">
+      <div className="h-full lg:overflow-hidden w-full">
+        <div className="hidden min-h-[33.6px] border-b-2 border-lines  overflow-x-auto scrollbar-x lg:flex flex-nowrap">
             <span className="cursor-pointer inline-block border-r-2 text-xs border-r-lines pr-20 pl-6 py-2 capitalize overflow-hidden text-ellipsis whitespace-nowrap">contact</span>
         </div>
         <div className="h-full pb-8 flex">
-          <div className=" w-1/2 overflow-auto scrollbar-y h-full border-r-2 border-r-lines">
+          <div className="w-full lg:w-1/2 overflow-auto scrollbar-y h-full lg:border-r-2 border-r-lines">
             {loading?
-            <div className="flex items-center justify-center h-full">
+            <div className="flex lg:items-center mt-10 lg:mt-0 justify-center h-full">
               <CircleSpinner color="#4D5BCE" loading={loading}/>
             </div>:
             sent?
-            <div  className="flex  items-center justify-center h-full flex-col">
-                <p className="text-lg">Thank you! &#x1F918;</p>
-                <p className="w-1/2 mt-2 text-sm text-secondary text-center">Your message has been accepted. You will recieve answer really soon!</p>
-                <Button onClick={handleNewMessage} >send-new-message</Button>
+            <div  className="flex items-center mt-10 lg:mt-0 lg:justify-center h-full flex-col">
+                <MessageSent handleNewMessage={handleNewMessage}/>
             </div>:
             <LeftContent handleChange={handleChange} handleSubmit={handleSubmit}/>}
           </div>

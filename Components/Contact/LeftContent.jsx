@@ -3,7 +3,7 @@ import Button from '../GeneralComponents/Button'
 const LeftContent = ({handleChange, handleSubmit}) => {
   const formRef = useRef()
   return (
-    <div className="w-full h-full text-xs flex flex-col pt-20  items-center">
+    <div className="w-full h-full text-xs flex flex-col pt-10 lg:pt-20  items-center">
         <form className="space-y-4" ref={formRef}>
             <div className="flex flex-col space-y-2">
                 <label htmlFor="name" className='text-secondary'>_name:</label>
