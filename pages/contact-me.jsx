@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
 import Nav from '../Components/Contact/Nav'
 import LeftContent from '../Components/Contact/LeftContent'
@@ -10,6 +10,7 @@ import ErrorModal from "../Components/GeneralComponents/ErrorModal"
 import formatDate from '../Helpers/formatDate'
 import Button from '../Components/GeneralComponents/Button'
 const ContactMe = () => {
+  const date = useMemo(()=>formatDate(new Date()),[])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [sent, setSent] = useState(false)
@@ -17,7 +18,7 @@ const ContactMe = () => {
     name:"",
     email:"",
     message:"",
-    date:String(formatDate(new Date()))
+    date:date
   })
   const handleChange =useCallback(
     (e) =>{
@@ -42,14 +43,14 @@ const ContactMe = () => {
     setLoading(false)
     setSent(true)
   }
-  const handleSubmit =async(e,formRef) =>{
+  const handleSubmit =useCallback(async(e,formRef) =>{
     e.preventDefault()
     if(formRef.current.checkValidity()){
       await sendData()
       return true
     }
     setError({error:"Please put in the correct details"})
-  }
+  },[])
   const handleNewMessage = () =>{
     setLoading(true)
     setTimeout(()=>{
@@ -57,7 +58,8 @@ const ContactMe = () => {
       setValues({
         name:"",
         email:"",
-        message:""
+        message:"",
+        date:date
       })
       setSent(false)
     } ,300)

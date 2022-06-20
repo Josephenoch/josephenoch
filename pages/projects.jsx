@@ -22,13 +22,13 @@ const Projects = () => {
   }
   
   return (
-    <aside className="h-full w-full flex">
+    <aside className="h-full w-full flex flex-col lg:flex-row">
       <Head>
         <title>Joseph Enoch | Projects</title>
       </Head>
       {error&&<ErrorModal error={error} retry={getData} close={clearError}/>}
       <ProjectsNav stack={stack} handleCheck={handleCheck}/>
-      <div className=" pb-5 flex w-full overflow-y-auto scrollbar-y flex-wrap">
+      <div className="pb-5 flex w-full justify-center lg:justify-start lg:items-center overflow-y-auto scrollbar-y flex-wrap">
         {project.map(stak=>
           stak.projects.map((proj,id)=>{
             const checked = stack[stack.findIndex(sta=>sta.stack===stak.stack)]?.checked     
