@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from "next/link"
+import DropDown from "../GeneralComponents/DropDown"
 const Nav = () => {
   const [contact, setContact] = useState(true)
   const [findMe, setFindMe] = useState(true)
@@ -19,13 +20,7 @@ const Nav = () => {
 }
   return (
     <nav className="min-w-[13rem] lg:h-full lg:border-r-2 border-r-lines">
-        <div onClick={handleContact} className={`${extraStyle.contact} bg-secondary text-white lg:bg-inherit lg:text-inherit cursor-pointer hover:text-white text-xs py-2 h-fit w-full flex justify-start `}>
-            {
-                contact?<i className="ri-arrow-down-s-fill lg:ml-2 ml-8"></i>:<i className="ri-arrow-right-s-fill lg:ml-2 ml-8"></i>
-            }
-            <h1 className="ml-2">contacts</h1>
-        </div>
-        <div className={` ${extraStyle.contactDropDown} space-y-2`}>
+        <DropDown name="contact">
             <Link href="/contact-me"> 
             <a className="text-secondary text-xs flex hover:text-white items-center space-x-1">
                 <i className="ri-mail-fill ml-8 lg:ml-2"></i>
@@ -37,14 +32,8 @@ const Nav = () => {
                 <i className="ri-discord-fill inline-block ml-8 lg:ml-2"></i>
                 <span className="text-[10px] inline ">Join The Tech Cartel</span> 
             </a >
-        </div>
-        <div onClick={handleFindMe} className={`${extraStyle.findMe} cursor-pointer hover:text-white text-xs py-2 h-fit w-full flex bg-secondary text-white lg:bg-inherit lg:text-inherit justify-start border-y-2 border-y-lines`}>
-            {
-                findMe?<i className="ri-arrow-down-s-fill lg:ml-2 ml-8"></i>:<i className="ri-arrow-right-s-fill lg:ml-2 ml-8"></i>
-            }
-            <h1 className="ml-2">find-me-also-on</h1>
-        </div>
-        <div className={` ${extraStyle.findMeDropDown} space-y-2`}>
+        </DropDown>
+        <DropDown name="find-me-also-on">
             <a target="_blank" tel="nonreferrer" href="#" className="text-secondary hover:text-white  text-sm flex items-center space-x-1">
                 <i className="ri-external-link-line inline-block ml-8 lg:ml-2"></i>
                 <span className="text-[10px]" >Dev.to Profile</span> 
@@ -61,7 +50,7 @@ const Nav = () => {
                 <i className="ri-external-link-line inline-block ml-8 lg:ml-2"></i>
                 <span className="text-[10px]" >Medium Account</span> 
             </a>
-        </div>
+        </DropDown>
     </nav>
   )
 }
