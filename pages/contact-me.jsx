@@ -9,6 +9,7 @@ import { CircleSpinner } from 'react-spinners-kit'
 import ErrorModal from "../Components/GeneralComponents/ErrorModal"
 import formatDate from '../Helpers/formatDate'
 import MessageSent from '../Components/Contact/MessageSent'
+import TabTitle from '../Components/GeneralComponents/TabTitle'
 const ContactMe = () => {
   const date = useMemo(()=>formatDate(new Date()),[])
   const [loading, setLoading] = useState(false)
@@ -64,6 +65,9 @@ const ContactMe = () => {
       setSent(false)
     } ,300)
   }
+  const style = {
+    activeStyle :"!pr-20 !pl-6 !py-2"
+  }
   return (
     <div className="h-full overflow-auto scrollbar-y lg:overflow-hidden flex lg:flex-row flex-col min-w-full">  
       <Head>
@@ -73,7 +77,7 @@ const ContactMe = () => {
       {error&&<ErrorModal retry={()=>setError(null)} close={()=>setError(null)} error={error}/>}
       <div className="h-full lg:overflow-hidden w-full">
         <div className="hidden min-h-[33.6px] border-b-2 border-lines  overflow-x-auto scrollbar-x lg:flex flex-nowrap">
-            <span className="cursor-pointer inline-block border-r-2 text-xs border-r-lines pr-20 pl-6 py-2 capitalize overflow-hidden text-ellipsis whitespace-nowrap">contact</span>
+          <TabTitle title="Contact" styles={style}/>
         </div>
         <div className="h-full pb-8 flex">
           <div className="w-full lg:w-1/2 overflow-auto scrollbar-y h-full lg:border-r-2 border-r-lines">

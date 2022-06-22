@@ -1,6 +1,7 @@
 import React,{useMemo} from 'react'
 
 import getLines from '../../Helpers/getLines'
+import TabTitle from '../GeneralComponents/TabTitle'
 
 const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
   const WIDTH = 59
@@ -25,11 +26,9 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
        openEditor.pages.map((page,index)=>{
         const styles ={
           activeStyle:page.title==openEditor.pages[openEditor.active].title?"text-white":"",
-          moreThanFourOpened:openEditor.pages.length>4&&`w-28`}
-        return <div key={index}  className={ `${styles.moreThanFourOpened} inline-flex items-center border-r-2   border-lines`}>
-                <span  onClick={()=>handleChangeEditor(page)} className={`${styles.activeStyle} cursor-pointer inline-block pr-2 pl-6 py-2 capitalize overflow-hidden text-ellipsis whitespace-nowrap`}>{page.title}</span>
-                <span onClick={()=>closeEditor(page)} className=" cursor-pointer w-4 h-4 inline-flex mr-2 items-center bg-gray-50/10 justify-center rounded-full"><i className="ri-close-line"></i></span>
-              </div>
+          }
+        return <TabTitle key={index} handleChangeEditor={()=>handleChangeEditor(page)} closeEditor={()=>closeEditor(page)} page={page} title={page.title} closeAble styles={styles}/>
+
       })
      }
      </div>
