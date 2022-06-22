@@ -32,8 +32,8 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
       })
      }
      </div>
-      <div className="pl-12 pr-10  border-r-2 border-lines pt-5 h-full overflow-y-auto scrollbar-y pb-10">
-        <ol className='w-full'>
+      <div className="pl-12 pr-10  lg:border-r-2 border-lines pt-5 h-full overflow-y-auto scrollbar-y pb-10">
+        <ol className='w-full hidden lg:block'>
 
           <li className="list-decimal"><span className="ml-4">{"/**"}</span></li>
           {openEditor.pages.length>0&&<li className="list-decimal"><span className="ml-4">* About</span></li>}
@@ -46,8 +46,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
           <li className="list-decimal"><span className="ml-4">{"*/"}</span></li>
         </ol>
         <p className="w-fit lg:hidden">
-          {openEditor.pages[openEditor.active]?.text}
-          
+          {openEditor.pages[openEditor.active].content}
         </p>
       </div>
     </>
