@@ -46,7 +46,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
           <li className="list-decimal"><span className="ml-4">{"*/"}</span></li>
         </ol>
         <p className="w-fit lg:hidden">
-          {openEditor.pages[openEditor.active].content}
+          {openEditor.pages[openEditor.active]?.content}
         </p>
       </div>
     </>
