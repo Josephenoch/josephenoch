@@ -9,7 +9,7 @@ const AboutLayout = ({children}) => {
           <title>Joseph Enoch | About Me</title>
       </Head>
       <section className="h-full flex flex-col lg:flex-row overflow-auto scrollbar-y lg:overflow-clip">
-        <nav className="w-full lg:w-12 h-full lg:border-r-2 border-r-lines justify-around lg:justify-start border-y-2 border-lines lg:border-y-0 lg:items-center flex flex-row lg:flex-col">
+        <nav className="w-full lg:w-12 h-fit lg:h-full lg:border-r-2 border-r-lines justify-around lg:justify-start border-y-2 border-lines lg:border-y-0 lg:items-center flex flex-row lg:flex-col">
           <AboutNav/>
         </nav>
         {children}

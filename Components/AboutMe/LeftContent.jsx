@@ -21,7 +21,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
   return (
     <>
 
-    <div className="w-full min-h-[33.6px] border-b-2 border-lines  overflow-x-auto scrollbar-x flex flex-nowrap">
+    <div className={`w-full min-h-[33.6px] ${openEditor.pages.length>0&&"border-b-2"} border-lines lg:border-b-2 overflow-x-auto scrollbar-x flex flex-nowrap`}>
      {
        openEditor.pages.map((page,index)=>{
         const styles ={
@@ -32,7 +32,7 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
       })
      }
      </div>
-      <div className="pl-12 pr-10  lg:border-r-2 border-lines pt-5 h-full overflow-y-auto scrollbar-y pb-10">
+      <div className={`pl-12 pr-10  lg:border-r-2 border-lines pt-5 border-b-2 h-full overflow-y-auto scrollbar-y lg:pb-10`}>
         <ol className='w-full hidden lg:block'>
 
           <li className="list-decimal"><span className="ml-4">{"/**"}</span></li>
@@ -45,7 +45,8 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
           {openEditor.pages.length==0&&<li className="list-decimal"><span className="ml-4">{"* No editor open, Click a file to read about me"}</span></li>}
           <li className="list-decimal"><span className="ml-4">{"*/"}</span></li>
         </ol>
-        <p className="w-fit lg:hidden">
+        <p className="w-full lg:hidden">
+          {openEditor.pages.length==0&&"No editor open, Click a file to read about me"}
           {openEditor.pages[openEditor.active]?.content}
         </p>
       </div>

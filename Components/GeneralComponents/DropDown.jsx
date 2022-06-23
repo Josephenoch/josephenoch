@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-const DropDown = ({name,children, first}) => {
+const DropDown = ({name,children, first, sx}) => {
   const notFirst = !first
   const [dropDown, setDropDown] = useState(false)
   const style = {
@@ -12,7 +12,7 @@ const DropDown = ({name,children, first}) => {
 }
   return (
     <>
-        <div onClick={()=>setDropDown(prevState=>!prevState)} className={`${style.dropDown} ${style.first} ${style.otherDropDown} hover:text-white cursor-pointer lg:bg-inherit lg: border-b-2  bg-secondary py-2 lowercase  text-xs border-lines  h-fit w-full flex justify-start`}>
+        <div onClick={()=>setDropDown(prevState=>!prevState)} className={`${style.dropDown} ${style.first} ${style.otherDropDown} ${sx} hover:text-white cursor-pointer lg:bg-inherit border-b-2  bg-secondary py-2 lowercase  text-xs border-lines  h-fit w-full flex justify-start`}>
             {
                 dropDown?<i className="ri-arrow-down-s-fill lg:ml-2 ml-8"></i>:<i className="ri-arrow-right-s-fill lg:ml-2 ml-8"></i>
             }

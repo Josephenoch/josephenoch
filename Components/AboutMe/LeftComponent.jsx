@@ -41,10 +41,10 @@ const LeftComponent = ({pageTitle}) => {
   return (
     <>
     {error&&<ErrorModal error={error} close={close} retry={retry}/>}
-        <nav className="w-full lg:w-40 h-full lg:border-r-2 border-r-lines">
+        <nav className="w-full lg:w-40 h-fit lg:h-full lg:border-r-2 border-r-lines">
             <PageNav loading={loading} files={files} handleChangeEditor={handleChangeEditor} pageTitle={pageTitle}/>
         </nav>
-        <article className="w-full lg:w-[41.4%] h-full text-secondary text-xs ">
+        <article className="w-full  border-t-lines lg:w-[41.4%] h-fit lg:h-full text-secondary text-xs ">
             <LeftContent  openEditor={openEditor} handleChangeEditor={handleChangeEditor} closeEditor={closeEditor}/>
         </article>
       </>
