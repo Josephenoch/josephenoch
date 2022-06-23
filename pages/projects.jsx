@@ -1,12 +1,11 @@
 import React,{useState,useEffect} from 'react'
+import { getDocs, collection } from "firebase/firestore";
+import { db } from '../firebase-config';
 import Project from '../Components/Projects/Project'
 import ProjectsNav from '../Components/Projects/ProjectsNav'
 import Head from 'next/head'
-import { useProject } from '../Contexts/ProjectContext'
-import ErrorModal from '../Components/GeneralComponents/ErrorModal'
 
-const Projects = () => {
-  const {data:project, error, clearError, getData} = useProject()
+const Projects = ({project}) => {
   const [stack, setStack] = useState([])
   useEffect(()=>{
       const smt =project.map(proj=>{return {stack:proj.stack, checked:false}})
@@ -26,7 +25,6 @@ const Projects = () => {
       <Head>
         <title>Joseph Enoch | Projects</title>
       </Head>
-      {error&&<ErrorModal error={error} retry={getData} close={clearError}/>}
       <ProjectsNav stack={stack} handleCheck={handleCheck}/>
       <div className="lg:pb-5 flex w-full justify-center lg:justify-start lg:overflow-y-auto scrollbar-y flex-wrap">
         {project.map(stak=>
@@ -41,3 +39,15 @@ const Projects = () => {
 }
 
 export default Projects
+
+export const getStaticProps = async () =>{
+  const docsRef = collection(db, "stack");
+  const docsSnap = await getDocs(docsRef);
+  const project = docsSnap.docs.map(data=>data.data())
+  return {
+    props:{
+      project
+    }
+  }
+
+}

@@ -40,7 +40,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
   return (
     <>
         <DropDown name={pageTitle}>
-            {/* {loading?<div className="flex justify-center py-10"><CircleSpinner size={15} color="#4D5BCE" loading={loading} /></div>:*/<div className={`${extraStyle.pageTitle} space-y-2`}> 
+            {<div className={`${extraStyle.pageTitle} space-y-2`}> 
                 {files?.map((file,index)=>{
                     if(file.folderName==="none"){
                         return( 

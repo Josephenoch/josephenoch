@@ -4,7 +4,6 @@ import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
-import ProjectProvider from '../Contexts/ProjectContext'
 
 function MyApp({ Component, pageProps }) {
   const ChildLayout = Component.Layout || EmptyLayout
@@ -20,9 +19,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
         <ChildLayout>
-          <ProjectProvider>
             <Component {...pageProps} />
-          </ProjectProvider>
         </ChildLayout>
       </Layout>
     </>

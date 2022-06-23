@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 const DropDown = ({name,children, first, sx}) => {
   const notFirst = !first
-  const [dropDown, setDropDown] = useState(false)
+  const [dropDown, setDropDown] = useState(true)
   const style = {
     dropDown:dropDown?"text-white":"text-white lg:text-secondary ",
     otherDropDown:notFirst&&dropDown?"border-b-2":"",
