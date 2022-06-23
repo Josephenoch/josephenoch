@@ -12,17 +12,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
     const folders = files?.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})
     setFolders(folders)
   },[files])
-  const [page, setPage] = useState(true)
-  const [contact, setContact] = useState(true)
-
-  const handlePage = () => {
-    setPage(prevState =>!prevState)
-  }
-  const handleContact = () => {
-    setContact(prevState =>!prevState)
-  }
   const handleFolder = (name) => {
-    
     setFolders(prevState =>{
         const newDropdowns = [...prevState]
         const itemId = prevState.findIndex(item=>item.folderName===name)
@@ -31,16 +21,10 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
     })
   }
 
-
-  const extraStyle = {
-      pageTitle: page?"h-fit opacity-100 ":"h-0 opacity-0 py-0",
-      contactStyle: contact?"h-fit opacity-100 py-4":"h-0 opacity-0 py-0",
-  }
-
   return (
     <>
         <DropDown name={pageTitle} openByDefault>
-            {<div className={`${extraStyle.pageTitle} space-y-2`}> 
+            {<div className="space-y-2"> 
                 {files?.map((file,index)=>{
                     if(file.folderName==="none"){
                         return( 
@@ -83,7 +67,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
             </div>}
         </DropDown>
         <DropDown name="contacts" sx={"hidden lg:flex"}>
-            <div className={` ${extraStyle.contactStyle} space-y-2`}>
+            <div className="space-y-2">
                 <div className="text-secondary text-xs flex items-center space-x-1">
                     <i className="ri-mail-fill inline-block ml-2"></i>
                     <Link href="/contact-me">                
