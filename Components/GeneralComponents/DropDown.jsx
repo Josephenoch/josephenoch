@@ -1,14 +1,12 @@
 import React,{useState} from 'react'
 
-const DropDown = ({name,children, first, sx}) => {
+const DropDown = ({name,children, first, sx, openByDefault}) => {
   const notFirst = !first
-  const [dropDown, setDropDown] = useState(true)
+  const [dropDown, setDropDown] = useState(openByDefault)
   const style = {
     dropDown:dropDown?"text-white":"text-white lg:text-secondary ",
     otherDropDown:notFirst&&dropDown?"border-b-2":"",
     dropDownContent: dropDown?"h-fit opacity-100 py-4":"h-0 opacity-0 hidden py-0",
-    // first:first?"":"border-t-2"
-
 }
   return (
     <>

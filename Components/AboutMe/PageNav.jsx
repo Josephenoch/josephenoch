@@ -39,7 +39,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
 
   return (
     <>
-        <DropDown name={pageTitle}>
+        <DropDown name={pageTitle} openByDefault>
             {<div className={`${extraStyle.pageTitle} space-y-2`}> 
                 {files?.map((file,index)=>{
                     if(file.folderName==="none"){
