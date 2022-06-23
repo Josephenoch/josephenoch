@@ -38,7 +38,7 @@ const Layout = ({children}) => {
             />
         </div>
         <div className={` h-[calc(100%-2.5rem)] lg:max-h-[85%] lg:h-[85%] overflow-hidden text-white ${nav?"opacity-0 lg:opacity-100  ":"opacity-100 transition-all delay-1000 ease-in-out  duration-1000"}`}>
-          <h1 className="ml-8 h-[10%] lg:hidden flex items-center">{route.pathname.slice(1)==="about-me"?`_${route.pathname.slice(1)}/personalInfo`:`_${route.pathname.slice(1)}`}</h1>
+          <h1 className="ml-8 h-[10%] lg:hidden flex items-center">{route.pathname.slice(1)?route.pathname.slice(1)==="about-me"?`_${route.pathname.slice(1)}/professionalInfo`:`_${route.pathname.slice(1)}`:""}</h1>
           <div className="h-[90%] lg:h-full">
             {children}
           </div>

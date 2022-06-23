@@ -10,7 +10,7 @@ const AboutNav = () => {
     },
     {
       icon:<i className="ri-terminal-box-fill"></i>,
-      link:"/professional-info"
+      link:"/personal-info"
     },
     {
       icon:<i className="ri-gamepad-fill"></i>,
