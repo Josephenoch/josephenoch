@@ -74,7 +74,8 @@ export const getStaticProps= async()=>{
     return {
       props:{
         files
-      }
+      },
+      revalidate:10
     }
 }
 
