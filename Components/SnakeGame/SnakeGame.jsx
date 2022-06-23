@@ -7,25 +7,26 @@ export const SnakeGame = () => {
     {x:11,y:11},
     {x:11,y:12},
     {x:11,y:13},
+    {x:11,y:14},
+    {x:11,y:15},
+
 
   ])
-  const [direction, setDirection] = useState({x:0,y:0})
-  const moveSnake = () =>{
-    const sb = [...snakeBody]
-    for (let i=sb.length-2;i>=0;i-- ){
-      sb[i+1] = {...sb[i]}
-    }
-      sb[0].y += -1
-      sb[0].x += 0
 
-
-    return sb
-  }
-  // useEffect(()=>{
-  //   setTimeout(()=>{
-  //     console.log(moveSnake())
-  //   },400)
-  // })
+  useEffect(()=>{
+    const timer1=setTimeout(()=>{
+      setSnakeBody((prevState)=>{
+        let sb = [...prevState]
+          for (let i=sb.length-2;i>=0;i-- ){
+            sb[i+1] = {...sb[i]}
+          }
+          sb[0].y += -1
+          sb[0].x += 0
+          return [...sb]
+        })
+    },400)
+    return () => clearTimeout(timer1)
+  },[snakeBody])
 
  
   return (

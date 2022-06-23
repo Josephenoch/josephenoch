@@ -33,7 +33,7 @@ const PersonalInfo = ({files}) => {
   return (
     <>
         <nav className="w-full lg:w-40 h-fit lg:h-full lg:border-r-2 border-r-lines">
-            <PageNav files={files} handleChangeEditor={handleChangeEditor} pageTitle={"professional-info"}/>
+            <PageNav files={files} handleChangeEditor={handleChangeEditor} pageTitle={"personal-info"}/>
         </nav>
         <article className="w-full  border-t-lines lg:w-[41.4%] h-fit lg:h-full text-secondary text-xs ">
             <LeftContent  openEditor={openEditor} handleChangeEditor={handleChangeEditor} closeEditor={closeEditor}/>

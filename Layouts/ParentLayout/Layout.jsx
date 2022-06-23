@@ -62,8 +62,8 @@ const Layout = ({children}) => {
       <div className='absolute w-fit lg:right-[94%] top-2 lg:top-auto lg:rotate-90 text-xs'>
           <p className="text-center">Design by <ColoredText color="accent-green"><a href="https://twitter.com/YankaDarelova" className="underline" rel="noreferrer" target="_blank">Dare Lova</a></ColoredText></p>
       </div>
-      <div className='absolute lg:left-[92%] top-[96%] lg:top-auto w-fit lg:rotate-[270deg] text-xs'>
-        <p className="text-center">Built with <ColoredText color="secondary-purple">&#10084;</ColoredText> by <ColoredText color="accent"><a href="https://www.twitter.com/techbrojoe" className="underline" rel="noreferrer" target="_blank">Joseph Enoch</a></ColoredText></p>
+      <div className='absolute lg:left-[92%] bottom-0 lg:bottom-auto w-fit lg:rotate-[270deg] text-xs'>
+        <p className="text-center">Built with <ColoredText color="secondary-purple">&#10084;</ColoredText> by <ColoredText color="accent"><a href="https://www.twitter.com/t`echbrojoe" className="underline" rel="noreferrer" target="_blank">Joseph Enoch</a></ColoredText></p>
 
       </div>
     </div>    
