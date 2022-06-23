@@ -82,7 +82,7 @@ const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
                 })}
             </div>}
         </DropDown>
-        <DropDown name="contacts" sx={"!hidden !lg:flex"}>
+        <DropDown name="contacts" sx={"hidden lg:flex"}>
             <div className={` ${extraStyle.contactStyle} space-y-2`}>
                 <div className="text-secondary text-xs flex items-center space-x-1">
                     <i className="ri-mail-fill inline-block ml-2"></i>
