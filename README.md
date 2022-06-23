@@ -1,7 +1,7 @@
 ### Hello World 👋, I am Joseph Enoch 
 I am a passionate developer from Nigeria. I love to write react code and I enjoy playing with snakes (just python). 
-- 🔭 Working on multiple frontend projects using React,
-- 🌱 Learning redux for state management and python (Django) for backend
+- 🔭 *Working* on a `Nextjs` Application with Wordpress as a Headless CMS,
+- 🌱 *Learning* `Django`
 
 ## Connect with me
 
@@ -13,12 +13,6 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 
 <br />
 
-## Some of my Github Stats
-
-<div style="width:100%; display:flex; justify-content:center;">
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Josephenoch&layout=compact&theme=aura&hide_border=true"/>
-</div>
-
 
 ## Expertise
 <br>
@@ -29,22 +23,3 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 ![Django](https://img.shields.io/badge/Django%20-%23ffff.svg?&style=for-the-badge&logo=django&logoColor=%23092e20)
 
 
-## Side Projects 
-<br>
-
-### React Projects 
-
-[Nerdy Eye Project](https://nerdy-eye-gamma.vercel.app/)<br>
-[Portfolio Dashboard](https://portfolio-dashboard-josephenoch.vercel.app/)<br>
-[ChatUp](https://chat-up-chi.vercel.app/)<br>
-[Authex](http://authex.vercel.app/)<br>
-
-### Nextjs Projects 
-
-[Rick and Morty App](https://rick-and-morty-page.vercel.app/)<br>
-[Events Listing Page](https://event-listing-page.vercel.app/)<br>
-[My Portfolio](https://josephenoch.vercel.app)
-
-### Typescript projects
-
-[Typescript for DOM](https://github.com/Josephenoch/ts-dom)
