@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import  SocialIcon  from './SocialIcon'
 import  NavBar  from './NavBar'
 import { useRouter } from 'next/router'
+import ColoredText from "../../Components/GeneralComponents/ColoredText"
 
 const Layout = ({children}) => {
   const route = useRouter()
@@ -58,7 +59,13 @@ const Layout = ({children}) => {
         </div>  
              
       </div>
-            
+      <div className='absolute w-fit lg:right-[94%] top-2 lg:top-auto lg:rotate-90 text-xs'>
+          <p className="text-center">Design by <ColoredText color="accent-green"><a href="https://twitter.com/YankaDarelova" className="underline" rel="noreferrer" target="_blank">Dare Lova</a></ColoredText></p>
+      </div>
+      <div className='absolute lg:left-[92%] bottom-0 lg:bottom-auto w-fit lg:rotate-[270deg] text-xs'>
+        <p className="text-center">Built with <ColoredText color="secondary-purple">&#10084;</ColoredText> by <ColoredText color="accent"><a href="https://www.twitter.com/techbrojoe" className="underline" rel="noreferrer" target="_blank">Joseph Enoch</a></ColoredText></p>
+
+      </div>
     </div>    
   )
 }
