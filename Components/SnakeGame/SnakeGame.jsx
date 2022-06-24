@@ -1,61 +1,47 @@
-import React,{ useState, useEffect} from 'react'
- 
-import Styles from "../../styles/SnakeGame.module.css"
+import React,{useState} from 'react'
+import Food from './Food'
+import Snake from './Snake'
 
-export const SnakeGame = () => {
-  const [snakeBody, setSnakeBody] = useState([
-    {x:11,y:11},
-    {x:11,y:12},
-    {x:11,y:13},
-    {x:11,y:14},
-    {x:11,y:15},
-
-
-  ])
-
-  useEffect(()=>{
-    const timer1=setTimeout(()=>{
-      setSnakeBody((prevState)=>{
-        let sb = [...prevState]
-          for (let i=sb.length-2;i>=0;i-- ){
-            sb[i+1] = {...sb[i]}
-          }
-          sb[0].y += -1
-          sb[0].x += 0
-          return [...sb]
-        })
-    },400)
-    return () => clearTimeout(timer1)
-  },[snakeBody])
-
- 
+const SnakeGame = () => {
+  const getRandomCoordinates = () =>{
+    let min = 1
+    let max = 98
+    let x = Math.floor((Math.random()*(max-min+1)+min)/2)*2
+    let y = Math.floor((Math.random()*(max-min+1)+min)/2)*2
+    console.log({top:y, left:x})
+    return {top:y, left:x}
+  } 
+  const [food, setFood] = useState(getRandomCoordinates)
+  const [snakeBody, setSnakeBody] = useState (
+    [
+        {
+            top:0,
+            left:0
+        },
+        {
+            top:0,
+            left:2
+        },
+        {
+            top:0,
+            left:4
+        },
+        {
+            top:0,
+            left:6
+        },
+        {
+            top:0,
+            left:8
+        }
+    ]
+  )
   return (
-    <>
-      <div className="w-[51%] h-[80%] bg-primary-dark rounded-lg">
-       <div className={`${Styles.background} h-52 w-54`}>
-        {snakeBody.map((body,index)=>
-        <div 
-          key={index}
-          style={{
-            gridColumnStart:body.x,
-            gridRowStart:body.y
-          }}
-          className="bg-accent-green "
-        >
-        </div>
-      )}
-       </div>
-       <div className="bg-primary-lighter/[84%] w-full py-3 text-center ">
-        <span className="text-accent-green uppercase text-lg"> Well done!</span>
-       </div>
-       <span className="text-sm text-center w-full block mt-3"> play-again</span>
-
-      </div>
-      <div className="w-[35%] h-[80%]">
-
-        
-      </div>
-    
-    </>
+    <div className="relative h-52 w-54">
+        <Snake snakeBody={snakeBody}/>
+        <Food food={food}/>
+    </div>
   )
 }
+
+export default SnakeGame

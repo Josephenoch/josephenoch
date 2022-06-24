@@ -59,7 +59,6 @@ export default ProfessionalInfo
 
 
 export const getStaticProps= async()=>{
-  // const {files,error, loading, clearError, getData} = useAbout("professionalInfo")
   const docsRef = collection(db,"professionalInfo")
     const docs = await getDocs(docsRef)
     const files = docs.docs.map(data=>data.data())
