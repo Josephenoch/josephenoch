@@ -1,12 +1,15 @@
-import React,{useState} from 'react'
+import React,{useState, FC, ReactNode} from 'react'
 import  SocialIcon  from './SocialIcon'
 import  NavBar  from './NavBar'
 import { useRouter } from 'next/router'
 import ColoredText from "../../Components/GeneralComponents/ColoredText"
 
-const Layout = ({children}) => {
+interface Props{
+    children: ReactNode
+}
+const Layout:FC<Props> = ({children}) => {
   const route = useRouter()
-  const [nav, setNav] = useState(false)
+  const [nav, setNav] = useState<boolean>(false)
   const handleNav = () =>{
       setNav(prev=> !prev)
   }

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, {FC} from 'react'
 import Button from '../Components/GeneralComponents/Button'
 import Link from "next/link"
-const NotFound = () => {
+const NotFound:FC = () => {
   return (
     <div className="flex text-secondary w-full h-full flex-col items-center justify-center">
       <div className=" w-2/5 flex flex-col items-center justify-center">

@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { GetStaticProps } from 'next';
 import { getDocs, collection } from "firebase/firestore";
 import { db } from '../firebase-config';
 import Project from '../Components/Projects/Project'
@@ -40,7 +41,7 @@ const Projects = ({project}) => {
 
 export default Projects
 
-export const getStaticProps = async () =>{
+export const getStaticProps:GetStaticProps = async () =>{
   const docsRef = collection(db, "stack");
   const docsSnap = await getDocs(docsRef);
   const project = docsSnap.docs.map(data=>data.data())

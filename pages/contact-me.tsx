@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { FC, useCallback, useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
 import Nav from '../Components/Contact/Nav'
 import LeftContent from '../Components/Contact/LeftContent'
@@ -10,12 +10,14 @@ import ErrorModal from "../Components/GeneralComponents/ErrorModal"
 import formatDate from '../Helpers/formatDate'
 import MessageSent from '../Components/Contact/MessageSent'
 import TabTitle from '../Components/GeneralComponents/TabTitle'
-const ContactMe = () => {
-  const date = useMemo(()=>formatDate(new Date()),[])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [sent, setSent] = useState(false)
-  const [values,setValues] = useState({
+import { Error } from '../Interfaces/ErrorInterface'
+import { Message } from '../Interfaces/MessageInterface'
+const ContactMe:FC = () => {
+  const date = useMemo<string>(()=>formatDate(new Date()),[])
+  const [loading, setLoading] = useState<boolean>(false)
+  const [error, setError] = useState<null|Error>(null)
+  const [sent, setSent] = useState<boolean>(false)
+  const [values,setValues] = useState<Message>({
     name:"",
     email:"",
     message:"",
@@ -98,5 +100,4 @@ const ContactMe = () => {
     </div>
   )
 }
-
 export default ContactMe

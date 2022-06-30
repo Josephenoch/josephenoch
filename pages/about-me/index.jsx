@@ -6,7 +6,6 @@ import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowC
 import PageNav from '../../Components/AboutMe/PageNav'
 import LeftContent from '../../Components/AboutMe/LeftContent'
 const ProfessionalInfo = ({files}) => {  
-  console.log(files)
   const [openEditor, setOpenEditor] = useState(
       {
         active:0,
