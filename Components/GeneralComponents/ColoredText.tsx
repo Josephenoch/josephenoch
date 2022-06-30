@@ -1,11 +1,12 @@
 import React,{FC, ReactNode} from 'react'
 interface Props{
   children:ReactNode,
-  color:string
+  color:string,
+  className:string
 }
-const ColoredText:FC<Props> = ({children, color}) => {
+const ColoredText:FC<Props> = ({children, color, className, ...rest}) => {
   return (
-    <span className={`text-${color}`}>{children}</span>
+    <span {...rest} className={`text-${color}`}>{children}</span>
   )
 }
 

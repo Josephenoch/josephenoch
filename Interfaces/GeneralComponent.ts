@@ -4,3 +4,6 @@ export interface Message{
     message:string,
     date:string
 } 
+export interface Error{
+    error:string
+}

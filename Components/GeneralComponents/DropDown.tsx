@@ -5,10 +5,11 @@ interface Props{
   children:ReactNode,
   first?:boolean,
   sx?:string,
-  openByDefault?:boolean
+  openByDefault?:boolean,
+  className?:string
 }
 
-const DropDown:FC<Props> = ({name,children, first, sx, openByDefault}) => {
+const DropDown:FC<Props> = ({name,children, first, sx, openByDefault, className, ...rest}) => {
   const notFirst = !first
   const [dropDown, setDropDown] = useState<boolean>(openByDefault)
   const style = {
@@ -18,7 +19,7 @@ const DropDown:FC<Props> = ({name,children, first, sx, openByDefault}) => {
 }
   return (
     <>
-        <div onClick={()=>setDropDown(prevState=>!prevState)} className={`${style.dropDown} ${style.otherDropDown} ${sx} hover:text-white cursor-pointer lg:bg-inherit border-b-2  bg-secondary py-2 lowercase  text-xs border-lines  h-fit w-full flex justify-start`}>
+        <div {...rest} onClick={()=>setDropDown(prevState=>!prevState)} className={`${style.dropDown} ${style.otherDropDown} ${sx} hover:text-white cursor-pointer lg:bg-inherit border-b-2  bg-secondary py-2 lowercase  text-xs border-lines  h-fit w-full flex justify-start`}>
             {
                 dropDown?<i className="ri-arrow-down-s-fill lg:ml-2 ml-8"></i>:<i className="ri-arrow-right-s-fill lg:ml-2 ml-8"></i>
             }
