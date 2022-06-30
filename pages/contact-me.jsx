@@ -86,7 +86,7 @@ const ContactMe = () => {
               <CircleSpinner color="#4D5BCE" loading={loading}/>
             </div>:
             sent?
-            <div  className="flex items-center mt-10 lg:mt-0 lg:justify-center h-full flex-col">
+            <div className="flex items-center mt-10 lg:mt-0 lg:justify-center h-full flex-col">
                 <MessageSent handleNewMessage={handleNewMessage}/>
             </div>:
             <LeftContent handleChange={handleChange} handleSubmit={handleSubmit}/>}
