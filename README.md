@@ -23,3 +23,4 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 ![Django](https://img.shields.io/badge/Django%20-%23ffff.svg?&style=for-the-badge&logo=django&logoColor=%23092e20)
 
 
+To preview the `code` for my portfolio, check out the repo named josephenoch. Built with Typescript
