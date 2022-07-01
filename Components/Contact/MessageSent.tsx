@@ -1,7 +1,11 @@
-import React from 'react'
-import Button from '../../Components/GeneralComponents/Button'
+import React, { FC } from 'react'
+import Button from '../GeneralComponents/Button'
 
-const MessageSent = ({handleNewMessage}) => {
+interface Props{
+  handleNewMessage():void
+}
+
+const MessageSent:FC<Props> = ({handleNewMessage}) => {
   return (
     <>
         <p className="text-lg">Thank you! &#x1F918;</p>

@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react'
 interface Props{
   children:ReactNode,
   rest?:any,
-  onClick():void
+  onClick:any
 }
 const Button:FC<Props> = ({onClick,children, ...rest}) => {
   return (

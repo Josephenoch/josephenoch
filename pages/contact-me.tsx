@@ -10,8 +10,8 @@ import ErrorModal from "../Components/GeneralComponents/ErrorModal"
 import formatDate from '../Helpers/formatDate'
 import MessageSent from '../Components/Contact/MessageSent'
 import TabTitle from '../Components/GeneralComponents/TabTitle'
-import { Error } from '../Interfaces/ErrorInterface'
-import { Message } from '../Interfaces/MessageInterface'
+import { Error } from '../Interfaces/GeneralComponent'
+import { Message } from '../Interfaces/GeneralComponent'
 const ContactMe:FC = () => {
   const date = useMemo<string>(()=>formatDate(new Date()),[])
   const [loading, setLoading] = useState<boolean>(false)
