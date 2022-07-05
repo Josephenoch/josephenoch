@@ -1,4 +1,4 @@
-import React, { Fragment, ReactNode,FC, } from 'react'
+import React, { Fragment, ReactNode,FC, Component, } from 'react'
 import Layout from '../Layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
@@ -8,13 +8,13 @@ import { NewAppProps } from '../Interfaces/PageInterfaces'
 interface Props {
   children: ReactNode;
 }
-const  MyApp:FC =({ Component, pageProps }:NewAppProps) =>{
+const  MyApp:FC =({ Component:Comp, pageProps }:NewAppProps) =>{
 
   const EmptyLayout:FC<Props> = ({children}) => 
       <Fragment>
           {children}
       </Fragment>
-  const ChildLayout = Component.Layout || EmptyLayout
+  const ChildLayout: typeof Component | FC = Comp.Layout || EmptyLayout
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></Script>  
@@ -27,7 +27,7 @@ const  MyApp:FC =({ Component, pageProps }:NewAppProps) =>{
       </Head>
 
         <ChildLayout>
-            <Component {...pageProps} />
+            <Comp {...pageProps} />
         </ChildLayout>
       </Layout>
     </>
