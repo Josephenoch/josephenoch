@@ -1,8 +1,22 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, FC} from 'react'
+import { Node } from '../../Interfaces/SnakeComponents'
 import Food from './Food'
 import Snake from './Snake'
 
-const SnakeGame = ({increaseScore, direction, setDirection,running,setRunning, snakeBody, setSnakeBody, getRandomCoordinates, food, setFood}) => {  
+interface Props{
+    increaseScore():void,
+    direction:string,
+    setDirection(direction?),
+    running:boolean,
+    setRunning(bool?),
+    snakeBody:Node[],
+    setSnakeBody(node?),
+    getRandomCoordinates():Node,
+    food:Node,
+    setFood(node?)
+}
+
+const SnakeGame:FC<Props> = ({increaseScore, direction, setDirection,running,setRunning, snakeBody, setSnakeBody, getRandomCoordinates, food, setFood}) => {  
   
   
   useEffect(()=>{
@@ -22,7 +36,7 @@ const SnakeGame = ({increaseScore, direction, setDirection,running,setRunning, s
         const newTail = {...sBody[sBody.length-1]}
         sBody.push(newTail)
         increaseScore()
-        setFood(getRandomCoordinates)
+        setFood(getRandomCoordinates())
     }
     const moveSnake = () =>{
         switch(direction){
@@ -67,7 +81,7 @@ const SnakeGame = ({increaseScore, direction, setDirection,running,setRunning, s
                 newDirection="RIGHT"
                 break
         }    
-        setDirection(prevState=>{
+        setDirection((prevState)=>{
             // check if the newDirection is directly opposite the oldDirection i.e prevState
             if((newDirection==="UP"&&prevState==="DOWN")||(newDirection==="DOWN"&&prevState==="UP")||(newDirection==="RIGHT"&&prevState==="LEFT")||(newDirection==="RIGHT"&&prevState==="LEFT")){
                 return prevState
@@ -76,7 +90,7 @@ const SnakeGame = ({increaseScore, direction, setDirection,running,setRunning, s
         })
     }
     document.addEventListener("keydown",onKeyDown)
-    setFood(getRandomCoordinates)
+    setFood(getRandomCoordinates())
     return () => {
         document.removeEventListener("keydown",onKeyDown)
     }

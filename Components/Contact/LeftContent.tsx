@@ -1,7 +1,13 @@
-import React, { useCallback,memo,useRef } from 'react'
+import React, {FC, memo,useRef, ChangeEvent, MutableRefObject } from 'react'
 import Button from '../GeneralComponents/Button'
-const LeftContent = ({handleChange, handleSubmit}) => {
-  const formRef = useRef()
+
+interface Props{
+    handleChange(e:ChangeEvent<HTMLInputElement|HTMLTextAreaElement>):void,
+    handleSubmit(e:MouseEvent,form:MutableRefObject<HTMLFormElement>):void
+}
+
+const LeftContent:FC<Props> = ({handleChange, handleSubmit}) => {
+  const formRef = useRef<HTMLFormElement>(null)
   return (
     <div className="w-full h-full text-xs flex flex-col pt-10 lg:pt-20  items-center">
         <form className="space-y-4" ref={formRef}>

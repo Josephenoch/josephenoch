@@ -2,6 +2,7 @@ import React,{ useState, useEffect} from 'react'
 import Keypad from './Keypad'
 import Button from "../GeneralComponents/Button"
 import SnakeGame from './SnakeGame'
+import { Node } from '../../Interfaces/SnakeComponents'
 
 const SnakeGameComponent = () => {
   const startCoordinates = [
@@ -26,12 +27,12 @@ const SnakeGameComponent = () => {
         left:50
     }
 ]
-  const [snakeBody, setSnakeBody] = useState (startCoordinates)
-  const [running,setRunning] = useState()  
-  const [direction,setDirection]= useState("UP")
-  const [score,setScore] = useState(0)
-  const [highScore,setHighScore] = useState(0)
-  const [food, setFood] = useState({})
+  const [snakeBody, setSnakeBody] = useState<Node[]>(startCoordinates)
+  const [running,setRunning] = useState<boolean|null>()  
+  const [direction,setDirection]= useState<string>("UP")
+  const [score,setScore] = useState<number>(0)
+  const [highScore,setHighScore] = useState<number>(0)
+  const [food, setFood] = useState<Node>({top:0, left:0})
   const getRandomCoordinates = () =>{
     let min = 1
     let max = 98
@@ -46,14 +47,14 @@ const SnakeGameComponent = () => {
     }
     getRandomCoordinates()
   } 
-  useEffect(()=>setHighScore(JSON.parse(window.localStorage.getItem("highScore")||0)),[])
+  useEffect(()=>setHighScore(Number(JSON.parse(window.localStorage.getItem("highScore"))||0)),[])
   const increaseScore = () =>{
     setScore(prevState =>prevState+1)
   }
   const setNewHighScore = () =>{
     if(score>highScore){
       setHighScore(score)
-      window.localStorage.setItem("highScore",score)
+      window.localStorage.setItem("highScore",String(score))
     }
   }
   const move = (direction) =>{

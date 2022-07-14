@@ -1,6 +1,12 @@
-import React,{memo} from 'react'
+import React,{memo,FC} from 'react'
 
-const Keypad = ({direction,...props}) => {
+interface Props{
+    direction:number,
+    onClick():void
+    rest?:any
+}
+
+const Keypad:FC<Props> = ({direction,onClick, ...rest}) => {
   let Icon
   switch(direction){
     case 1 :
@@ -20,7 +26,7 @@ const Keypad = ({direction,...props}) => {
         break
   }
   return (
-    <button className="bg-black py-1 px-4 h-fit rounded-md active:scale-90 hover:scale-105 transition-all duration-75 ease-linear" {...props}>
+    <button className="bg-black py-1 px-4 h-fit rounded-md active:scale-90 hover:scale-105 transition-all duration-75 ease-linear" onClick={onClick} {...rest}>
         {Icon}
     </button>
   )

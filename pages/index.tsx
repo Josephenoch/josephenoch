@@ -2,8 +2,9 @@ import Head from 'next/head'
 import Typewriter from 'typewriter-effect'
 import SnakeGameComponent from '../Components/SnakeGame/SnakeGameComponent';
 import ColoredText from "../Components/GeneralComponents/ColoredText"
+import { FC } from 'react';
 
-const Home = () => {
+const Home:FC = () => {
   return (
     <>
       <Head>

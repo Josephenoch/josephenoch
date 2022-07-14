@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { Fragment, ReactNode,FC, Component, } from 'react'
 import Layout from '../Layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
+import { NewAppProps } from '../Interfaces/PageInterfaces'
+import { Page } from '../Types/page'
+interface Props {
+  children: ReactNode;
+}
+const  MyApp:FC =({ Component:Comp, pageProps }:NewAppProps) =>{
 
-function MyApp({ Component, pageProps }) {
-  const ChildLayout = Component.Layout || EmptyLayout
+  const EmptyLayout:FC<Props> = ({children}) => 
+      <Fragment>
+          {children}
+      </Fragment>
+  const ChildLayout: typeof Component | FC<Props> = Comp.Layout || EmptyLayout 
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></Script>  
-      <Script src="https://kit.fontawesome.com/b557305bb5.js" crossorigin="anonymous"></Script>
+      <Script src="https://kit.fontawesome.com/b557305bb5.js" crossOrigin="anonymous"></Script>
       <Layout>
       <Head>
         <meta name="description" content="Joseph Enoch is a Fullstack using React and Django. Check out his portfolio" />
@@ -19,7 +28,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
         <ChildLayout>
-            <Component {...pageProps} />
+            <Comp {...pageProps} />
         </ChildLayout>
       </Layout>
     </>
@@ -28,5 +37,4 @@ function MyApp({ Component, pageProps }) {
     
 
 }
-const EmptyLayout = ({children}) => <>{children}</>
 export default MyApp

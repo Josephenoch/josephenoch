@@ -1,12 +1,15 @@
 import React,{useState,useEffect} from 'react'
+import { GetStaticProps } from 'next';
 import { getDocs, collection } from "firebase/firestore";
 import { db } from '../firebase-config';
 import Project from '../Components/Projects/Project'
 import ProjectsNav from '../Components/Projects/ProjectsNav'
 import Head from 'next/head'
+import { stack } from '../Interfaces/ProjectInterfaces';
+
 
 const Projects = ({project}) => {
-  const [stack, setStack] = useState([])
+  const [stack, setStack] = useState<stack[]>([])
   useEffect(()=>{
       const smt =project.map(proj=>{return {stack:proj.stack, checked:false}})
       setStack(smt)
@@ -40,7 +43,7 @@ const Projects = ({project}) => {
 
 export default Projects
 
-export const getStaticProps = async () =>{
+export const getStaticProps:GetStaticProps = async () =>{
   const docsRef = collection(db, "stack");
   const docsSnap = await getDocs(docsRef);
   const project = docsSnap.docs.map(data=>data.data())

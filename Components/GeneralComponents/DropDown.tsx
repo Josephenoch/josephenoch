@@ -1,8 +1,17 @@
-import React,{useState} from 'react'
+import React,{ReactNode, useState, FC} from 'react'
 
-const DropDown = ({name,children, first, sx, openByDefault}) => {
+interface Props{
+  name:string,
+  children:ReactNode,
+  first?:boolean,
+  sx?:string,
+  openByDefault?:boolean,
+  className?:string
+}
+
+const DropDown:FC<Props> = ({name,children, first, sx, openByDefault, className, ...rest}) => {
   const notFirst = !first
-  const [dropDown, setDropDown] = useState(openByDefault)
+  const [dropDown, setDropDown] = useState<boolean>(openByDefault)
   const style = {
     dropDown:dropDown?"text-white":"text-white lg:text-secondary ",
     otherDropDown:notFirst&&dropDown?"border-b-2":"",
@@ -10,7 +19,7 @@ const DropDown = ({name,children, first, sx, openByDefault}) => {
 }
   return (
     <>
-        <div onClick={()=>setDropDown(prevState=>!prevState)} className={`${style.dropDown} ${style.first} ${style.otherDropDown} ${sx} hover:text-white cursor-pointer lg:bg-inherit border-b-2  bg-secondary py-2 lowercase  text-xs border-lines  h-fit w-full flex justify-start`}>
+        <div {...rest} onClick={()=>setDropDown(prevState=>!prevState)} className={`${style.dropDown} ${style.otherDropDown} ${sx} hover:text-white cursor-pointer lg:bg-inherit border-b-2  bg-secondary py-2 lowercase  text-xs border-lines  h-fit w-full flex justify-start`}>
             {
                 dropDown?<i className="ri-arrow-down-s-fill lg:ml-2 ml-8"></i>:<i className="ri-arrow-right-s-fill lg:ml-2 ml-8"></i>
             }

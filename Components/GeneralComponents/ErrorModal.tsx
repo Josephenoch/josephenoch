@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { Error } from '../../Interfaces/GeneralComponent'
 
-const ErrorModal = ({error,retry, close}) => {
+interface Props{
+    error:Error,
+    retry():void,
+    close():void
+}
+const ErrorModal:FC<Props> = ({error,retry, close}) => {
   
   return (
         <div className="absolute translate-x-1/2 translate-y-1/2 right-1/2 p-4 w-full max-w-md h-full md:h-auto">
