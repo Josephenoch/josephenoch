@@ -5,6 +5,7 @@ import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
 import { NewAppProps } from '../Interfaces/PageInterfaces'
+import { Page } from '../Types/page'
 interface Props {
   children: ReactNode;
 }
@@ -14,7 +15,7 @@ const  MyApp:FC =({ Component:Comp, pageProps }:NewAppProps) =>{
       <Fragment>
           {children}
       </Fragment>
-  const ChildLayout: typeof Component | FC = Comp.Layout || EmptyLayout
+  const ChildLayout: typeof Component | FC<Props> = Comp.Layout || EmptyLayout 
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></Script>  
