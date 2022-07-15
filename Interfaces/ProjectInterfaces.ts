@@ -1,4 +1,4 @@
-export interface stack{
+export interface IStack{
     checked:boolean
     stack:string,
 }

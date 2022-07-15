@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import { Node } from '../../Interfaces/SnakeComponents'
+import { INode } from '../../Interfaces/SnakeComponents'
 
 interface Props{
-  food:Node
+  food:INode
 }
 
 const Food:FC<Props> = ({food}) => {

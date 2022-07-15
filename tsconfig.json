@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/about-me/hobbies.jsx"  ],
+, "pages/about-me/hobbies.tsx"  ],
   "exclude": [
     "node_modules"
   ]

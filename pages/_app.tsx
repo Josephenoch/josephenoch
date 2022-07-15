@@ -4,12 +4,11 @@ import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
-import { NewAppProps } from '../Interfaces/PageInterfaces'
-import { Page } from '../Types/page'
+import { INewAppProps } from '../Interfaces/PageInterfaces'
 interface Props {
   children: ReactNode;
 }
-const  MyApp:FC =({ Component:Comp, pageProps }:NewAppProps) =>{
+const  MyApp:FC =({ Component:Comp, pageProps }:INewAppProps) =>{
 
   const EmptyLayout:FC<Props> = ({children}) => 
       <Fragment>

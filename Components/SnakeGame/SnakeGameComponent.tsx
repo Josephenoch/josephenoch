@@ -2,7 +2,7 @@ import React,{ useState, useEffect} from 'react'
 import Keypad from './Keypad'
 import Button from "../GeneralComponents/Button"
 import SnakeGame from './SnakeGame'
-import { Node } from '../../Interfaces/SnakeComponents'
+import { INode } from '../../Interfaces/SnakeComponents'
 
 const SnakeGameComponent = () => {
   const startCoordinates = [
@@ -27,12 +27,12 @@ const SnakeGameComponent = () => {
         left:50
     }
 ]
-  const [snakeBody, setSnakeBody] = useState<Node[]>(startCoordinates)
+  const [snakeBody, setSnakeBody] = useState<INode[]>(startCoordinates)
   const [running,setRunning] = useState<boolean|null>()  
   const [direction,setDirection]= useState<string>("UP")
   const [score,setScore] = useState<number>(0)
   const [highScore,setHighScore] = useState<number>(0)
-  const [food, setFood] = useState<Node>({top:0, left:0})
+  const [food, setFood] = useState<INode>({top:0, left:0})
   const getRandomCoordinates = () =>{
     let min = 1
     let max = 98

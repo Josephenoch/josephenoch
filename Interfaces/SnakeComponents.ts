@@ -1,4 +1,4 @@
-export interface Node{
+export interface INode{
     top:number,
     left:number
 }

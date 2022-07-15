@@ -1,9 +1,9 @@
-export interface file{
+export interface IFile{
     title:string,
     content:string
 } 
 
-export interface folder{
+export interface IFolder{
     folderName:string,
-    pages:file[]
+    pages:IFile[]
 }

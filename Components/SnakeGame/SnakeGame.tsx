@@ -1,5 +1,5 @@
 import React,{useEffect, FC} from 'react'
-import { Node } from '../../Interfaces/SnakeComponents'
+import { INode } from '../../Interfaces/SnakeComponents'
 import Food from './Food'
 import Snake from './Snake'
 
@@ -9,10 +9,10 @@ interface Props{
     setDirection(direction?),
     running:boolean,
     setRunning(bool?),
-    snakeBody:Node[],
+    snakeBody:INode[],
     setSnakeBody(node?),
-    getRandomCoordinates():Node,
-    food:Node,
+    getRandomCoordinates():INode,
+    food:INode,
     setFood(node?)
 }
 

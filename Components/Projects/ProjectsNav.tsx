@@ -1,10 +1,10 @@
 import React,{FC} from 'react'
 import ProjectStack from './ProjectStack'
 import DropDown from '../GeneralComponents/DropDown';
-import { stack } from '../../Interfaces/ProjectInterfaces';
+import { IStack } from '../../Interfaces/ProjectInterfaces';
 
 interface Props{
-  stack:stack[],
+  stack:IStack[],
   handleCheck(id:number):void
 }
 const ProjectsNav:FC<Props> = ({stack, handleCheck}) => {

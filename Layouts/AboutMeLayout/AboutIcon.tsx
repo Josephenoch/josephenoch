@@ -1,10 +1,10 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 interface Props{
-  icon:ReactElement,
+  icon:ReactNode,
   link:string
 }
 

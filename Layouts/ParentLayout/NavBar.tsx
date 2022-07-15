@@ -1,11 +1,14 @@
 import Link from 'next/link'
 
-import React from 'react'
+import React, { FC } from 'react'
 
 import { useRouter } from 'next/router'
 
-
-const NavBar = ({nav, handleNav}) => {
+interface Props{
+    nav:boolean,
+    handleNav():void
+}
+const NavBar:FC<Props> = ({nav, handleNav}) => {
   const path = useRouter().pathname
   const styles = {
       nav :nav?"opacity-100 flex":"h-0 lg:h-full opacity-0 lg:opacity-100 hidden lg:flex",

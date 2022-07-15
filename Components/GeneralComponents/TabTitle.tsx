@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
-import { file } from '../../Interfaces/AboutInterface'
+import { IFile } from '../../Interfaces/AboutInterface'
 interface Styles{
   activeStyle:string
 }
 interface Props{
-  handleChangeEditor?:(page:file)=>void,
-  page?:file,
+  handleChangeEditor?:(page:IFile)=>void,
+  page?:IFile,
   title:string,
   closeAble?:boolean
-  closeEditor?:(page:file)=>void,
+  closeEditor?:(page:IFile)=>void,
   styles?:Styles
 }
 const TabTitle:FC<Props> = ({handleChangeEditor, page, title, closeAble, closeEditor,styles, ...rest}) => {

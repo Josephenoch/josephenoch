@@ -29,7 +29,7 @@ const SpotifyProvider = ({children}) => {
     try{
         const data = await axios({
         method:"get",
-        url:"https://api.spotify.com/v1/users/314su7vnojlr2wtq75z2rab6v6te/playlists?offset=0&limit=50",
+        url:"BQDpA6TKxyEqbB_FFgHs2mhPTfxbiIJUxCWe28FRJH7iFNxm1uFqA7ZNMXkyEodsuaqpW1VrFcIEyPverrGI2CyA0a5eKQftJ_dpwrRP4mpp_iHW0RlQj8TuHPmktZA8TQtnHjrVwSXfnc4Y3jXlht52CUV7qTvBHGbKbJhNrSn4GVexeD8N7LibL9kYJrbAB5k_7M0JXkjqpr_B_KFwCjk",
         headers:{
           "Accept": "application/json",
           "Content-Type": "application/json",
