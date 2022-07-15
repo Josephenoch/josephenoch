@@ -1,5 +1,5 @@
 
-export default function* getLines(text,width){
+export default function* getLines(text:string,width:number){
   const letters = text.split("")
   let words =""
   for(let i =0; i<(letters.length/59);i++){

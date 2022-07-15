@@ -1,7 +1,7 @@
 import React from 'react'
-import { Node } from '../../Interfaces/SnakeComponents'
+import { INode } from '../../Interfaces/SnakeComponents'
 interface Props{
-  snakeBody:Node[]
+  snakeBody:INode[]
 }
 const Snake = ({snakeBody}:Props) => {
   return (

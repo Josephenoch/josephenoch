@@ -1,11 +1,18 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, FC} from 'react'
 import { db } from '../../firebase-config'
 import { getDocs, collection } from 'firebase/firestore'
 import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowCaseSection"
 import PageNav from '../../Components/AboutMe/PageNav'
 import LeftContent from '../../Components/AboutMe/LeftContent'
-const PersonalInfo = ({files}) => {  
+import { IFolder } from '../../Interfaces/AboutInterface'
+import { Page } from '../../Types/page'
+
+interface Props{
+  files:IFolder[]
+}
+
+const PersonalInfo:Page<Props> = ({files}) => {  
   const [openEditor, setOpenEditor] = useState(
       {
         active:0,
@@ -58,7 +65,6 @@ export default PersonalInfo
 
 
 export const getStaticProps= async()=>{
-  // const {files,error, loading, clearError, getData} = useAbout("professionalInfo")
   const docsRef = collection(db,"personalInfo")
     const docs = await getDocs(docsRef)
     const files = docs.docs.map(data=>data.data())

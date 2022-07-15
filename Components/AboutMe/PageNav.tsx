@@ -1,19 +1,19 @@
 import React,{useEffect, useState,FC} from 'react'
 import Link from "next/link"
 import DropDown from '../GeneralComponents/DropDown';
-import { file, folder } from '../../Interfaces/AboutInterface';
-interface folderUI{
+import { IFile, IFolder } from '../../Interfaces/AboutInterface';
+interface IFolderUI{
     folderName:string,
     active:boolean
 }
 interface Props{
-    files:folder[],
-    handleChangeEditor(file:file):void,
+    files:IFolder[],
+    handleChangeEditor(file:IFile):void,
     pageTitle:string
 }
 
 const PageNav:FC<Props> = ({files,handleChangeEditor, pageTitle}) => {
-  const [folders, setFolders] = useState<folderUI[]>([])
+  const [folders, setFolders] = useState<IFolderUI[]>([])
   const folderColors = ["text-accent-green","text-accent","text-secondary-purple"]
   useEffect(()=>{
     const folders = files?.filter(file=> file.folderName !== "none").map(file=> {return {folderName:file.folderName,active:true}})

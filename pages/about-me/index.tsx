@@ -5,7 +5,14 @@ import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
 import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowCaseSection"
 import PageNav from '../../Components/AboutMe/PageNav'
 import LeftContent from '../../Components/AboutMe/LeftContent'
-const ProfessionalInfo = ({files}) => {  
+import { Page } from '../../Types/page'
+import { IFolder } from '../../Interfaces/AboutInterface'
+
+interface Props{
+  files:IFolder[]
+}
+
+const ProfessionalInfo:Page<Props> = ({files}) => {  
   const [openEditor, setOpenEditor] = useState(
       {
         active:0,

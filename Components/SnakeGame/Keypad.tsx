@@ -2,8 +2,8 @@ import React,{memo,FC} from 'react'
 
 interface Props{
     direction:number,
-    onClick():void
-    rest?:any
+    onClick():void,
+    [x:string]:any
 }
 
 const Keypad:FC<Props> = ({direction,onClick, ...rest}) => {

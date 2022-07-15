@@ -1,6 +1,11 @@
-import React from 'react'
+import React,{ FC, ReactNode } from 'react'
 
-const SocialIcon = ({icon, link}) => {
+interface Props{
+  icon:ReactNode
+  link:string
+}
+
+const SocialIcon:FC<Props> = ({icon, link}) => {
 
   return (
     <>
