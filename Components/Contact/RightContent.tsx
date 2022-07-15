@@ -1,9 +1,9 @@
 import React, { useMemo,FC } from 'react'
 import formatDate from '../../Helpers/formatDate'
-import { Message } from '../../Interfaces/GeneralComponent'
+import { IMessage } from '../../Interfaces/GeneralComponent'
 import ColoredText from '../GeneralComponents/ColoredText'
 interface Props{
-  values:Message
+  values:IMessage
 }
 const RightContent:FC<Props> = ({values}) => {
   const today = useMemo(()=>formatDate(new Date()),[])
