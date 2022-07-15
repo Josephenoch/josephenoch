@@ -2,7 +2,6 @@ import React,{useEffect, useState} from 'react'
 
 import Link from "next/link"
 
-import { CircleSpinner } from "react-spinners-kit";
 import DropDown from '../GeneralComponents/DropDown';
 
 const PageNav = ({files,handleChangeEditor, pageTitle,loading}) => {
