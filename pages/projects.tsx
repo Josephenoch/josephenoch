@@ -5,11 +5,11 @@ import { db } from '../firebase-config';
 import Project from '../Components/Projects/Project'
 import ProjectsNav from '../Components/Projects/ProjectsNav'
 import Head from 'next/head'
-import { stack } from '../Interfaces/ProjectInterfaces';
+import { IStack } from '../Interfaces/ProjectInterfaces';
 
 
 const Projects = ({project}) => {
-  const [stack, setStack] = useState<stack[]>([])
+  const [stack, setStack] = useState<IStack[]>([])
   useEffect(()=>{
       const smt =project.map(proj=>{return {stack:proj.stack, checked:false}})
       setStack(smt)
