@@ -10,14 +10,14 @@ import ErrorModal from "../Components/GeneralComponents/ErrorModal"
 import formatDate from '../Helpers/formatDate'
 import MessageSent from '../Components/Contact/MessageSent'
 import TabTitle from '../Components/GeneralComponents/TabTitle'
-import { Error } from '../Interfaces/GeneralComponent'
-import { Message } from '../Interfaces/GeneralComponent'
+import { IError } from '../Interfaces/GeneralComponent'
+import { IMessage } from '../Interfaces/GeneralComponent'
 const ContactMe:FC = () => {
   const date = useMemo<string>(()=>formatDate(new Date()),[])
   const [loading, setLoading] = useState<boolean>(false)
-  const [error, setError] = useState<null|Error>(null)
+  const [error, setError] = useState<null|IError>(null)
   const [sent, setSent] = useState<boolean>(false)
-  const [values,setValues] = useState<Message>({
+  const [values,setValues] = useState<IMessage>({
     name:"",
     email:"",
     message:"",
