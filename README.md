@@ -25,5 +25,6 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=josephenoch&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D" alt="Joseph Enoch" /></p>
 
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=josephenoch&show_icons=true&locale=en&theme=tokyonight&" alt="stephengade" /></p>
 
 To preview the `code` for my portfolio, check out the repo named josephenoch. Built with Typescript
