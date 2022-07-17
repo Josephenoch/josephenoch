@@ -23,6 +23,7 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 ![Django](https://img.shields.io/badge/Django%20-%23ffff.svg?&style=for-the-badge&logo=django&logoColor=%23092e20)
 ![Python](https://img.shields.io/badge/Python%20-%2320232a.svg?&style=for-the-badge&logo=python&logoColor=%234B8BBE)
 
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=josephenoch&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D" alt="Joseph Enoch" /></p>
 
 
 To preview the `code` for my portfolio, check out the repo named josephenoch. Built with Typescript
