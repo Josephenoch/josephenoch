@@ -1,6 +1,6 @@
 ### Hello World 👋, I am Joseph Enoch 
 I am a passionate developer from Nigeria. I love to write react code and I enjoy playing with snakes (just python). 
-- 🔭 *Working* on a `Nextjs` Application with React Native, AWS AMplify, EC2, Lambda Functions and a lot more,
+- 🔭 *Working* on a `Mobile` Application with React Native, AWS AMplify, EC2, Lambda Functions and a lot more,
 - 🌱 *Mastering* `React`
 
 ## Connect with me
