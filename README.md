@@ -1,7 +1,7 @@
 ### Hello World 👋, I am Joseph Enoch 
 I am a passionate developer from Nigeria. I love to write react code and I enjoy playing with snakes (just python). 
-- 🔭 *Working* on a `Nextjs` Application with Wordpress as a Headless CMS,
-- 🌱 *Learning* `Django`
+- 🔭 *Working* on a `Nextjs` Application with React Native, AWS AMplify, EC2, Lambda Functions and a lot more,
+- 🌱 *Mastering* `React`
 
 ## Connect with me
 
@@ -23,8 +23,5 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 ![Django](https://img.shields.io/badge/Django%20-%23ffff.svg?&style=for-the-badge&logo=django&logoColor=%23092e20)
 ![Python](https://img.shields.io/badge/Python%20-%2320232a.svg?&style=for-the-badge&logo=python&logoColor=%234B8BBE)
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=josephenoch&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D" alt="Joseph Enoch" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=josephenoch&show_icons=true&locale=en&theme=tokyonight&" alt="stephengade" /></p>
 
 To preview the `code` for my portfolio, check out the repo named josephenoch. Built with Typescript
