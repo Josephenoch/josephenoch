@@ -17,7 +17,7 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 ## Expertise
 <br>
 
-![Javascript](https://img.shields.io/badge/javascript%20-%2320232a.svg?&style=for-the-badge&logo=javascript&logoColor=%23F0DB4F)
+![Javascript](https://img.shields.io/badge/javascript%20-%23ffff.svg?&style=for-the-badge&logo=javascript&logoColor=%23F0DB4F)
 ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Nodejs](https://img.shields.io/badge/nodejs%20-%23ffff.svg?&style=for-the-badge&logo=nodedotjs&logoColor=%3cb73a)
 ![Typescript](https://img.shields.io/badge/typescript%20-%2320232a.svg?&style=for-the-badge&logo=typescript&logoColor=%2361DAFB)
