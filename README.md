@@ -18,8 +18,8 @@ I am a passionate developer from Nigeria. I love to write react code and I enjoy
 <br>
 
 ![Javascript](https://img.shields.io/badge/javascript%20-%2320232a.svg?&style=for-the-badge&logo=javascript&logoColor=%23F0DB4F)
-![React](https://img.shields.io/badge/react%20-%23ffff.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Nodejs](https://img.shields.io/badge/nodejs%20-%2320232a.svg?&style=for-the-badge&logo=nodedotjs&logoColor=%3cb73a)
+![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Nodejs](https://img.shields.io/badge/nodejs%20-%23ffff.svg?&style=for-the-badge&logo=nodedotjs&logoColor=%3cb73a)
 ![Typescript](https://img.shields.io/badge/typescript%20-%2320232a.svg?&style=for-the-badge&logo=typescript&logoColor=%2361DAFB)
 ![Django](https://img.shields.io/badge/Django%20-%23ffff.svg?&style=for-the-badge&logo=django&logoColor=%23092e20)
 ![Python](https://img.shields.io/badge/Python%20-%2320232a.svg?&style=for-the-badge&logo=python&logoColor=%234B8BBE)
