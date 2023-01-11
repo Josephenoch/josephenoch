@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, FormEvent, useCallback, useEffect, useMemo, useState, MutableRefObject } from 'react'
+import React, { ChangeEvent, FC, FormEvent, useCallback, useEffect, useMemo, useState, MutableRefObject, MouseEvent } from 'react'
 import Head from 'next/head'
 import Nav from '../Components/Contact/Nav'
 import LeftContent from '../Components/Contact/LeftContent'
@@ -50,7 +50,7 @@ const ContactMe:FC = () => {
   }
 
 
-  const handleSubmit =async(e:MouseEvent,formRef:MutableRefObject<HTMLFormElement>) =>{
+  const handleSubmit =async(e:MouseEvent<HTMLButtonElement>,formRef:MutableRefObject<HTMLFormElement>) =>{
     e.preventDefault()
     if(formRef.current.checkValidity()){
       await sendData()
