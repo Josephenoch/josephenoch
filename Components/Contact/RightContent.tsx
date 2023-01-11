@@ -29,15 +29,15 @@ const RightContent:FC<Props> = ({values}) => {
               </li>
               <li className="pl-4 list-decimal">
                 <ColoredText color="secondary-purple">name</ColoredText>:
-                <ColoredText color="accent">{` "${values.name}"`}</ColoredText>,
+                <ColoredText color="accent">{` "${values?.name}"`}</ColoredText>,
               </li>
               <li className="pl-4 list-decimal">
                 <ColoredText color="secondary-purple">email</ColoredText>:
-                <ColoredText color="accent">{` "${values.email}"`}</ColoredText>,
+                <ColoredText color="accent">{` "${values?.email}"`}</ColoredText>,
               </li>
               <li className="pl-4 list-decimal break-words">
                 <ColoredText color="secondary-purple">message</ColoredText>:
-                <ColoredText color="accent ">{` "${values.message}"`}</ColoredText>,
+                <ColoredText color="accent ">{` "${values?.message}"`}</ColoredText>,
               </li>
               <li className="pl-4 list-decimal"> 
                 date:

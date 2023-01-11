@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from 'react'
+import React, { ChangeEvent, FC, FormEvent, useCallback, useEffect, useMemo, useState, MutableRefObject } from 'react'
 import Head from 'next/head'
 import Nav from '../Components/Contact/Nav'
 import LeftContent from '../Components/Contact/LeftContent'
@@ -12,59 +12,59 @@ import MessageSent from '../Components/Contact/MessageSent'
 import TabTitle from '../Components/GeneralComponents/TabTitle'
 import { IError } from '../Interfaces/GeneralComponent'
 import { IMessage } from '../Interfaces/GeneralComponent'
+
 const ContactMe:FC = () => {
   const date = useMemo<string>(()=>formatDate(new Date()),[])
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState<null|IError>(null)
-  const [sent, setSent] = useState<boolean>(false)
-  const [values,setValues] = useState<IMessage>({
-    name:"",
-    email:"",
-    message:"",
-    date:date
-  })
+  const [sent, setSent] = useState(false)
+  const [data,setData] = useState({} as IMessage)
+  
   const handleChange =useCallback(
-    (e) =>{
-    const eventName = e.target.name
-    const eventValue = e.target.value
+    (e:ChangeEvent<HTMLInputElement>) =>{
+    const {name, value} = e.target
 
-    setValues(prevState=>{
-     return {...prevState,[eventName]:eventValue}
+    setData(prevState=>{
+     return {...prevState,[name]:value}
     })
   },[])
+
+
   const sendData = async() =>{
-    
-    setLoading(true)
-    const docRef = collection(db, "messages")
-    const data = await addDoc(docRef,values)
-    if(!data.id){
-      setError({error:"error sending message"})
-      setLoading(false)
-      setSent(false)
-      return false
+    setLoading(()=>true)
+    try{
+      const docRef = collection(db, "messages")
+      const resp = await addDoc(docRef,{...data, date})
+      if(!resp.id){
+        setError(()=>{return {error:"error sending message"}})
+        setLoading(()=>false)
+        setSent(()=>false)
+        return false
+      }
+    }catch(err){
+      setError(()=>{return {error:"error sending message"}})
     }
-    setLoading(false)
-    setSent(true)
+    
+    setLoading(()=>false)
+    setSent(()=>true)
   }
-  const handleSubmit =useCallback(async(e,formRef) =>{
+
+
+  const handleSubmit =async(e:MouseEvent,formRef:MutableRefObject<HTMLFormElement>) =>{
     e.preventDefault()
     if(formRef.current.checkValidity()){
       await sendData()
-      return true
     }
-    setError({error:"Please put in the correct details"})
-  },[])
+    setError(()=>{return {error:"Please put in the correct details"}})
+  }
+
+
   const handleNewMessage = () =>{
     setLoading(true)
     setTimeout(()=>{
-      setLoading(false)
-      setValues({
-        name:"",
-        email:"",
-        message:"",
-        date:date
-      })
-      setSent(false)
+      setLoading(()=>false)
+      setData(()=>{return {}as IMessage })
+      setSent(()=>false)
     } ,300)
   }
   const style = {
@@ -91,9 +91,9 @@ const ContactMe:FC = () => {
             <div className="flex items-center mt-10 lg:mt-0 lg:justify-center h-full flex-col">
                 <MessageSent handleNewMessage={handleNewMessage}/>
             </div>:
-            <LeftContent handleChange={handleChange} handleSubmit={handleSubmit}/>}
+            <LeftContent values={data} handleChange={handleChange} handleSubmit={handleSubmit}/>}
           </div>
-          <RightContent values={values}/>
+          <RightContent values={data}/>
         </div>
       </div>
       

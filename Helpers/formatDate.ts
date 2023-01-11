@@ -1,6 +1,5 @@
 const formatDate = (date) =>{
-  var options = { weekday: 'short',  day: 'numeric', month: 'long', }
-  const today = date.toLocaleDateString("en-us", options)
+  const today = date.toISOString().split('T')[0]
   return today
 }
 
