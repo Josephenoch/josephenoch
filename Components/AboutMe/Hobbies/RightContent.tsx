@@ -11,7 +11,7 @@ const RightContent = () => {
           {
               loggedIn?
                   playlists?
-                    <LoginError/>:playlists.map(playlist=><Playlist key={playlist.id} playlist={playlist}/> )
+                    <>{playlists.map(playlist=><Playlist key={playlist.id} playlist={playlist}/> )}</>:<LoginError/>
                   :
                     <SpotifyLogin handleLogIn={handleLogIn}/>
           }

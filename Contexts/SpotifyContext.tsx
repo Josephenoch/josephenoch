@@ -29,14 +29,15 @@ const SpotifyProvider = ({children}) => {
     try{
         const data = await axios({
         method:"get",
-        url:"BQDpA6TKxyEqbB_FFgHs2mhPTfxbiIJUxCWe28FRJH7iFNxm1uFqA7ZNMXkyEodsuaqpW1VrFcIEyPverrGI2CyA0a5eKQftJ_dpwrRP4mpp_iHW0RlQj8TuHPmktZA8TQtnHjrVwSXfnc4Y3jXlht52CUV7qTvBHGbKbJhNrSn4GVexeD8N7LibL9kYJrbAB5k_7M0JXkjqpr_B_KFwCjk",
+        url:"https://api.spotify.com/v1/users/314su7vnojlr2wtq75z2rab6v6te/playlists?limit=50",
         headers:{
           "Accept": "application/json",
           "Content-Type": "application/json",
-          "Authorization": "Bearer BQDNO-PcAsnuD-qmuSMnyV2tE-lkEvOME6KBT1a_VgC-ISHWVNW7z7nCX0Qg0hRYB51196IiYnILkNnRwg4md7BMIQyiLJoLCn3M4n9XxMxVLCzpysD6JsTJvfwP9ZYus6l4egElPKHvMCmbWHAVOyX7Pw1YTmhDetKvltXqEF_U4LuCfPE"
+          "Authorization": "Bearer BQCwvnKzwrmBXDSRZ2HC5NMjbf1Ml-6nh0lx_obz6SsUYKjKSjtpCkvtRQTpjEv3DzyYLpn0Ayahc4jJEhIla0jBj4DGfsyVT60YqFEqKog7mu67nnl6XnFgOOIxDTlzKI0QW66jU-o9XOIGIv07FoYwzUoREA9s6wq7OdJgSqSWN5nTwD-y7y2MwN2Vv54Ee6nUHI9bnxPg6kc2Gr-vYXkj"
         }
       })
       const actualData =data.data.items.filter(item=>item.collaborative===true||item.owner.id==="314su7vnojlr2wtq75z2rab6v6te")
+      console.log(actualData)
       setPlaylists([...actualData])
     }
     catch(err){
