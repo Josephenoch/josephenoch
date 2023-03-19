@@ -4,8 +4,8 @@ import SpotifyLogin from './SpotifyLogin'
 import Playlist from "./Playlist"
 import LoginError from './LoginError'
 const RightContent = () => {
-  const {loggedIn, playlists, handleLogIn} = useSpotifyContext()
-
+  const {fetchPlaylists, loggedIn, playlists, handleLogIn} = useSpotifyContext()
+  
   return (
         <>
           {
@@ -13,7 +13,7 @@ const RightContent = () => {
                   playlists?
                     <>{playlists.map(playlist=><Playlist key={playlist.id} playlist={playlist}/> )}</>:<LoginError/>
                   :
-                    <SpotifyLogin handleLogIn={handleLogIn}/>
+                    <SpotifyLogin handleLogIn={fetchPlaylists}/>
           }
         </>
   )

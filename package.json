@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "firebase": "^9.8.3",
     "next": "12.1.5",
+    "nextjs-cors": "^2.1.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-facebook-login": "^4.1.1",
