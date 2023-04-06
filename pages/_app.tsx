@@ -21,7 +21,7 @@ const  MyApp:FC =({ Component:Comp, pageProps }:INewAppProps) =>{
       <Script src="https://kit.fontawesome.com/b557305bb5.js" crossOrigin="anonymous"></Script>
       <Layout>
       <Head>
-        <meta name="description" content="Joseph Enoch is a Fullstack using React and Django. Check out his portfolio" />
+        <meta name="description" content="Joseph Enoch a Fullstack developer using React, Next, Node & NestJS" />
         <link rel="icon" href="/favicon.png" />
         <meta name="keywords" content="Reactjs, Django, Javascript, Python, Frontend, Backend, Web, Developer, Joseph Enoch"/>
       </Head>
