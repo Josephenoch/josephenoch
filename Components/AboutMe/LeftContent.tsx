@@ -4,7 +4,7 @@ import getLines from '../../Helpers/getLines'
 import TabTitle from '../GeneralComponents/TabTitle'
 
 const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
-  const WIDTH = 59
+  const WIDTH = 62
   const lines = useMemo(()=>{
     if(!(openEditor.pages.length>0)){
       return []
@@ -32,14 +32,23 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
       })
      }
      </div>
-      <div className={`pl-12 pr-10  lg:border-r-2 border-lines pt-5 border-b-2 h-full overflow-y-auto scrollbar-y lg:pb-10`}>
+      <div className={`pl-4 pr-10  lg:border-r-2 border-lines pt-5 border-b-2 h-full overflow-y-auto scrollbar-y lg:pb-10`}>
         <ol className='w-full hidden lg:block'>
 
-          <li className="list-decimal"><span className="ml-4">{"/**"}</span></li>
+          <li className="list-decimal"><span className="ml-4 ">{"/**"}</span></li>
           {openEditor.pages.length>0&&<li className="list-decimal"><span className="ml-4">* About</span></li>}
           {
-            lines.map((line, index)=>
-                <li className="list-decimal" key={index}><span className="ml-4">* {line}</span></li>
+            lines.map((line, index)=>{
+              console.log(line?.search(/\*next_line\*/))
+              return(
+                <li className="list-decimal leading-5" key={index}>
+                  <span className="ml-4">
+                  * {line}
+                  </span>
+                </li>
+              )
+            }
+               
             )
           }  
           {openEditor.pages.length==0&&<li className="list-decimal"><span className="ml-4">{"* No editor open, Click a file to read about me"}</span></li>}
