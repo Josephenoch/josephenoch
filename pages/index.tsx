@@ -17,7 +17,7 @@ const Home:FC = () => {
           <h1 className="text-md text-lg lg:text-2xl font-thin text-secondary-purple flex align-baseline">
              {<Typewriter
                 options={{
-                  strings: ['Front-end Developer', 'UX Designer', 'Data Science Enthusiast'],
+                  strings: ['Front-end Developer', 'Mobile Developer', 'Backend Developer', 'AI Enthusiast'],
                   autoStart: true,
                   loop: true,
                 }}
