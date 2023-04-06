@@ -58,7 +58,7 @@ const SnakeGame:FC<Props> = ({increaseScore, direction, setDirection,running,set
         setSnakeBody([...sBody])
       }
     if(running===true && !collision()){
-        setTimeout(()=>moveSnake(),100)
+        setTimeout(()=>moveSnake(),300)
         
     }
 // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -105,3 +105,5 @@ const SnakeGame:FC<Props> = ({increaseScore, direction, setDirection,running,set
 }
 
 export default SnakeGame
+
+// Enthusiast
