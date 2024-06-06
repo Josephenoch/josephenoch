@@ -1,12 +1,12 @@
 import React,{useState, useEffect, FC} from 'react'
 import { db } from '../../firebase-config'
 import { getDocs, collection } from 'firebase/firestore'
-import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
-import CodeShowCaseSection from "../../Components/AboutMe/PersonalInfo/CodeShowCaseSection"
-import PageNav from '../../Components/AboutMe/PageNav'
-import LeftContent from '../../Components/AboutMe/LeftContent'
-import { IFolder } from '../../Interfaces/AboutInterface'
-import { Page } from '../../Types/page'
+import AboutLayout from '../../layouts/AboutMeLayout/AboutLayout'
+import CodeShowCaseSection from "../../components/AboutMe/PersonalInfo/CodeShowCaseSection"
+import PageNav from '../../components/AboutMe/PageNav'
+import LeftContent from '../../components/AboutMe/LeftContent'
+import { IFolder } from '../../interfaces/AboutInterface'
+import { Page } from '../../types/page'
 
 interface Props{
   files:IFolder[]

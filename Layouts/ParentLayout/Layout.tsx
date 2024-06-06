@@ -2,7 +2,7 @@ import React,{useState, FC, ReactNode} from 'react'
 import  SocialIcon  from './SocialIcon'
 import  NavBar  from './NavBar'
 import { useRouter } from 'next/router'
-import ColoredText from "../../Components/GeneralComponents/ColoredText"
+import ColoredText from "../../components/GeneralComponents/ColoredText"
 
 interface Props{
     children: ReactNode

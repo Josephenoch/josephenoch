@@ -2,10 +2,10 @@ import React,{useState,useEffect} from 'react'
 import { GetStaticProps } from 'next';
 import { getDocs, collection } from "firebase/firestore";
 import { db } from '../firebase-config';
-import Project from '../Components/Projects/Project'
-import ProjectsNav from '../Components/Projects/ProjectsNav'
+import Project from '../components/Projects/Project'
+import ProjectsNav from '../components/Projects/ProjectsNav'
 import Head from 'next/head'
-import { IStack } from '../Interfaces/ProjectInterfaces';
+import { IStack } from '../interfaces/ProjectInterfaces';
 
 
 const Projects = ({project}) => {

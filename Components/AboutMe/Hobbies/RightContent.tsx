@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSpotifyContext } from '../../../Contexts/SpotifyContext'
+import { useSpotifyContext } from '../../../contexts/SpotifyContext'
 import SpotifyLogin from './SpotifyLogin'
 import Playlist from "./Playlist"
 import LoginError from './LoginError'

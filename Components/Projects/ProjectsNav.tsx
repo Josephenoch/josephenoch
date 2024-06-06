@@ -1,7 +1,7 @@
 import React,{FC} from 'react'
 import ProjectStack from './ProjectStack'
 import DropDown from '../GeneralComponents/DropDown';
-import { IStack } from '../../Interfaces/ProjectInterfaces';
+import { IStack } from '../../interfaces/ProjectInterfaces';
 
 interface Props{
   stack:IStack[],

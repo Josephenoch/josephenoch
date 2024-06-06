@@ -1,10 +1,10 @@
 import React, { Fragment, ReactNode, FC, Component, } from 'react'
-import Layout from '../Layouts/ParentLayout/Layout'
+import Layout from '../layouts/ParentLayout/Layout'
 import '../styles/globals.css'
 import 'remixicon/fonts/remixicon.css'
 import Script from 'next/script'
 import Head from 'next/head'
-import { INewAppProps } from '../Interfaces/PageInterfaces'
+import { INewAppProps } from '../interfaces/PageInterfaces'
 interface Props {
   children: ReactNode;
 }

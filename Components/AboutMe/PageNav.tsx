@@ -1,7 +1,7 @@
 import React,{useEffect, useState,FC} from 'react'
 import Link from "next/link"
 import DropDown from '../GeneralComponents/DropDown';
-import { IFile, IFolder } from '../../Interfaces/AboutInterface';
+import { IFile, IFolder } from '../../interfaces/AboutInterface';
 interface IFolderUI{
     folderName:string,
     active:boolean

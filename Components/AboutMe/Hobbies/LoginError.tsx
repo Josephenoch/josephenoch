@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { useSpotifyContext } from '../../../Contexts/SpotifyContext'
+import { useSpotifyContext } from '../../../contexts/SpotifyContext'
 
 const LoginError = () => {
   const {error} = useSpotifyContext()

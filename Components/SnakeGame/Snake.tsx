@@ -1,5 +1,5 @@
 import React from 'react'
-import { INode } from '../../Interfaces/SnakeComponents'
+import { INode } from '../../interfaces/SnakeComponents'
 interface Props{
   snakeBody:INode[]
 }

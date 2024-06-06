@@ -1,13 +1,13 @@
 import React,{FC, useState} from "react"
-import AboutLayout from '../../Layouts/AboutMeLayout/AboutLayout'
-import SpotifyProvider from '../../Contexts/SpotifyContext'
-import RightContent from '../../Components/AboutMe/Hobbies/RightContent'
-import PageNav from "../../Components/AboutMe/PageNav"
-import LeftContent from "../../Components/AboutMe/LeftContent"
+import AboutLayout from '../../layouts/AboutMeLayout/AboutLayout'
+import SpotifyProvider from '../../contexts/SpotifyContext'
+import RightContent from '../../components/AboutMe/Hobbies/RightContent'
+import PageNav from "../../components/AboutMe/PageNav"
+import LeftContent from "../../components/AboutMe/LeftContent"
 import { getDocs,collection } from "firebase/firestore"
 import { db } from "../../firebase-config"
-import { Page } from "../../Types/page"
-import { IFolder } from "../../Interfaces/AboutInterface"
+import { Page } from "../../types/page"
+import { IFolder } from "../../interfaces/AboutInterface"
 
 interface Props{
   files:IFolder[]

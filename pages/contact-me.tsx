@@ -1,17 +1,17 @@
 import React, { ChangeEvent, FC, FormEvent, useCallback, useEffect, useMemo, useState, MutableRefObject, MouseEvent } from 'react'
 import Head from 'next/head'
-import Nav from '../Components/Contact/Nav'
-import LeftContent from '../Components/Contact/LeftContent'
-import RightContent from '../Components/Contact/RightContent'
+import Nav from '../components/Contact/Nav'
+import LeftContent from '../components/Contact/LeftContent'
+import RightContent from '../components/Contact/RightContent'
 import {collection, addDoc} from "firebase/firestore"
 import { db } from '../firebase-config'
 import { CircleSpinner } from 'react-spinners-kit'
-import ErrorModal from "../Components/GeneralComponents/ErrorModal"
-import formatDate from '../Helpers/formatDate'
-import MessageSent from '../Components/Contact/MessageSent'
-import TabTitle from '../Components/GeneralComponents/TabTitle'
-import { IError } from '../Interfaces/GeneralComponent'
-import { IMessage } from '../Interfaces/GeneralComponent'
+import ErrorModal from "../components/GeneralComponents/ErrorModal"
+import formatDate from '../helpers/formatDate'
+import MessageSent from '../components/Contact/MessageSent'
+import TabTitle from '../components/GeneralComponents/TabTitle'
+import { IError } from '../interfaces/GeneralComponent'
+import { IMessage } from '../interfaces/GeneralComponent'
 
 const ContactMe:FC = () => {
   const date = useMemo<string>(()=>formatDate(new Date()),[])

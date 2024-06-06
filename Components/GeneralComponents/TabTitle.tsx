@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { IFile } from '../../Interfaces/AboutInterface'
+import { IFile } from '../../interfaces/AboutInterface'
 interface Styles{
   activeStyle:string
 }

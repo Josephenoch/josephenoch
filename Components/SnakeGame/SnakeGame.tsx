@@ -1,5 +1,5 @@
 import React,{useEffect, FC} from 'react'
-import { INode } from '../../Interfaces/SnakeComponents'
+import { INode } from '../../interfaces/SnakeComponents'
 import Food from './Food'
 import Snake from './Snake'
 

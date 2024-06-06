@@ -1,6 +1,6 @@
 import React, {FC, memo,useRef, ChangeEvent, MutableRefObject, MouseEvent } from 'react'
 import Button from '../GeneralComponents/Button'
-import { IMessage } from '../../Interfaces/GeneralComponent'
+import { IMessage } from '../../interfaces/GeneralComponent'
 
 interface Props{
     handleChange(e:ChangeEvent<HTMLInputElement|HTMLTextAreaElement>):void,

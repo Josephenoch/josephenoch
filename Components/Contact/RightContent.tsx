@@ -1,6 +1,6 @@
 import React, { useMemo,FC } from 'react'
-import formatDate from '../../Helpers/formatDate'
-import { IMessage } from '../../Interfaces/GeneralComponent'
+import formatDate from '../../helpers/formatDate'
+import { IMessage } from '../../interfaces/GeneralComponent'
 import ColoredText from '../GeneralComponents/ColoredText'
 interface Props{
   values:IMessage

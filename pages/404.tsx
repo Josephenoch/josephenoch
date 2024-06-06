@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import Button from '../Components/GeneralComponents/Button'
+import Button from '../components/GeneralComponents/Button'
 import Link from "next/link"
 const NotFound:FC = () => {
   return (

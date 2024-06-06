@@ -2,7 +2,7 @@ import React,{ useState, useEffect} from 'react'
 import Keypad from './Keypad'
 import Button from "../GeneralComponents/Button"
 import SnakeGame from './SnakeGame'
-import { INode } from '../../Interfaces/SnakeComponents'
+import { INode } from '../../interfaces/SnakeComponents'
 
 const SnakeGameComponent = () => {
   const startCoordinates = [

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { IError } from '../../Interfaces/GeneralComponent'
+import { IError } from '../../interfaces/GeneralComponent'
 
 interface Props{
     error:IError,
