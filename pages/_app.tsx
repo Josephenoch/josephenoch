@@ -34,8 +34,8 @@ const MyApp: FC = ({ Component: Comp, pageProps }: INewAppProps) => {
           <link rel="icon" href="/favicon.png" />
           <meta name="keywords" content="Reactjs, Nestjs, Nextjs, Python, Frontend, Backend, Web, Developer, Joseph Enoch" />
           <meta name="og:url" content="https://technicalportfolio.josephenoch.com"/>
-          <meta name="og:description" content="oseph Enoch a Fullstack developer, well versed with React, Next, Expres & NestJS"/>
-          <meta name="twitter:card" content="summary"/>
+          <meta name="og:description" content="Joseph Enoch a Fullstack developer, well versed with React, Next, Expres & NestJS"/>
+          <meta name="twitter:card" content="summary_large_image"/>
           <meta name="twitter:creator" content="@techbrojoe" />
           <meta name="twitter:image" content="/social-preview.png" />
           <meta name="twitter:site" content="Joseph Enoch's Technical Portfolio" />
