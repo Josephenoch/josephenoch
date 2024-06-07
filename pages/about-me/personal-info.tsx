@@ -5,7 +5,7 @@ import AboutLayout from '../../layouts/AboutMeLayout/AboutLayout'
 import CodeShowCaseSection from "../../components/AboutMe/PersonalInfo/CodeShowCaseSection"
 import PageNav from '../../components/AboutMe/PageNav'
 import LeftContent from '../../components/AboutMe/LeftContent'
-import { IFolder } from '../../interfaces/AboutInterface'
+import { IFile, IFolder } from '../../interfaces/AboutInterface'
 import { Page } from '../../types/page'
 
 interface Props{
@@ -20,7 +20,7 @@ const PersonalInfo:Page<Props> = ({files}) => {
         ]
       }
     )
-  const handleChangeEditor = ((selected) =>{
+  const handleChangeEditor = ((selected:IFile) =>{
     setOpenEditor(prevState=>{
       if(prevState.pages.some(page=>page.title===selected.title)){
         const newActive = prevState.pages.findIndex(page=>page.title==selected.title)
@@ -30,7 +30,7 @@ const PersonalInfo:Page<Props> = ({files}) => {
     })
   })
   
-  const closeEditor = (item=>{
+  const closeEditor = ((item:IFile)=>{
     setOpenEditor(prevState=>{
       const oldArray = [...prevState.pages]
       const newArray = oldArray.filter(arr=>arr.title!==item.title)

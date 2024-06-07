@@ -11,14 +11,15 @@ import { IStack } from '../interfaces/ProjectInterfaces';
 const Projects = ({project}) => {
   const [stack, setStack] = useState<IStack[]>([])
   useEffect(()=>{
-      const smt =project.map(proj=>{return {stack:proj.stack, checked:false}})
+      const smt =project.map((proj:IStack)=>{return {stack:proj.stack, checked:false}})
       setStack(smt)
     },[project])
 
-  const handleCheck = (id) => {
+  const handleCheck = (id: number) => {
     setStack(prevState=>{
         const newState = [...prevState]
-        newState[id] = {...prevState[id],checked:!prevState[id].checked}
+        newState[id] = {...prevState[id], checked:!prevState[id].checked}
+        console.log(newState[id])
         return [...newState]
     })
   }
@@ -30,9 +31,9 @@ const Projects = ({project}) => {
       </Head>
       <ProjectsNav stack={stack} handleCheck={handleCheck}/>
       <div className="lg:pb-5 flex w-full justify-center lg:justify-start lg:overflow-y-auto scrollbar-y flex-wrap">
-        {project.map(stak=>
+        {project.map((stak)=>
           stak.projects.map((proj,id)=>{
-            const checked = stack[stack.findIndex(sta=>sta.stack===stak.stack)]?.checked     
+            const checked = stack[stack.findIndex(sta=>sta.stack===stak.stack)]?.checked  
             return checked && <Project  key={id} project={proj}/>
           })
         )}
