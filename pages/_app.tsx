@@ -30,9 +30,18 @@ const MyApp: FC = ({ Component: Comp, pageProps }: INewAppProps) => {
       <Script src="https://kit.fontawesome.com/b557305bb5.js" crossOrigin="anonymous"></Script>
       <Layout>
         <Head>
-          <meta name="description" content="Joseph Enoch a Fullstack developer using React, Next, Node & NestJS" />
+          <meta name="description" content="Joseph Enoch a Fullstack developer, well versed with React, Next, Expres & NestJS" />
           <link rel="icon" href="/favicon.png" />
-          <meta name="keywords" content="Reactjs, Django, Javascript, Python, Frontend, Backend, Web, Developer, Joseph Enoch" />
+          <meta name="keywords" content="Reactjs, Nestjs, Nextjs, Python, Frontend, Backend, Web, Developer, Joseph Enoch" />
+          <meta name="og:url" content="https://technicalportfolio.josephenoch.com"/>
+          <meta name="og:description" content="oseph Enoch a Fullstack developer, well versed with React, Next, Expres & NestJS"/>
+          <meta name="twitter:card" content="summary"/>
+          <meta name="twitter:creator" content="@techbrojoe" />
+          <meta name="twitter:image" content="/social-preview.png" />
+          <meta name="twitter:site" content="Joseph Enoch's Technical Portfolio" />
+          <meta name="twitter:title" content="Joseph Enoch's Technical Portfolio" />
+          <meta name="og:type" content="Person"/>
+          <meta property="og:image" content="/social-preview.png" />
         </Head>
 
         <ChildLayout>
