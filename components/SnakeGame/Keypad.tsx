@@ -1,4 +1,4 @@
-import React,{memo,FC} from 'react'
+import React,{memo,FC, ReactNode} from 'react'
 
 interface Props{
     direction:number,
@@ -7,7 +7,7 @@ interface Props{
 }
 
 const Keypad:FC<Props> = ({direction,onClick, ...rest}) => {
-  let Icon
+  let Icon: ReactNode
   switch(direction){
     case 1 :
         Icon =<i className="ri-arrow-up-s-fill"/>

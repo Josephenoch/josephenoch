@@ -58,15 +58,15 @@ const SnakeGame:FC<Props> = ({increaseScore, direction, setDirection,running,set
         setSnakeBody([...sBody])
       }
     if(running===true && !collision()){
-        setTimeout(()=>moveSnake(),300)
+        setTimeout(()=>moveSnake(),50)
         
     }
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[snakeBody,running])
   useEffect(()=>{
-    const onKeyDown=(e)=>{
+    const onKeyDown=(e:KeyboardEvent)=>{
         setRunning(true)
-        let newDirection 
+        let newDirection:string 
         switch(e.keyCode){
             case 38:
                 newDirection="UP"

@@ -57,7 +57,7 @@ const SnakeGameComponent = () => {
       window.localStorage.setItem("highScore",String(score))
     }
   }
-  const move = (direction) =>{
+  const move = (direction: string) =>{
     if(!running){
       setRunning(true)
     }
@@ -75,7 +75,7 @@ const SnakeGameComponent = () => {
       style={{
           background:"linear-gradient(135deg, rgba(67, 217, 173,0.7), rgba(23, 85, 83,0.7))"
       }}
-      className=" ml-20 hidden lg:flex w-[35%] px-8 h-[80%] shadow-[_116px_85px_66px_-54px_rgba(77,91,206,0.3),_-59px_-99px_81px_-41px_rgba(67,217,173,0.64);] justify-center items-center rounded-md"
+      className="ml-20 hidden lg:flex w-[35%] px-8 h-[80%] shadow-[_116px_85px_66px_-54px_rgba(77,91,206,0.3),_-59px_-99px_81px_-41px_rgba(67,217,173,0.64);] justify-center items-center rounded-md"
     >
       <div className="w-[50%] h-[80%] bg-primary-dark rounded-lg ">
         <SnakeGame 
