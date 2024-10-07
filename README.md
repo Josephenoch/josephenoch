@@ -1,15 +1,15 @@
 ### Hello World 👋, I am Joseph Enoch 
 I am a passionate developer from Nigeria. I love to write react code and I enjoy playing with snakes (just python). 
-- 🔭 *Working* on a `Mobile` Application with React Native, AWS Amplify, EC2, Lambda Functions and a lot more,
+- 🔭 *Working* on building a Licensing as a Service Application with Javascript (Typescript) everywhere,
 - 🌱 *Mastering* `Nestjs & AWS Services`
 
 ## Connect with me
 
 
 [![Linkedin Badge](https://img.shields.io/badge/-Joseph%20Enoch-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joseph-enoch/)](https://www.linkedin.com/in/joseph-enoch/)
-[![Instagram Badge](https://img.shields.io/badge/-@j.oenoch-E33153?style=flat-square&logo=instagram&logoColor=white&link=https://instagram.com/j.oenoch/)](https://instagram.com/j.oenoch)
+[![Instagram Badge](https://img.shields.io/badge/-@j.oenoch-E33153?style=flat-square&logo=instagram&logoColor=white&link=https://instagram.com/j.oenoch/)](https://instagram.com/techbrojoe)
 [![Twitter Badge](https://img.shields.io/badge/-@techbrojoe-blue?style=flat-square&logo=twitter&logoColor=white&link=https://twitter.com/techbrojoe/)](https://twitter.com/techbrojoe)
-[![Portfolio Badge](https://img.shields.io/badge/-Portfolio-333333?style=flat-square&logo=google-chrome&logoColor=white&link=https://josephenoch.vercel.app/)](https://josephenoch.vercel.app/)
+[![Portfolio Badge](https://img.shields.io/badge/-Portfolio-333333?style=flat-square&logo=google-chrome&logoColor=white&link=https://technicalportfolio.josephenoch.com/)](https://technicalportfolio.josephenoch.com/)
 
 <br />
 
