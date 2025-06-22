@@ -12,13 +12,18 @@ import MessageSent from '../components/Contact/MessageSent'
 import TabTitle from '../components/GeneralComponents/TabTitle'
 import { IError } from '../interfaces/GeneralComponent'
 import { IMessage } from '../interfaces/GeneralComponent'
+import { sendMessageEmail } from '../requests/email.request'
 
 const ContactMe:FC = () => {
   const date = useMemo<string>(()=>formatDate(new Date()),[])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<null|IError>(null)
   const [sent, setSent] = useState(false)
-  const [data,setData] = useState({} as IMessage)
+  const [data,setData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  } as IMessage)
   
   const handleChange =useCallback(
     (e:ChangeEvent<HTMLInputElement>) =>{
@@ -35,6 +40,13 @@ const ContactMe:FC = () => {
     try{
       const docRef = collection(db, "messages")
       const resp = await addDoc(docRef,{...data, date})
+      const respEmail = await sendMessageEmail({
+        sentTime: date,
+        message: data.message,
+        senderName: data.name,
+        senderEmail: data.email
+      })
+      console.log(respEmail)
       if(!resp.id){
         setError(()=>{return {error:"error sending message"}})
         setLoading(()=>false)
@@ -42,6 +54,7 @@ const ContactMe:FC = () => {
         return false
       }
     }catch(err){
+      console.log(err)
       setError(()=>{return {error:"error sending message"}})
     }
     
