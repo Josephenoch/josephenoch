@@ -40,13 +40,12 @@ const ContactMe:FC = () => {
     try{
       const docRef = collection(db, "messages")
       const resp = await addDoc(docRef,{...data, date})
-      const respEmail = await sendMessageEmail({
+      await sendMessageEmail({
         sentTime: date,
         message: data.message,
         senderName: data.name,
         senderEmail: data.email
       })
-      console.log(respEmail)
       if(!resp.id){
         setError(()=>{return {error:"error sending message"}})
         setLoading(()=>false)
@@ -67,6 +66,7 @@ const ContactMe:FC = () => {
     e.preventDefault()
     if(formRef.current.checkValidity()){
       await sendData()
+      return
     }
     setError(()=>{return {error:"Please put in the correct details"}})
   }
