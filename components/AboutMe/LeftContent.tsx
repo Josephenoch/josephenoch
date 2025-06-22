@@ -1,23 +1,23 @@
-import React,{useMemo} from 'react'
+import React from 'react'
 
-import getLines from '../../helpers/getLines'
+// import getLines from '../../helpers/getLines'
 import TabTitle from '../GeneralComponents/TabTitle'
 
 const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
-  const WIDTH = 62
-  const lines = useMemo(()=>{
-    if(!(openEditor.pages.length>0)){
-      return []
-    }
-    const genobj = getLines(openEditor.pages[openEditor.active]?.content, WIDTH)
-    const res = []
-    let result = genobj.next()
-    while(!result.done){
-      res.push(result.value)
-      result = genobj.next()
-    }
-    return res
-  },[openEditor])
+  const WIDTH = 65
+  // const lines = useMemo(()=>{
+  //   if(!(openEditor.pages.length>0)){
+  //     return []
+  //   }
+  //   const genobj = getLines(openEditor.pages[openEditor.active]?.content, WIDTH)
+  //   const res = []
+  //   let result = genobj.next()
+  //   while(!result.done){
+  //     res.push(result.value)
+  //     result = genobj.next()
+  //   }
+  //   return res
+  // },[openEditor])
   return (
     <>
 
@@ -33,31 +33,39 @@ const LeftContent = ({openEditor, handleChangeEditor, closeEditor}) => {
      }
      </div>
       <div className={`pl-4 pr-10  lg:border-r-2 border-lines pt-5 border-b-2 h-full overflow-y-auto scrollbar-y lg:pb-10`}>
-        <ol className='w-full hidden lg:block'>
-
-          <li className="list-decimal"><span className="ml-4 ">{"/**"}</span></li>
-          {openEditor.pages.length>0&&<li className="list-decimal"><span className="ml-4">* About</span></li>}
+        <div
+          className="w-full text-white"
+          style={{
+            fontFamily: 'monospace',
+            whiteSpace: 'pre-wrap',
+            wordBreak: 'break-word',
+            overflowWrap: 'break-word',
+            lineHeight: '1.6em'
+          }}
+        >
           {
-            lines.map((line, index)=>{
-              console.log(line?.search(/\*next_line\*/))
-              return(
-                <li className="list-decimal leading-5" key={index}>
-                  <span className="ml-4">
-                  * {line}
-                  </span>
-                </li>
-              )
-            }
-               
-            )
-          }  
-          {openEditor.pages.length==0&&<li className="list-decimal"><span className="ml-4">{"* No editor open, Click a file to read about me"}</span></li>}
-          <li className="list-decimal"><span className="ml-4">{"*/"}</span></li>
-        </ol>
-        <p className="w-full lg:hidden">
-          {openEditor.pages.length==0&&"No editor open, Click a file to read about me"}
-          {openEditor.pages[openEditor.active]?.content}
-        </p>
+            openEditor.pages.length > 0 &&
+            openEditor.pages[openEditor.active]?.content
+              .split('next_line')
+              .map((line, index) => {
+                const isBullet = /^\s*\[]/.test(line); // Detects lines starting with "*"
+                const cleanLine = isBullet ? line.replace(/^\s*\[]\s?/, '• ') : line;
+                return (
+                  <div
+                    key={index}
+                    className="mt-2"
+                    style={{
+                      marginLeft: isBullet ? '1.5em' : 0
+                    }}
+                  >
+                    {cleanLine || '\u00A0'}
+                  </div>
+                );
+              })
+          }
+        </div>
+
+        {/* {openEditor.pages.length==0&&<li className="list-decimal"><span className="ml-4">{"* No editor open, Click a file to read about me"}</span></li>} */}
       </div>
     </>
   )

@@ -19,7 +19,6 @@ const Projects = ({project}) => {
     setStack(prevState=>{
         const newState = [...prevState]
         newState[id] = {...prevState[id], checked:!prevState[id].checked}
-        console.log(newState[id])
         return [...newState]
     })
   }

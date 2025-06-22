@@ -23,7 +23,6 @@ const login = async (req: NextApiRequest, res:NextApiResponse) => {
       client_id: process.env.NEXT_SPOTIFY_CLIENT_ID
     })})
   }catch(err){
-    console.log(err)
   }
 }
 

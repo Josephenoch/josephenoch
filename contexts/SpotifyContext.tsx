@@ -30,7 +30,6 @@ const SpotifyProvider = ({children}) => {
 
     }
     catch(err){
-      console.log(err)
       setError(err)
     }
     // setLoggedIn(true)
